@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Types of Corrosion</title>
+  <style type="text/css">
+    #pageDiv {
+      padding-top: 11%;
+    }
+    
+    .m1t2p7 {
+      font-size: 30px;
+    }
+
+    .m1t2p7 ul li span {
+      color: black;
+    }
+
+    .m1t2p7 ul {
+      padding-left: 30px;
+      list-style-type: disc;
+      color: #FF8C00;
+      line-height: 36px;
+    }
+
+    .types_corrosion_newslide {
+      position: relative;
+      width: 1200px;
+      background-image: url(./content/images/pages/m1_t2_p7/new-initial.png);
+      height: 605px;
+      background-size: 100% 100%;
+      left: 29%;
+    }
+
+    .mouse {
+      top: 44%;
+      left: 26%;
+      position: absolute;
+      background-image: url(./content/images/shell/mouse_click.png);
+      background-repeat: no-repeat;
+      background-size: 100% 100%;
+      width: 65%;
+      height: 59px;
+    }
+
+    .mouse-content {
+      line-height: 25px;
+      margin-top: 12px;
+      font-size: 25px !important;
+      font-style: italic;
+      color: green !important;
+      margin-left: 74px;
+    }
+
+    .corrosion_tabs_new p {
+      cursor: pointer;
+      font-family: 'PLinotte-Bold';
+      padding: 5px 35px;
+      position: absolute;
+      left: -40%;
+      width: 40%;
+      border-bottom-left-radius: 40px;
+      border-top-left-radius: 40px;
+    }
+
+    .corrosion_tabs_new p:nth-child(even) {
+      background: linear-gradient(to right, #AAFAFF 0%, #98F5FB 25%, #72ECF4 40%, #59E6EF 65%, #50E4ED 100%);
+    }
+
+    .corrosion_tabs_new p:nth-child(odd) {
+      background: linear-gradient(to right, #CEE5FF 0%, #BFDDFE 25%, #B1D5FE 40%, #9DCBFD 65%, #95C6FD 100%);
+    }
+
+    .galvanic_tab {
+      top: 16%;
+    }
+
+    .pitting_tab {
+      top: 27%;
+    }
+
+    .crevice_tab {
+      top: 39%;
+    }
+
+    .induced_tab {
+      top: 51%;
+    }
+
+    .uniform_tab {
+      top: 63%;
+    }
+
+    .stress_tab {
+      top: 75%;
+    }
+
+    .tab_heading {
+      top: 7%;
+      font-family: 'PLinotte-Bold';
+      color: white;
+      position: absolute;
+      left: 8%;
+      font-size: 35px;
+    }
+
+    .tab_listing {
+      width: 45%;
+      position: absolute;
+      top: 20%;
+      left: 9%;
+    }
+
+    .tabs_image {
+      height: 85%;
+      position: absolute;
+      width: 42%;
+      background-size: 100% 100%;
+      top: 10%;
+      left: 55%;
+      border-radius: 20px;
+    }
+
+    .galvanic_bg {
+      background-image: url('./content/images/pages/m1_t2_p7/galvanic.png');
+    }
+
+    .pitting_bg {
+      background-image: url('./content/images/pages/m1_t2_p7/pitting.png');
+    }
+
+    .crevice_bg {
+      background-image: url('./content/images/pages/m1_t2_p7/crevice.png');
+    }
+
+    .induced_bg {
+      background-image: url('./content/images/pages/m1_t2_p7/microbial_induced.png');
+    }
+
+    .uniform_bg {
+      background-image: url('./content/images/pages/m1_t2_p7/uniform.png');
+    }
+
+    .stress_bg {
+      background-image: url('./content/images/pages/m1_t2_p7/stress-cracking.png');
+    }
+
+    .tabs-visited {
+      position: absolute;
+      background-image: url('./content/images/shell/tickmark_black.png');
+      background-repeat: no-repeat;
+      height: 57px;
+      width: 57px;
+      top: -14%;
+      left: -6%;
+    }
+
+    .finished_tab {
+      background: linear-gradient(to right, #E5E5E5 0%, #E0E0E0 25%, #D6D6D6 40%, #CFCFCF 65%, #CCCCCC 100%) !important;
+    }
+
+    .clicked {
+      background: linear-gradient(to right, #FFE6AA 0%, #FDE098 25%, #FAD579 40%, #F7CB5E 65%, #F6C650 100%) !important;
+    }
+  </style>
+</head>
+
+<body>
+  <section id="page-intro">
+    <p class="headingOne"><strong>Basics of Cathodic Protection (CP)</strong></p>
+    <p class="headingTwo">Types of Corrosion</p>
+  </section>
+  <section id="pageDiv" class="m1t2p7" >
+    <section id="audio-video-player"></section>
+    <div class="types_corrosion_newslide">
+      <div class="mouse d-none 1_4" tab-num-details="1">
+        <p class="mouse-content ">Click each tab to learn about types of Corrosion.</p>
+      </div>
+      <div class="corrosion_tabs_new enableTabs">
+        <p class="galvanic_tab" tab-num="2">Galvanic Corrosion <span id="1"></span></p>
+        <p class="pitting_tab" tab-num="3">Pitting Corrosion <span  id="2"></span></p>
+        <p class="crevice_tab" tab-num="4">Crevice Corrosion <span  id="3"></span></p>
+        <p class="induced_tab" tab-num="5">Microbial Induced Corrosion <span  id="4"></span></p>
+        <p class="uniform_tab" tab-num="6">Uniform Corrosion <span  id="5"></span></p>
+        <p class="stress_tab" tab-num="7">Stress Corrosion Cracking <span  id="6"></span></p>
+      </div>
+      <div class="tab_content"></div>
+    </div>
+  </section>
+</body>
+
+<script>
+  currentPagenumber = 3;
+  var pagenumber = 1;
+  menuSelection(pagenumber);
+  var checkPrevtab;
+
+  var tabnum = 1;
+  var suspendData;
+  var suspendArr;
+  var curPage = model.currentModule+'_'+model.currentTopic+'_'+model.currentPage;
+  $(document).ready(function(){
+      getPageActivity(curPage, 'tabs-visited');
+  });
+  var initialaudio = model.getPageCurrentAudioPath(true, 1);
+  initAudioVideoPlayer(initialaudio, 'audio-video-player', 'm4a');
+
+  $('#audio-video-player').on($.jPlayer.event.timeupdate, function (event) {
+    var classTime = event.jPlayer.status.currentTime.toFixed(0);
+    $("." + tabnum + '_' + classTime).removeClass("d-none");
+  });
+
+  $('#audio-video-player').on($.jPlayer.event.ended, function (event) {
+    $('#player_nextBtn').removeClass("player_nextBtnDisabled_style").addClass("player_nextBtn_style");
+    $('.itextNext').removeClass("d-none");
+    $('.corrosion_tabs_new').removeClass('enableTabs');
+    $('#player_content_controls').addClass('audio-video-player-stopped');
+  });
+
+  $('#audio-video-player').on($.jPlayer.event.seeking, function (event) {
+    updateDurationAudio(event);
+  });
+
+  $('#audio-video-player').on($.jPlayer.event.seeked, function (event) { 
+    updateDurationAudio(event);
+  });
+
+  function updateDurationAudio(event) {
+    var percentage = (event.jPlayer.status.currentTime / event.jPlayer.status.duration) * 100;
+    var classTime = event.jPlayer.status.currentTime.toFixed(0);
+    var totaltime = event.jPlayer.status.duration.toFixed(0);
+
+    for (let i = 0; i <= classTime; i++) {
+      $("." + tabnum + '_' + i).removeClass("d-none");
+    }
+    for (let i = classTime; i < totaltime; i++) {
+      $("." + tabnum + '_' + i).addClass("d-none");
+    }
+  };
+ 
+  $('.corrosion_tabs_new p').click(function () {
+    var imageUrl = "./content/images/pages/m1_t2_p7/new-bg.png";
+    $(this).addClass('clicked');
+    $(this).find('span').addClass('tabs-visited');
+    $('.mouse').addClass('d-none');
+    $('.types_corrosion_newslide').css("background-image", " url(" + imageUrl + ")");
+    
+    setPageActivity(curPage,'tabs-visited');
+
+  });
+
+  $('.galvanic_tab').click(function () {
+    checkPrevTab();
+    $('.tab_content').html(
+      `<div class="tab_heading">Galvanic Corrosion</div>
+      <div class="tab_listing">
+        <ul class="text-animation gs_left galvanic_list">
+          <li class="d-none 2_2">
+            <span>Most common form of corrosion.</span>
+          </li>
+          <li class="d-none 2_4">
+            <span>Occurs when two different metals are located together in an electrolyte and is connected by a metallic path.</span>
+          </li>
+          <li class="d-none 2_12">
+            <span>The metal lying in the bottom of the Galvanic series becomes anode as it is more active and gets corroded while the other metal lying comparatively above in the galvanic series becomes the cathode and gets protected.</span>
+          </li>
+        </ul>
+        </div>
+        <div class="tabs_image galvanic_bg"></div>`);
+    checkPrevtab = 2;
+    $('.tab_content').attr('tab-num-details', '2');
+     tabnum = $(".tab_content").attr('tab-num-details');
+    var audioLocalFilePath = model.getPageCurrentAudioPath(true, tabnum);
+    initAudioVideoPlayer(audioLocalFilePath, 'audio-video-player', 'm4a');
+  });
+
+  $('.pitting_tab').click(function () {
+    checkPrevTab();
+    $('.tab_content').html(
+      `<div class="tab_heading">Pitting Corrosion</div><div class="tab_listing"><ul class="text-animation gs_left pitting_list"><li class="d-none 3_1"><span> Occurs under specific conditions, which leads to accelerated corrosion in certain areas rather than uniform corrosion throughout the surface. </span></li><li class="d-none 3_11"><span> Conditions include low concentrations of oxygen or high concentrations of chlorides (as in sea water), presence of non uniformities in metal structure . </span></li><li class="d-none 3_22"><span> The deterioration of this small area can penetrate the metal, causing pits, and can lead to failure.</span></li></ul></div><div class="tabs_image pitting_bg"></div>`
+    );
+    checkPrevtab = 3;
+    $('.tab_content').attr('tab-num-details', '3');
+     tabnum = $(".tab_content").attr('tab-num-details');
+    var audioLocalFilePath = model.getPageCurrentAudioPath(true, tabnum);
+    initAudioVideoPlayer(audioLocalFilePath, 'audio-video-player', 'm4a');  
+  });
+
+  $('.crevice_tab').click(function () {
+    checkPrevTab();
+    $('.tab_content').html('<div class="tab_heading">Crevice Corrosion</div><div class="tab_listing"><ul class="text-animation gs_left crevice_list"><li class="d-none 4_1"><span> Occurs at a specific location.</span></li><li class="d-none 4_7"><span> Often associated with a stagnant micro-environment, like those found under gaskets and washers, and clamps.</span></li></ul></div><div class="tabs_image crevice_bg"></div>'
+    );
+    checkPrevtab = 4;
+    $('.tab_content').attr('tab-num-details', '4');
+     tabnum = $(".tab_content").attr('tab-num-details');
+    var audioLocalFilePath = model.getPageCurrentAudioPath(true, tabnum);
+    initAudioVideoPlayer(audioLocalFilePath, 'audio-video-player', 'm4a');  
+  });
+
+  $('.induced_tab').click(function () {
+    checkPrevTab();
+    $('.tab_content').html(
+      '<div class="tab_heading">Microbial Induced Corrosion</div><div class="tab_listing"><ul class="text-animation gs_left induced_list"> <li class="d-none 5_1"><span> Caused by microorganisms.</li><li class="d-none 5_7"><span> Applies to both metallic and non-metallic materials with or without oxygen.</span></li><li class="d-none 5_12"><span> When oxygen is absent, sulfate-reducing bacteria are active and produce hydrogen sulfide causing sulfide stress cracking.</span></li><li class="d-none 5_22"><span> When oxygen is present, some bacteria may directly oxidize iron to iron oxides and hydroxides leading to corrosion.</span></li></ul></div><div class="tabs_image induced_bg"></div>'
+    );
+    checkPrevtab = 5;
+    $('.tab_content').attr('tab-num-details', '5');
+     tabnum = $(".tab_content").attr('tab-num-details');
+    var audioLocalFilePath = model.getPageCurrentAudioPath(true, tabnum);
+    initAudioVideoPlayer(audioLocalFilePath, 'audio-video-player', 'm4a');
+  });
+
+  $('.uniform_tab').click(function () {
+    checkPrevTab();
+    $('.tab_content').html(
+      '<div class="tab_heading">Uniform Corrosion</div><div class="tab_listing"><ul class="text-animation gs_left uniform_list" > <li class="d-none 6_2"><span>Refers to the corrosion that proceeds at approximately the same rate over the exposed metal surface, instead of at the localized spots.</span></li></ul></div><div class="tabs_image uniform_bg"></div>'
+    );
+    checkPrevtab = 6;
+    $('.tab_content').attr('tab-num-details', '6');
+     tabnum = $(".tab_content").attr('tab-num-details');
+    var audioLocalFilePath = model.getPageCurrentAudioPath(true, tabnum);
+    initAudioVideoPlayer(audioLocalFilePath, 'audio-video-player', 'm4a');
+  });
+
+  $('.stress_tab').click(function () {
+    checkPrevTab();
+    $('.tab_content').html(
+      '<div class="tab_heading">Stress Corrosion Cracking</div><div class="tab_listing"><ul class="text-animation gs_left stress_list">  <li class="d-none 7_1"><span>Is a failure mechanism that is caused by the environment, susceptible material, and tensile stresses.</span></li><li class="d-none 7_10"><span>Leads to the formation of a colony of cracks which not have developed by the action of stress or environment alone.</span></li></ul></div><div class="tabs_image stress_bg"></div>'
+    );
+    checkPrevtab = 7;
+    $('.tab_content').attr('tab-num-details', '7');
+     tabnum = $(".tab_content").attr('tab-num-details');
+    var audioLocalFilePath = model.getPageCurrentAudioPath(true, tabnum);
+    initAudioVideoPlayer(audioLocalFilePath, 'audio-video-player', 'm4a');
+  });
+
+  function checkPrevTab() {
+    if (checkPrevtab) {
+      var tab = Number(checkPrevtab) - 1;
+      $(".corrosion_tabs_new p:nth-child(" + tab + ")").removeClass('clicked').addClass('finished_tab');
+    }
+  }
+</script>
+
+</html>

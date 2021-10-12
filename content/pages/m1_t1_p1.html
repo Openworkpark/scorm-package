@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Introduction</title>
+  <style type="text/css"></style>
+</head>
+
+<body>
+  <section id="page-intro">
+    <p class="headingOne"><strong>Basics of Cathodic Protection (CP)</strong></p>
+    <p class="headingTwo">Instructions</p>
+  </section>
+  <section id="pageDiv" class="m1t1p1">
+    <section id="audio-video-player"></section>  
+  </section>
+</body>
+
+<script>
+  initAudioVideoPlayer('./content/video/Screen_01.mp4', 'audio-video-player', 'm4v');
+
+  $('#audio-video-player').on($.jPlayer.event.ended, function (event) {
+    $('#player_nextBtn').removeClass("player_nextBtnDisabled_style").addClass("player_nextBtn_style");
+    $('.itextNext').removeClass("d-none");
+    $('#audio-video-player').css("display", "block");
+    $('#player_content_controls').addClass('audio-video-player-stopped');
+  });
+  
+</script>
+
+</html>

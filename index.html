@@ -1,0 +1,758 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>ICS</title>
+  <meta charset="UTF-8" />
+  <meta name="author" content="author">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1,user-scalable=no" />
+  <link rel="stylesheet" media="screen" href="content/css/ics_demo.css" />
+  <link rel="stylesheet" media="screen" href="content/css/fonts.css" />
+  <link rel="stylesheet" media="screen" href="content/css/player.css" />
+  <script type="text/javascript" src="content/js/jquery-1.11.1.min.js"></script>
+  <script type="text/javascript" src="content/js/utils/DetectDevice.js"></script>
+  <script type="text/javascript" src="content/js/ics_demo.min.js"></script>
+  <script type="text/javascript" src="content/js/utils/SystemDetect.js"></script>
+  <script type="text/javascript" src="content/js/utils/preloadCssImages.jQuery_v5.js"></script>
+  <script type="text/javascript" src="content/js/utils/imageLoader.js"></script>
+  <script type="text/javascript" src="content/js/utils/utils.js"></script>
+  <script type="text/javascript" src="content/js/utils/DebuggerFunctions.js"></script>
+  <script type="text/javascript" src="content/js/player/model.js"></script>
+  <script type="text/javascript" src="content/js/player/audioController.js"></script>
+  <script type="text/javascript" src="content/js/player/glossary.js"></script>
+  <script type="text/javascript" src="content/js/player/resource.js"></script>
+  <script type="text/javascript" src="content/js/player/controlsHandeler.js"></script>
+  <script type="text/javascript" src="content/js/player/controller.js"></script>
+  <script type="text/javascript" src="content/js/player/animationController.js"></script>
+  <script type="text/javascript" src="content/js/player/template.js"></script>
+  <script type="text/javascript" src="content/js/player/interactivePopup.js"></script>
+  <script type="text/javascript" src="content/js/player/timeline.js"></script>
+  <script type="text/javascript" src="content/js/player/accordion.js"></script>
+  <script type="text/javascript" src="content/js/player/questionsBank.js"></script>
+  <script type="text/javascript" src="content/js/player/dragAndDrop.js"></script>
+  <script type="text/javascript" src="content/js/player/assessment.js"></script>
+  <script type="text/javascript" src="content/js/player/search.js"></script>
+  <script type="text/javascript" src="content/js/enscroll-0.6.2.min.js"></script>
+  <script type="text/javascript" src="content/js/player/audioTimeline.js"></script>
+  <script type="text/javascript" src="content/js/player/events.js"></script>
+  <script type="text/javascript" src="content/js/video.js"></script>
+  <script type="text/javascript" src="content/js/jquery.jplayer.min.js"></script>
+  
+  <link rel="stylesheet" href="content/css/video-js.css" type="text/css" />
+  <!-- SCORM related files -->
+  <script type="text/javascript" src="content/js/apiwrapper.js"></script>
+  <script type="text/javascript" src="content/js/scofunctions.js"></script>
+  <!-- SCORM related files -->
+  <!--GreenSock lib-->
+  <script type="text/javascript" src="content/js/greensock/TweenMax.min.js"></script>
+  <script type="text/javascript" src="content/js/greensock/TimelineMax.min.js"></script>
+
+  <!--GreenSock lib-->
+  <!--for remote debugging-->
+  <!--  menu js and Css-->
+  <link rel="stylesheet" href="content/css/menu.css" type="text/css">
+  <!--  menu js and Css -->
+  <!--  JQuery UI Js and Css-->
+  <link rel="stylesheet" href="content/css/jquery-ui.css" type="text/css">
+  <link rel="stylesheet" href="content/css/jplayer.blue.monday.min.css" type="text/css">
+
+  <script type="text/javascript" src="content/js/jquery-ui.js"></script>
+  <script type="text/javascript" src="content/js/player/bootstrap.min.js"></script>
+  <!--  JQuery UI js and Css -->
+  <!-- for touch-->
+  <script type="text/javascript" src="content/js/jquery.ui.touch-punch.min.js"></script>
+  <!-- touch end-->
+  <!-- vanderlee_coverflow -->
+  <script type="text/javascript" src="content/js/vanderlee_coverflow/reflection.js"></script>
+  <script type="text/javascript" src="content/js/vanderlee_coverflow/jquery.mousewheel.js"></script>
+  <script type="text/javascript" src="content/js/vanderlee_coverflow/jquery.interpolate.js"></script>
+  <script type="text/javascript" src="content/js/vanderlee_coverflow/jquery.coverflow.js"></script>
+  <!-- vanderlee_coverflow -->
+  <script type="text/javascript" src="content/js/player/carousal.js"></script>
+  <!-- Questions CSS-->
+  <link href="./content/js/player/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" media="screen" href="content/css/questions.css" />
+  <!-- Font Style -->
+  <link rel="stylesheet" media="screen" href="content/css/iconCss/css/fontello.css" />
+  <link rel="stylesheet" href="content/css/iconCss/css/fontello.css">
+  <link rel="stylesheet" href="content/css/iconCss/css/animation.css">
+  <link rel="stylesheet" href="content/css/custom.css">
+  <link rel="stylesheet" href="content/css/flex.css">
+  <link rel="stylesheet" href="./content/css/ics.css">
+  <!--  for scroll -->
+  <link rel="stylesheet" href="content/js/scroll/jquery.mCustomScrollbar.css" />
+  <script type="text/javascript" src="content/js/scroll/jquery.mCustomScrollbar.js"></script>
+  <!--course color-->
+  <script type="text/javascript" src="content/js/player/handle_color.js"></script>
+  <script type="text/javascript" src="content/js/jquery-ui-touch-punch.js"></script>
+  <script type="text/javascript" src="content/js/player/animations/classie.js"></script>
+  <script src="content/js/modernizr.custom.js" type="text/javascript"></script>
+  <script>
+    var width = window.innerWidth;
+    var height_de = window.innerHeight;
+    var currentPagenumber = 0
+    if (typeof (console) == "undefined") {
+      console = {};
+      console.log = function () { };
+      console.error = function () { };
+    }
+
+    $(document).ready(function () {
+    
+      setLoop();
+      $(".resources li a").click(function () {
+        model.resource_Array[$(".resources li a").index($(this))] = 1;
+        $(this).addClass("actme");
+        controller.updateSaveData();
+      });
+
+      $('#treeMenu').enscroll({
+        showOnHover: false,
+        verticalTrackClass: 'track3',
+        verticalHandleClass: 'handle3'
+      });
+
+      $('.transcript_Container_inner').enscroll({
+        showOnHover: false,
+        verticalTrackClass: 'track3',
+        verticalHandleClass: 'handle3'
+      });
+
+      $('.rowdivs').enscroll({
+        showOnHover: true,
+        verticalTrackClass: 'track3',
+        verticalHandleClass: 'handle3'
+      });
+
+      $('.menuTopic').off('click').click(function () {
+        var tabId = $(this).attr('topicref');
+        $(".menuBtn").attr('title', 'Home');
+        model.showPageWithAnimation(1, tabId, 1, "next");
+        $(".menuMe").removeClass("leftmove");
+        $('.menuBtn').removeClass('cldv')
+      });
+
+      $("#treeMenu li a").attr("title", "");
+      $.preloadCssImages();
+      controller.init();
+
+      $('.transcript-close').click(function () {
+        $('.transcriptsection').addClass('d-none');
+      });
+
+      $('.close-icon').click(function (e) {
+        $('#glossaryPopup, .resourcessection').addClass('d-none');
+        if (!$('#player_content_controls').hasClass("audio-video-player-stopped")) {
+          $('#audio-video-player').jPlayer("play");
+        } 
+        // controlsHandeler.PlayPauseVideo();
+      });
+
+      $("#custom-seekbar").click(function (e) {
+        var offset = $(this).offset();
+        var left = (e.pageX - offset.left);
+        var totalWidth = $("#custom-seekbar").width();
+        var percentage = (left / totalWidth);
+        var vidTime = vid.duration * percentage;
+        vid.currentTime = vidTime;
+      });
+
+      $("#play_pause").click(function () {
+        if ($("#player_audio").attr("src").length <= 0) {
+          if (vid.paused == true) {
+            // Play the video
+            vid.play();
+            $("#play_pause").removeClass("playBtn").addClass("pauseBtn")
+            return;
+          } else {
+            // Pause the video
+            vid.pause();
+            $("#play_pause").removeClass("pauseBtn").addClass("playBtn")
+            return;
+          }
+        }
+      });
+
+      $("#audioOnOff").click(function () {
+        if (vid.muted) {
+          vid.muted = false;
+          // mutebtn2.innerHTML = "Mute";
+          $("#audioOnOff").removeClass("audioON").addClass("audioOFF")
+          return;
+        } else {
+          vid.muted = true;
+          // mutebtn2.innerHTML = "Unmute";
+          $("#audioOnOff").removeClass("audioOFF").addClass("audioON")
+          return;
+        }
+      });
+
+      $('.btn-close').click(function () {
+        if (!$('#player_content_controls').hasClass("audio-video-player-stopped")) {
+          $('#audio-video-player').jPlayer("play");
+        }
+      });
+
+      $('.menu-modal ul li').click(function () {
+        let attr = $(this).attr('page-num');
+        let separatVal = attr.split('_');
+        $('#menu-modal').modal('hide');
+        var findClass = $("#menuPageId" + separatVal[1] + separatVal[2]).attr("class")
+        if (findClass.indexOf("disabled-list") === -1) {
+          model.showPage(separatVal[0], separatVal[1], separatVal[2]);
+        }
+      })
+      
+    });
+
+
+
+    $(window).resize(function () {
+      setLoop();
+    });
+
+    function setLoop() {
+      width = window.innerWidth;
+      height_de = window.innerHeight;
+      if (width < 1920 || height_de < 945) {
+        $(".MainC").attr('id', 'MainC');
+        $(".MainC").removeClass("non_addaptive");
+        controller.adapted();
+      } else {
+        $(".MainC").removeAttr('id', 'MainC');
+        $(".MainC").addClass("non_addaptive");
+        // $(".MainC").css('top', '0%').css('left', '0%').css('transform', 'none');
+        if (width > 1920) {
+          var new_width = (((parseInt(width) - 1920) / parseInt(width)) / 2) * 100;
+        }
+
+        if (height_de > 945) {
+          var new_Height = (((parseInt(height_de) - 945) / parseInt(height_de)) / 2) * 100;
+          $(".non_addaptive").css('top', new_Height + '%');
+        }
+      }
+    }
+
+    function menuSelection(val) {
+      for (let i = 2; i <= currentPagenumber; i++) {
+        $("#menuPageId" + i + val).removeClass("disabled-list");
+      }
+    }
+
+    /**Initializing global jplayer for audio/video*/
+    function initAudioVideoPlayer(mediapath, selector, format) {
+      $('#player_content_controls').removeClass('audio-video-player-stopped');
+      $(window).find('#jquery_jplayer_1').jPlayer('destroy');
+      var myPlayer = $("#" + selector);
+      $("#" + selector).jPlayer("destroy");
+      if (format === 'm4v') {
+        $("#" + selector).jPlayer({
+          ready: function () {
+            $(this).jPlayer("setMedia", { m4v: mediapath }).jPlayer("play");
+          },
+          cssSelectorAncestor: "#player_content_controls",
+          swfPath: "/js",
+          supplied: "m4v",
+          useStateClassSkin: true,
+          autoBlur: false,
+          smoothPlayBar: true,
+          keyEnabled: true,
+          remainingDuration: true,
+          toggleDuration: true,
+          size: {
+            width: '100%',
+            height: 'auto'
+          },
+          volumechange: function (event) {
+            if (event.jPlayer.options.muted) {
+              myControl.volume.slider("value", 0);
+            } else {
+              myControl.volume.slider("value", event.jPlayer.options.volume);
+            }
+          },
+        });
+      } else {
+        $("#" + selector).jPlayer({
+          ready: function () {
+            $(this).jPlayer("setMedia", { m4a: mediapath }).jPlayer('play');
+          },
+          cssSelectorAncestor: "#player_content_controls",
+          swfPath: "/js",
+          supplied: "m4a",
+          useStateClassSkin: true,
+          autoBlur: false,
+          smoothPlayBar: true,
+          keyEnabled: true,
+          remainingDuration: true,
+          toggleDuration: true,
+          size: {
+            width: '100%',
+            height: 'auto'
+          },
+          volumechange: function (event) {
+            if (event.jPlayer.options.muted) {
+              myControl.volume.slider("value", 0);
+            } else {
+              myControl.volume.slider("value", event.jPlayer.options.volume);
+            }
+          },
+        });
+      }
+
+      myControl = {
+        volume: $(".jp-volume-bar-knob")
+      };
+      myControl.volume.slider({
+        animate: "fast",
+        max: 1,
+        range: "min",
+        step: 0.01,
+        orientation: "vertical",
+        value: $.jPlayer.prototype.options.volume,
+        slide: function (event, ui) {
+          myPlayer.jPlayer("option", "muted", false);
+          myPlayer.jPlayer("option", "volume", ui.value);
+        }
+      });
+    }
+
+    function volumeSlider(selector) {
+      $('#' + selector).find('.jp-volume-bar').toggleClass('d-none');
+    }
+
+
+    function setLocalStoreage(argument,value){
+      localStorage.setItem(argument, value);
+      console.log(localStorage.getItem('scormdata'));
+    }
+
+    function getLocalStoreage(arg){
+      return localStorage.getItem(arg);
+    }
+
+    var counterbooster = 1;
+    
+
+  </script>
+  <link rel="stylesheet" type="text/css" href="content/css/component.css" />
+  <link rel="stylesheet" type="text/css" href="content/css/shell.css" />
+</head>
+
+<body class="notIE9" onunload="controller.unloadPage()" onbeforeunload="controller.unloadPage()">
+  <noscript>
+    <div class="player_noscriptmsg_style">This course requires JavaScript to run. Please enable JavaScript. Please
+      contact your local IT Helpdesk for further support.</div>
+  </noscript>
+  <div class="MainC framewrap" id="MainC">
+    <div id='player_audioWrapper' class='player_audio_style'>
+      <audio id="player_audio" preload="none" src="" type="audio/mp3">audio holder</audio>
+      <audio id="popupAudio" preload="none" src="" type="audio/mp3">audio holder</audio>
+    </div>
+
+    <div class="player_container_style">
+      <div id="player_preLoader" class="player_preLoader_style">
+        <div class="player_loaderImg_style spinner_cube">
+          <div></div>
+          <div></div>
+        </div>
+      </div>
+
+      <!--Splash Container-->
+      <div id="splashContainer">
+        <video last id="splash" class="video-js vjs-default-skin" preload="auto" width="1920" height="945"
+          controls="false" autoplay="true">
+          <source src="./content/video/Splash.mp4" type='video/mp4' />
+        </video>
+
+        <video id="help-video" class="video-js vjs-default-skin d-none" preload="auto" width="1920" height="945"
+          controls="false">
+          <source src="./content/video/Help.mp4" type='video/mp4' />
+        </video>
+
+        <button id="start" class="d-none enableTabs"><span>START</span> <img
+            src="./content/images/shell/start-arrow.png" title="Start"></button>
+        <button id="skip" class="d-none"><span>SKIP</span> <img src="./content/images/shell/start-arrow.png"
+            title="Skip"></button>
+      </div> 
+
+      <!--Header Section-->
+      <header class="header">
+        <ul class="topicon">
+          <li class="enableTabs">
+            <buttons id="player_menuBtn" class="headerIcon menu-icon" title="Menu"></buttons>
+            <br><span>Menu</span>
+          </li>
+          <li>
+            <buttons id="player_transcriptDilogBtn" class="headerIcon transcript-icon transcript" title="Transcript">
+            </buttons><br><span>Transcript</span>
+          </li>
+          <li>
+            <buttons id="player_glossaryBtn" class="headerIcon glossary-icon" title="Glossary"></buttons>
+            <br><span>Glossary</span>
+          </li>
+          <li>
+            <buttons id="player_ResourcesBtn" class="headerIcon resources-icon" title="Resources"></buttons>
+            <br><span>Resources</span>
+          </li>
+          <li>
+            <buttons id="player_helpBtn" class="headerIcon help-icon" title="Help"></buttons>
+            <br><span>Help</span>
+          </li>
+          <li>
+            <buttons id="cross_button" class="headerIcon exit-icon" title="Exit"></buttons>
+            <br><span>Exit</span>
+          </li>
+        </ul>
+      </header>
+
+      <!--Content Section-->
+      <section id="player_contentArea" class="player_contentArea_style">
+        <div id="player_content" class="player_content_style player_content"></div>
+      </section>
+
+      <!--Footer Section-->
+      <footer class="footer d-none">
+        <div class="bottom_logo_1"></div>
+        <div class="footarea">
+          <div id="player_content_controls" class="jp-audio playerCenterBtns" role="application"
+            aria-label="media player">
+            <div class="jp-type-single">
+              <div class="jp-gui jp-interface">
+                <div class="jp-volume-controls">
+                  <button class="jp-volume-max" role="button" tabindex="0"
+                    onclick="volumeSlider('player_content_controls')">max volume</button>
+                  <div class="jp-volume-bar d-none">
+                    <div class="jp-volume-bar-value">
+                      <span class="jp-volume-bar-knob"></span>
+                    </div>
+                  </div>
+                </div>
+                <div class="jp-controls-holder">
+                  <div class="jp-controls">
+                    <button class="jp-play" role="button" tabindex="0">play</button>
+                  </div>
+                  <div class="jp-progress">
+                    <div class="jp-play-bar"></div>
+                    <div class="jp-seek-bar"></div>
+                  </div>
+                  <div class="jp-toggles">
+                    <button id="player_reloadPageBtn" class="jp-repeat" role="button" tabindex="0">repeat</button>
+                  </div>
+                </div>
+                <ul>
+                  <li class="plydv5"><button id="player_backBtn" class="backBtn player_backBtn_style"
+                      title="Back"></button>
+                  </li>
+                  <li class="plydv6">
+                    <div class="player_pageNumber_style">
+                      <div id="player_pageNumber" class=""></div>
+                    </div>
+                  </li>
+                  <li class="plydv7">
+                    <div id="player_nextBtn" class="nextBtn player_nextBtn_style" title="Next">
+                    </div>
+                  </li>
+                </ul>
+              </div>
+              <div class="jp-no-solution">
+                <span>Update Required</span>
+                To play the media you will need to either update your browser to a recent version or update your <a
+                  href="https://get.adobe.com/flashplayer/" target="_blank">Flash plugin</a>.
+              </div>
+            </div>
+          </div>
+
+          <!-- <div class="playerCenterBtns">
+            <ul>
+              <li class="plydv5"><button id="player_backBtn" class="backBtn player_backBtn_style" title="Back"></button>
+              </li>
+              <li class="plydv4">
+                <buttons id="play_pause" class="playBtn" title="Play/Pause"></buttons>
+              </li>
+              <li class="plydv8">
+                <buttons id="player_reloadPageBtn" class="replayBtn" title="Replay"></buttons>
+              </li>
+              <li class="plydv3">
+                <div title="Seek/Progress Bar" aria-disabled="true"
+                  class="ui-slider ui-slider-horizontal ui-widget ui-widget-content ui-corner-all" id="progressSlider">
+                  <div class="ui-slider-range ui-widget-header ui-corner-all ui-slider-range-min">
+                    <div id="custom-seekbar">
+                      <span></span>
+                    </div>
+                  </div>
+                </div>
+              </li>
+              <li class="plydv2">
+                <div id="slider-vertical_volume" class="d-none"></div>
+                <buttons id="audioOnOff" class="audioON" title="Audio On/Off"></buttons>
+              </li>
+              <li class="plydv6">
+                <div class="player_pageNumber_style">
+                  <div id="player_pageNumber" class=""></div>
+                </div>
+              </li>
+              <li class="plydv7">
+                <div id="player_nextBtn" class="nextBtn player_nextBtn_style player_nextBtnDisabled_style" title="Next">
+                </div>
+              </li>
+            </ul>
+          </div> -->
+        </div>
+        <div class="itextNext d-none">Click <strong>Next</strong> to continue</div>
+      </footer>
+
+      <!--bookmark div-->
+      <div class="popupScreen" id="player_bookmarkPopupWrapper">
+        <div class="feedbackContainer">
+          <div class="feedbackTitle">Bookmark</div>
+          <div class="feedcontent">Do you want to start from where you have left previously?
+          </div>
+          <div class="bookmarkPopupButton">
+            <button onClick="model.setBookmarkLocation();" class="clickButton">Yes</button>
+            <button onClick="model.closeBookmarkPopup();" class="clickButton">No</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- MENU Modal -->
+      <div class="modal fade" id="menu-modal" aria-hidden="true" aria-labelledby="exampleModalToggleLabel"
+        tabindex="-1">
+        <div class="modal-dialog modal-dialog-centered ">
+          <div class="modal-content menu-content">
+            <div class="modal-header">
+              <div id="page-intro">
+                <p class="headingOne"><strong>Basics of Cathodic Protection (CP)</strong></p>
+                <p class="headingTwo">Menu</p>
+              </div>
+              <button type="button" class="btn-close btn-color" data-bs-dismiss="modal" aria-label="Close">X</button>
+            </div>
+            <div class="modal-body">
+              <div class="menu_listing">
+                <div class="">
+                  <div class="warpperarea" audioId="1">
+                    <div id="anim1" class="botom_bx visibility" tw_from="30_0" tw_dur="0.5" tw_to="0_0" ease="P2_IO"
+                      tw_start="0.5" tw_stop=""></div>
+                  </div>
+                  <div id="anim100" tw_from="0_0" tw_dur="0.5" tw_to="0_0" ease="P2_IO" tw_start="26" tw_stop=""></div>
+                  <div class="col-5 menu-modal">
+                    <ul class="list-group list-group-flush" type="1">
+                      <li class="list-group-item bg-transparent disabled-list" page-num="1_2_1" id="menuPageId21">
+                        <div>01</div>
+                        <div>Course Objectives</div>
+                      </li>
+                      <li class="list-group-item  bg-transparent disabled-list" page-num="1_2_2" id="menuPageId22">
+                        <div>02 </div>
+                        <div>Corrosion</div>
+                      </li>
+                      <li class="list-group-item  bg-transparent disabled-list" page-num="1_3_1" id="menuPageId31">
+                        <div>03 </div>
+                        <div>Corrosion Protection Methods</div>
+                      </li>
+                      <li class="list-group-item  bg-transparent disabled-list" page-num="1_4_1" id="menuPageId41">
+                        <div>04 </div>
+                        <div>Cathodic Protection and Types of CP</div>
+                      </li>
+                      <li class="list-group-item  bg-transparent disabled-list" page-num="1_5_1" id="menuPageId51">
+                        <div>05 </div>
+                        <div class="non-padding">Pipe to Soil Potential and Criteria’s for CP</div>
+                      </li>
+                      <li class="list-group-item  bg-transparent disabled-list" page-num="1_6_1" id="menuPageId61">
+                        <div>06 </div>
+                        <div>CP Assets</div>
+                      </li>
+                  </div>
+                  <div class="col-5 ms-5 menu-modal">
+                    <ul class="list-group list-group-flush ">
+                      <li class="list-group-item  bg-transparent disabled-list" page-num="1_7_1" id="menuPageId71">
+                        <div>07 </div>
+                        <div>Challenges for CP</div>
+                      </li>
+                      <li class="list-group-item  bg-transparent disabled-list" page-num="1_8_1" id="menuPageId81">
+                        <div>08 </div>
+                        <div> CP Surveys</div>
+                      </li>
+                      <li class="list-group-item  bg-transparent disabled-list" page-num="1_9_1" id="menuPageId91">
+                        <div>09 </div>
+                        <div>Summary </div>
+                      </li>
+                      <li class="list-group-item  bg-transparent disabled-list" page-num="1_9_2" id="menuPageId92">
+                        <div>10 </div>
+                        <div>Assessment </div>
+                      </li>
+                    </ul>
+                  </div>
+                  <div class="menu-modal-instruction">
+                    <p class="instruction">
+                      <span>Click the active topic to get started.</span>
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- HELP MODAL -->
+      <div class="modal fade" id="help-modal" aria-hidden="true" aria-labelledby="exampleModalToggleLabel"
+        tabindex="-1">
+        <div class="modal-dialog modal-dialog-centered ">
+          <div class="modal-content help-content">
+            <div class="modal-header">
+
+              <!-- <p class="modal-title" id="menu-modal-title"></p> -->
+              <button type="button" class="btn-close btn-color" data-bs-dismiss="modal" aria-label="Close">X</button>
+            </div>
+            <div class="modal-body">
+
+            </div>
+
+          </div>
+        </div>
+      </div>
+
+      <!--- ****** Glossary Pop-up ***** -->
+      <div id="glossaryPopup" class="d-none">
+        <div class="glossary_topbg"></div>
+        <div class="glossary_linking"></div>
+
+        <article class="contentItem" id="glossary">
+          <div class="shellPopupWrap Help_wrapper">
+            <div class="shellPopupContent">
+              <div class="shell_h_popup_header">
+                <div class="shell_popup_header">
+                  <h2>Glossary <span class="close-icon glossarycloseicon"></span></h2>
+                </div>
+              </div>
+              <div class="shell_gray">
+                <div class="resources">
+                  <table class="w-100">
+                    <tr>
+                      <th>TERM</th>
+                      <th>EXPANSION</th>
+                    </tr>
+                    <tr>
+                      <td>CTE</td>
+                      <td>Coal-Tar Enamel</td>
+                    </tr>
+                    <tr>
+                      <td>FBE</td>
+                      <td>Fusion Bonded Epoxy</td>
+                    </tr>
+                    <tr>
+                      <td>ICCP</td>
+                      <td>Impressed Current Cathodic Protection</td>
+                    </tr>
+                    <tr>
+                      <td>3-LPE</td>
+                      <td>3-Layer Polyethylene</td>
+                    </tr>
+                    <tr>
+                      <td>3-LPP</td>
+                      <td>3-Layer polypropulene</td>
+                    </tr>
+                    <tr>
+                      <td>NACE</td>
+                      <td>National Association of Corrosion Engineers</td>
+                    </tr>
+                    <tr>
+                      <td>PSP</td>
+                      <td>Pipe to Soil Potential</td>
+                    </tr>
+                    <tr>
+                      <td>TRU</td>
+                      <td>Transformer Rectifier Units</td>
+                    </tr>
+                    <tr>
+                      <td>UKOPA</td>
+                      <td>United Kingdom Onshare Pipeline Operator's Association</td>
+                    </tr>
+                  </table>
+                </div>
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <div class="glossary_linking_bottom"></div>
+        <div class="glossary_bottombg"></div>
+      </div>
+
+      <!--- ****** Transcript Pop-up ***** -->
+      <div class="transcriptsection d-none">
+        <div class="transcript_topbg"></div>
+        <div class="transcript_linking"></div>
+        <div class="transcriptbox">
+          <div class="transcriptheader">
+            <h2>Transcript <span id="" class="transcript-close"></span></h2>
+          </div>
+          <div class="transcriptcontent">
+            <div class="transcriptDilog"></div>
+          </div>
+        </div>
+
+        <div class="transcript_linking_bottom"></div>
+        <div class="transcript_bottombg"></div>
+      </div>
+
+      <!--- ****** Resources Pop-up ***** -->
+      <div class="resourcessection d-none">
+        <div class="resources_topbg"></div>
+        <div class="resources_linking"></div>
+        <div class="resourcesbox ">
+          <div class="resourcesheader">
+            <h2>Resources <span class="close-icon"></span>
+            </h2>
+          </div>
+          <div class="resourcescontent">
+            <ul>
+              <li><span>Lorem ipsum dolor sit amet consectetur.</span></li>
+              <li><span>Lorem ipsum dolor sit amet consectetur.</span></li>
+              <li><span>Lorem ipsum dolor sit amet consectetur.</span></li>
+              <li><span>Lorem ipsum dolor sit amet consectetur.</span></li>
+              <li><span>Lorem ipsum dolor sit amet consectetur.</span></li>
+              <li><span>Lorem ipsum dolor sit amet.</span></li>
+            </ul>
+            <p>
+              <span>Click each point to know more.</span>
+              <img src="./content/images/shell/mouse_click.png" alt="">
+            </p>
+          </div>
+        </div>
+        <div class="resources_linking_bottom"></div>
+        <div class="resources_bottombg"></div>
+      </div>
+    </div>
+
+    <div class="player_chromeError_style">
+      <div class="cbText"
+        style="margin:0 auto;margin-top:225px;width:400px;height:170px;color:#ffffff;background-color:#c00010;padding:20px;font-size:18px;">
+        Due to the security restrictions inherent to Google Chrome the course will need to be run in one of the
+        following supported browsers if you wish to run this locally:
+        <ul>
+          <li>Internet Explorer</li>
+          <li>Firefox</li>
+          <li>Safari</li>
+        </ul>
+      </div>
+    </div>
+
+    <div id="player_systemNotSupported" class="player_noscriptmsg_style" style="display:none">This browser is not
+      supported.</div>
+    <div id="player_orientationPortrait" class="player_noscriptmsg_style" style="display:none">This course is best
+      suited for Landscape mode.</div>
+    <div class="popupScreen" id="shell_e_ppopup">
+      <div class="feedbackContainer">
+        <div class="feedbackTitle">Exit</div>
+        <div class="feedcontent">Are you sure you want to exit this course?</div>
+        <div class="bookmarkPopupButton">
+          <button id="shell_yes_btn" class="clickButton">Yes</button>
+          <button id="shell_no_btn" class="clickButton">No</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+
+</html>

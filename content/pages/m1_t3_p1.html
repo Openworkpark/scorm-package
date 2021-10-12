@@ -1,0 +1,749 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Protection Methods</title>
+  <style type="text/css">
+    #pageDiv {
+      padding-top: 11%;
+    }
+
+    .m1-t3-p1-cta {
+      display: flex;
+      justify-content: center;
+      margin-top: 35px;
+    }
+
+    .m1-t3-p1-cta a {
+      color: black
+    }
+
+    .cta-title {
+      position: absolute;
+      font-size: 30px;
+      font-family: "PLinotte-Bold";
+      text-align: center;
+      line-height: 1.2;
+      top: 60%;
+      margin-left: -340px;
+    }
+
+    .cta-ml {
+      margin-left: -275px;
+    }
+
+    .cta-img {
+      position: relative;
+      margin-left: -57px;
+    }
+
+    .wrapper {
+      display: flex;
+      justify-content: flex-end;
+    }
+
+    .click-info {
+      width: 50%;
+      position: relative;
+    }
+
+    .info-img {
+      width: 37vw;
+    }
+
+    .info-text {
+      color: green;
+      font-size: 2.5rem;
+      position: absolute;
+      top: 0rem;
+      left: 5rem;
+      font-style: italic;
+    }
+
+    .modal-header {
+      margin: 15px 0px 0px 20px;
+      background: linear-gradient(to right, #72BF44 0%, #72BD46 25%, #88C265 40%, #BADDA5 65%, #E6F2DE 100%);
+      border-top-left-radius: 53px 50px;
+      border-bottom-left-radius: 55px 46px;
+      box-shadow: -2.7px -2.7px;
+      font-size: 3rem;
+      padding-left: 1em;
+    }
+
+    .modalTitle {
+      color: white;
+    }
+
+    .main-list {
+      text-indent: -1em;
+      list-style-position: inside;
+      margin-left: 46px;
+      line-height: 3.8rem;
+    }
+
+    .sub-list {
+      list-style-position: inside;
+      text-indent: 0rem;
+    }
+
+    .list .main-list::before {
+      content: "•";
+      color: #72BF44;
+      font-weight: bold;
+      font-size: 4rem;
+    }
+
+    .main-list ul li.sub-list {
+      list-style-image: url('./content/images/shell/sub-list-style.png');
+    }
+
+    .listText {
+      font-size: 2.5rem;
+      margin: 15px;
+    }
+
+    .liSpanText {
+      padding-left: 8px;
+      text-align: justify;
+    }
+
+
+    .primaryProtectionList {
+      line-height: 2.5rem;
+      overflow: hidden;
+    }
+
+    .primaryProtectionImg {
+      width: 563px;
+      height: 335px;
+      float: left;
+    }
+
+    .list {
+      list-style: none;
+    }
+
+    .modal-dialog {
+      min-width: 1190px;
+    }
+
+    .headingThree {
+      font-size: 4rem;
+      margin-top: 15px;
+      margin-left: 90px;
+    }
+
+    .nobleMetalsImg {
+      margin-bottom: 10px;
+      height: 150px;
+      width: 262px;
+    }
+
+    .nobleMetalsImgThree {
+      width: 534px;
+      height: 154px;
+    }
+
+    button.close,
+    button.close:hover {
+      box-shadow: 2.5px -1.5px black;
+      border-radius: 50%;
+      background-color: #72BF44;
+      width: 50px;
+      height: 50px;
+      font-size: 4rem;
+      color: white;
+      opacity: 0.8;
+      background-image: none;
+      margin-right: 10px !important;
+    }
+
+    .close span {
+      display: block;
+      font-size: 5rem;
+      font-weight: bold;
+      margin-top: -5px;
+    }
+
+    .no-overflow {
+      overflow-y: hidden !important;
+    }
+
+    .next-content-firstpara {
+      float: left;
+    }
+
+    .noblemetals-visited {
+      top: 40%;
+      left: 25%;
+    }
+
+    .primaryprotection-visited {
+      top: 40%;
+      left: 50.5%;
+    }
+
+    .cathodicprotection-visited {
+      top: 40%;
+      left: 75%;
+    }
+
+    .tabs-visited {
+      position: absolute;
+      background-image: url('./content/images/shell/tickmark_black.png');
+      background-repeat: no-repeat;
+      height: 57px;
+      width: 57px;
+    }
+
+    .use-of-noble-metals {
+      left: 36.5%;
+    }
+
+    .provide-good-coating {
+      left: 61.5%;
+    }
+
+    .cathodic-protection {
+      left: 83.5%;
+    }
+
+    #nobleMetalsModal .modal-content,
+    #primaryProtectionModal .modal-content,
+    #cathodicProtectionModal .modal-content {
+      height: 550px;
+    }
+
+    #nobleMetalsModal .modal-footer,
+    #primaryProtectionModal .modal-footer,
+    #cathodicProtectionModal .modal-footer {
+      justify-content: flex-start;
+    }
+
+    #jp_container_1.jp-audio,
+    #jp_container_1 .jp-type-single .jp-interface {
+      width: 100%;
+      /* background: #ff8c00; */
+      background: white;
+      border-radius: 30px;
+      height: 53px !important;
+      border: none;
+    }
+
+    #jp_container_1 .jp-type-single .jp-gui.jp-interface .jp-controls .jp-play,
+    #jp_container_1 .jp-play:hover,
+    #jp_container_1 .jp-play:focus {
+      background: transparent url('./content/images/shell/play-modal.png') no-repeat;
+    }
+
+    #jp_container_1.jp-audio.jp-state-playing .jp-type-single .jp-gui.jp-interface .jp-controls .jp-play,
+    #jp_container_1.jp-audio.audio-video-player-stopped .jp-type-single .jp-gui.jp-interface .jp-controls .jp-play,    
+    #jp_container_1 .jp-state-playing .jp-play:hover,
+    #jp_container_1 .jp-state-playing .jp-play:focus {
+      background: transparent url('./content/images/shell/pause-modal.png') no-repeat;
+    }
+
+    #jp_container_1.jp-audio .jp-type-single .jp-gui.jp-interface .jp-controls {
+      width: 100%;
+      padding: 8px 20px;
+    }
+
+    #jp_container_1.jp-audio .jp-type-single .jp-gui.jp-interface .jp-progress {
+      left: 70px;
+      width: 88%;
+    }
+
+    #jp_container_1.jp-audio .jp-type-single .jp-gui.jp-interface .jp-progress {
+      top: 22px;
+      height: 8px;
+      background: transparent;
+    }
+
+    #jp_container_1.jp-audio .jp-type-single .jp-gui.jp-interface .jp-progress .jp-play-bar {
+      position: absolute;
+      height: 8px;
+      /* background: #ffffff; */
+      background: #ff8c00;
+    }
+
+    #jp_container_1.audio-video-player-stopped .jp-type-single .jp-gui.jp-interface .jp-progress .jp-play-bar{
+      width:100%!important;
+    }    
+
+    #jp_container_1.jp-audio .jp-type-single .jp-gui.jp-interface .jp-progress .jp-seek-bar {
+      position: absolute;
+      /* background: #ffffff; */
+      background: #ff8c00;
+      height: 2px;
+      top: 3px;
+    }
+
+    #jp_container_1.jp-audio .jp-type-single .jp-gui.jp-interface .jp-volume-controls .jp-volume-max,
+    #jp_container_1 .jp-volume-max:hover,
+    #jp_container_1 .jp-volume-max:focus {
+      background: transparent url('./content/images/shell/volume-modal.png') no-repeat;
+      width: 40px;
+      height: 40px;
+    }
+
+    #jp_container_1.jp-audio .jp-type-single .jp-gui.jp-interface .jp-volume-controls {
+      top: 13px;
+      right: 0;
+      left: auto;
+    }
+
+    #jp_container_1.jp-audio .jp-type-single .jp-gui.jp-interface .jp-volume-controls .jp-volume-max {
+      left: auto;
+      right: 15px;
+    }
+
+    #jp_container_1.jp-audio .jp-type-single .jp-gui.jp-interface .jp-volume-controls .jp-volume-bar {
+      border-radius: 20px;
+      border: 7px solid #C5D2E1;
+      /* background: #7E7E7E !important; */
+      top: -11rem;
+      left: 8.5rem;
+      width: 150px !important;
+      height: fit-content;
+      box-shadow: 0px 0px 0px 7px #FFFFFF;
+      transform: rotate(-92deg);      
+    }
+
+    #jp_container_1.jp-audio .jp-type-single .jp-gui.jp-interface .jp-volume-controls .jp-volume-bar .jp-volume-bar-value {
+      height: 11px !important;
+      background: linear-gradient(to left, #FFFFFF 5%, #F9A220 10%);
+    }
+
+    #jp_container_1.jp-audio .jp-type-single .jp-gui.jp-interface .jp-volume-controls .jp-volume-bar .jp-volume-bar-value .jp-volume-bar-knob {
+      position: absolute;
+      right: 0px;
+      margin-top: -6px;
+      z-index: 50;
+    }
+  </style>
+</head>
+
+<body>
+  <section id="page-intro">
+    <p class="headingOne"><strong>Basics of Cathodic Protection (CP)</strong></p>
+    <p class="headingTwo">Protection Methods</p>
+  </section>
+  <section id="pageDiv" class="m1t3p1">
+    <section id="audio-video-player"></section>
+
+    <div class="col-12 ml-70 mt-200">
+      <p class="headingThree">How to <span style="color: rgba(255, 123, 0, 0.938); font-family: PLinotte-Bold">protect the metal</span>
+        <span style="font-family: PLinotte-Bold">from corrosion?</span>
+      </p>
+    </div>
+
+    <div class="m1-t3-p1-cta enableTabs">
+      <a href="javascript:void(0)" id="nobleMetals" class="noble tabs d-none 1_2" tab-num="2">
+        <img class="cta-img " src="./content/images/pages/m1_t3_p1/noble_metals.png" alt="" />
+        <div class="noblemetals-visited" id="1"></div>
+        <span class="cta-title use-of-noble-metals">Use of noble<br /> metals</span>
+      </a>
+      <a href="javascript:void(0)" id="primaryProtection" data-toggle="modal" class="tabs coating d-none 1_2" tab-num="3">
+        <img class="cta-img  " src="./content/images/pages/m1_t3_p1/coating.png" alt="" />
+        <div class="primaryprotection-visited"  id="2"></div>
+        <span class="cta-title provide-good-coating">Provide good<br />coating</span>
+      </a>
+      <a href="javascript:void(0)" id="cathodicProtection" data-toggle="modal" class="tabs cathodic d-none 1_2" tab-num="4">
+        <img class="cta-img" src="./content/images/pages/m1_t3_p1/cathodic.png" alt="" />
+        <div class="cathodicprotection-visited" id="3"></div>
+        <span class="cta-title cta-ml cathodic-protection">Cathodic<br />protection</span>
+      </a>
+    </div>
+
+    <div class="wrapper">
+      <p class="click-info d-none 1_4 mt-5">
+        <img class="info-img" src="./content/images/shell/mouse_click.png" alt="">
+        <span class="info-text">Click each tab to learn about corrosion protection method.</span>
+      </p>
+    </div>
+  </section>
+
+  <div class="modal fade" id="nobleMetalsModal">
+    <div class="modal-dialog modal-lg modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header">
+          <p class="modal-title modalTitle">Use of noble metals</p>
+          <button type="button" class="close close-link" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true" class="close-link">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <div class="row listText">
+            <div class="col-md-6 ">
+              <ul class="list">
+                <li class="main-list d-none 2_1">
+                  <span class="liSpanText">Noble metals like gold, platinum are less prone to corrosion.
+                    <ul>
+                      <li class="sub-list d-none 2_13"><span>Costly</span></li>
+                    </ul>
+                  </span>
+                </li>
+              </ul>
+
+              <ul class="list">
+                <li class="main-list d-none 2_14"><span class="liSpanText">
+                    Carbon steel is used for the pipeline in the oil and gas industry.
+                    <ul class="nobleMetalsList">
+                      <li class="sub-list d-none 2_22"><span>Highly resistant to shock and vibration</span></li>
+                      <li class="sub-list d-none 2_25"><span>High tensile strength, elasticity and ductility</span></li>
+                    </ul>
+                  </span></li>
+              </ul>
+            </div>
+            <div class="col-md-6">
+              <div class="container">
+                <div class="row">
+                  <div class="col-md-6">
+                    <img class="nobleMetalsImg" src="./content/images/pages/m1_t3_p1/noble_metals_image1.png" alt="">
+                  </div>
+                  <div class="col-md-6">
+                    <img class="nobleMetalsImg" src="./content/images/pages/m1_t3_p1/noble_metals_image2.png" alt="">
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-md-12 w-100">
+                    <img class="nobleMetalsImgThree" src="./content/images/pages/m1_t3_p1/noble_metals_image3.png"
+                      alt="">
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="modal-footer"></div>
+      </div>
+    </div>
+  </div>
+  <div class="modal fade" id="primaryProtectionModal" tabindex="-1" role="dialog"
+    aria-labelledby="primaryProtectionModalCenterTitle" aria-hidden="true">
+    <div class="modal-dialog modal-lg modal-dialog-centered modal-dialog-scrollable" role="document">
+
+      <div class="modal-content">
+        <div class="modal-header">
+          <p class="modal-title modalTitle">Provide good coating (Primary protection)</p>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true" class="close-link">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body no-overflow">
+          <div class="row listText primaryProtectionList">
+            <div class="col-12 first-content">
+              <ul class="list">
+                <li class="main-list d-none 3_1"><span class="liSpanText">Providing a good coating to the metal is
+                    another way of protecting it from corrosion. It acts as primary protection against corrosion.</span>
+                </li>
+                <li class="main-list d-none 3_10"><span class="liSpanText">Isolate the metal from direct contact with the
+                    surrounding electrolyte.</span>
+                </li>
+                <li class="main-list d-none 3_14"><span class="liSpanText">Paint can be applied for above the ground
+                    pipelines and can also be reapplied effectively.</span></li>
+                <li class="main-list d-none 3_20"><span class="liSpanText">For underground structures such as pipelines,
+                    epoxy and polyethylene coatings are provided instead of painting as they possess high insulating
+                    properties and a large life span.</span></li>
+                <li class="main-list d-none 3_33"><span class="liSpanText">Despite all precautions, coatings also
+                    develop holes, referred to as holidays, during application/transport/installation.</span></li>
+              </ul>
+            </div>
+            <div class="next-content d-none">
+              <div class="col-6 next-content-firstpara">
+                <ul class="list">
+                  <li class="main-list d-none 3_43"><span class="liSpanText">Types of coating used for pipelines are
+                      <ul class="list">
+                        <li class="sub-list d-none 3_46"><span>Coal-Tar Enamel (CTE) </span></li>
+                        <li class="sub-list d-none 3_50"><span>Fusion Bonded Epoxy (FBE)</span></li>
+                        <li class="sub-list d-none 3_53"><span>3-Layer Polyethylene (3LPE)</span></li>
+                        <li class="sub-list d-none 3_57"><span>3-Layer Polypropylene (3LPP)</span></li>
+                      </ul>
+                    </span></li>
+                  <li class="main-list d-none 3_62"><span class="liSpanText">Types of coating used for the pipeline in
+                      PIL is 3-Layer Polyethylene (3LPE)</span></li>
+                </ul>
+              </div>
+              <div class="col-5 d-none 3_62">
+                <img class="primaryProtectionImg" src="./content/images/pages/m1_t3_p1/coating_image1.png" alt="">
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="modal-footer"></div>
+      </div>
+    </div>
+  </div>
+  <div class="modal fade" id="cathodicProtectionModal" tabindex="-1" role="dialog"
+    aria-labelledby="cathodicProtectionModalCenterTitle" aria-hidden="true">
+    <div class="modal-dialog modal-lg modal-dialog-centered" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <p class="modal-title modalTitle">Cathodic Protection</p>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true" class="close-link">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <div class="row listText">
+            <div class="column">
+              <ul class="list">
+                <li class="main-list d-none 4_13"><span class="liSpanText">As per the National Association of Corrosion
+                    Engineers (NACE) standard SP 0169, Cathodic protection is a technique to reduce the corrosion of a
+                    metal surface by making that metal surface the cathode of an electrochemical cell.</span></li>
+                <li class="main-list d-none 4_30"><span class="liSpanText">In the case of buried pipelines, metal to be
+                    protected or cathode are the carbon steel pipelines.</span></li>
+                <li class="main-list d-none 4_37"><span class="liSpanText">The electrolyte is soil and the metal that
+                    corrodes or the anode is any specific material laid in the vicinity of the pipeline and connected
+                    electrically to the cathode.</span></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div class="modal-footer"></div>
+      </div>
+    </div>
+  </div>
+</body>
+
+<script type="text/javascript">
+  currentPagenumber = 4;
+  var pagenumber = 1;
+  menuSelection(pagenumber);
+
+  var tabnum = 1;
+  var initialaudio = model.getPageCurrentAudioPath(true, 1);
+  initAudioVideoPlayer(initialaudio, 'audio-video-player', 'm4a');
+
+  var curPage = model.currentModule+'_'+model.currentTopic+'_'+model.currentPage;
+  $(document).ready(function(){
+    getPageActivity(curPage, 'tabs-visited');
+  });
+
+  $('#audio-video-player').on($.jPlayer.event.timeupdate, function (event) {
+    var classTime = event.jPlayer.status.currentTime.toFixed(0);
+    $("." + tabnum + '_' + classTime).removeClass("d-none");
+  });
+
+  $('#audio-video-player').on($.jPlayer.event.ended, function (event) {
+    $('#player_nextBtn').removeClass("player_nextBtnDisabled_style").addClass("player_nextBtn_style");
+    $('.itextNext').removeClass("d-none");
+    $('.m1-t3-p1-cta').removeClass('enableTabs');
+    $('#player_content_controls').addClass('audio-video-player-stopped');
+  });
+
+  $('#audio-video-player').on($.jPlayer.event.seeking, function (event) {
+    updateDurationAudio(event);
+  });
+
+  $('#audio-video-player').on($.jPlayer.event.seeked, function (event) {
+    updateDurationAudio(event);
+  }); 
+
+  /**Modal not to be closed when click outside or keyboard events*/
+  $('#nobleMetalsModal, #primaryProtectionModal, #cathodicProtectionModal').modal({
+    backdrop: 'static',
+    keyboard: true
+  });
+
+  $(document).on($.jPlayer.event.timeupdate, '#jquery_jplayer_1', function (event) {
+    updateTimeAudio(event);
+  });
+
+  $(document).on($.jPlayer.event.seeking, '#jquery_jplayer_1', function (event) {
+    updateDurationAudio(event);
+  });
+
+  $(document).on($.jPlayer.event.seeked, '#jquery_jplayer_1', function (event) {
+    updateDurationAudio(event);
+  });
+
+  $(document).on($.jPlayer.event.ended, '#jquery_jplayer_1', function (event) {
+    $('#jp_container_1').addClass('audio-video-player-stopped');
+  });
+
+
+  $('#nobleMetals').click(function () {
+    $('#nobleMetalsModal').find('.modal-footer').html('<div id="jquery_jplayer_1" class="jp-jplayer"></div><div id="jp_container_1" class="jp-audio" role="application" aria-label="media player"><div class="jp-type-single"><div class="jp-gui jp-interface"><div class="jp-controls"><button class="jp-play" role="button" tabindex="0">play</button></div><div class="jp-progress"><div class="jp-play-bar"></div><div class="jp-seek-bar"></div></div><div class="jp-volume-controls"><button class="jp-volume-max" role="button" tabindex="0">max volume</button><div class="jp-volume-bar d-none"><div class="jp-volume-bar-value"><span class="jp-volume-bar-knob"></span></div></div></div></div></div></div>');    
+    $("#jquery_jplayer_1").jPlayer({
+      cssSelectorAncestor: "#jp_container_1",
+      supplied: "mp3, oga",
+      useStateClassSkin: true,
+      autoBlur: false,
+      smoothPlayBar: true,
+      keyEnabled: true,
+      remainingDuration: true,
+      toggleDuration: true,
+      volumechange: function (event) {
+        if (event.jPlayer.options.muted) {
+          myControl.volume.slider("value", 0);
+        } else {
+          myControl.volume.slider("value", event.jPlayer.options.volume);
+        }
+      },
+    });
+    $(".listText ul li").addClass("d-none");
+    $('.noblemetals-visited').addClass('tabs-visited');
+    $('#nobleMetalsModal').modal('show');
+    $('div.modal-backdrop').remove();
+    $('#pageDiv').append('<div class="modal-backdrop fade show"></div>');
+
+    myControl = {volume: $(".jp-volume-bar-knob")};
+    myControl.volume.slider({
+      animate: "fast",
+      max: 1,
+      range: "min",
+      step: 0.01,
+      value: $.jPlayer.prototype.options.volume,
+      orientation: "vertical",
+      slide: function (event, ui) {
+        $("#jquery_jplayer_1").jPlayer("option", "muted", false);
+        $("#jquery_jplayer_1").jPlayer("option", "volume", ui.value);
+      }
+    });
+    
+    tabnum = $(this).attr('tab-num');
+    playAudio(tabnum);
+    setPageActivity(curPage,'tabs-visited');
+  })
+
+  $('#primaryProtection').click(function () {
+    $('#primaryProtectionModal').find('.modal-footer').html('<div id="jquery_jplayer_1" class="jp-jplayer"></div><div id="jp_container_1" class="jp-audio" role="application" aria-label="media player"><div class="jp-type-single"><div class="jp-gui jp-interface"><div class="jp-controls"><button class="jp-play" role="button" tabindex="0">play</button></div><div class="jp-progress"><div class="jp-play-bar"></div><div class="jp-seek-bar"></div></div><div class="jp-volume-controls"><button class="jp-volume-max" role="button" tabindex="0">max volume</button><div class="jp-volume-bar d-none"><div class="jp-volume-bar-value"><span class="jp-volume-bar-knob"></span></div></div></div></div></div></div>');
+
+    $("#jquery_jplayer_1").jPlayer({
+      cssSelectorAncestor: "#jp_container_1",
+      supplied: "mp3, oga",
+      useStateClassSkin: true,
+      autoBlur: false,
+      smoothPlayBar: true,
+      keyEnabled: true,
+      remainingDuration: true,
+      toggleDuration: true,
+      volumechange: function (event) {
+        if (event.jPlayer.options.muted) {
+          $("#jquery_jplayer_1").volume.slider("value", 0);
+        } else {
+          $("#jquery_jplayer_1").volume.slider("value", event.jPlayer.options.volume);
+        }
+      },
+    });
+
+    $(".listText ul li, .next-content").addClass("d-none");
+    $('.primaryprotection-visited').addClass('tabs-visited');
+    $('.first-content').removeClass('d-none');
+    $('#primaryProtectionModal').modal('show');
+    $('div.modal-backdrop').remove();
+    $('#pageDiv').append('<div class="modal-backdrop fade show"></div>');
+
+    myControl = {volume: $(".jp-volume-bar-knob")};
+    myControl.volume.slider({
+      animate: "fast",
+      max: 1,
+      range: "min",
+      step: 0.01,
+      value: $.jPlayer.prototype.options.volume,
+      orientation: "vertical",
+      slide: function (event, ui) {
+        $("#jquery_jplayer_1").jPlayer("option", "muted", false);
+        $("#jquery_jplayer_1").jPlayer("option", "volume", ui.value);
+      }
+    });
+    tabnum = $(this).attr('tab-num');
+    playAudio(tabnum);
+    setPageActivity(curPage,'tabs-visited');
+  })
+
+  $('#cathodicProtection').click(function () {
+    $('#cathodicProtectionModal').find('.modal-footer').html('<div id="jquery_jplayer_1" class="jp-jplayer"></div><div id="jp_container_1" class="jp-audio" role="application" aria-label="media player"><div class="jp-type-single"><div class="jp-gui jp-interface"><div class="jp-controls"><button class="jp-play" role="button" tabindex="0">play</button></div><div class="jp-progress"><div class="jp-play-bar"></div><div class="jp-seek-bar"></div></div><div class="jp-volume-controls"><button class="jp-volume-max" role="button" tabindex="0">max volume</button><div class="jp-volume-bar d-none"><div class="jp-volume-bar-value"><span class="jp-volume-bar-knob"></span></div></div></div></div></div></div>');
+    var myPlayer = $("#jquery_jplayer_1");
+    $("#jquery_jplayer_1").jPlayer({
+      cssSelectorAncestor: "#jp_container_1",
+      supplied: "mp3, oga",
+      useStateClassSkin: true,
+      autoBlur: false,
+      smoothPlayBar: true,
+      keyEnabled: true,
+      remainingDuration: true,
+      toggleDuration: true,
+      orientation: "vertical",
+      volumechange: function (event) {
+        if (event.jPlayer.options.muted) {
+          myControl.volume.slider("value", 0);
+        } else {
+          myControl.volume.slider("value", event.jPlayer.options.volume);
+        }
+      },
+    });
+    $(".listText ul li").addClass("d-none");
+    $('.cathodicprotection-visited').addClass('tabs-visited');
+    $('#cathodicProtectionModal').modal('show');
+    $('div.modal-backdrop').remove();
+    $('#pageDiv').append('<div class="modal-backdrop fade show"></div>');
+    myControl = {volume: $(".jp-volume-bar-knob")};
+    myControl.volume.slider({
+      animate: "fast",
+      max: 1,
+      range: "min",
+      step: 0.01,
+      value: $.jPlayer.prototype.options.volume,
+      orientation: "vertical",
+      slide: function (event, ui) {
+        $("#jquery_jplayer_1").jPlayer("option", "muted", false);
+        $("#jquery_jplayer_1").jPlayer("option", "volume", ui.value);
+      }
+    });
+    tabnum = $(this).attr('tab-num');
+    playAudio(tabnum);
+    setPageActivity(curPage,'tabs-visited');
+  });
+
+  $('.close').click(function () {
+    $(document).find("#jquery_jplayer_1").jPlayer("pause").jPlayer("destroy");
+
+    $('div.modal-backdrop').remove();
+    $('#nobleMetalsModal, #primaryProtectionModal, #cathodicProtectionModal').modal('hide');
+    $('#nobleMetalsModal, #primaryProtectionModal, #cathodicProtectionModal').find('.modal-footer').html('');
+  });
+
+  function playAudio(tabnum) {
+    var audioLocalFilePath = model.getPageCurrentAudioPath(true, tabnum);
+    $("#jquery_jplayer_1").jPlayer("setMedia", { mp3: audioLocalFilePath }).jPlayer("play");
+  }
+
+  function updateTimeAudio(event) {
+    var percentage = (event.jPlayer.status.currentTime / event.jPlayer.status.duration) * 100;
+    var classTime = event.jPlayer.status.currentTime.toFixed(0);    
+    $("." + tabnum + '_' + classTime).removeClass("d-none");
+
+    if ($('#primaryProtectionModal').hasClass('show') && percentage >= 65) {
+      $('.first-content').addClass('d-none');
+      $('.next-content').removeClass('d-none');
+    }
+  };
+
+  function updateDurationAudio(event) {
+    $('#jp_container_1').removeClass('audio-video-player-stopped');
+    var percentage = (event.jPlayer.status.currentTime / event.jPlayer.status.duration) * 100;
+    var classTime = event.jPlayer.status.currentTime.toFixed(0);
+    var totaltime = event.jPlayer.status.duration.toFixed(0);
+
+    for (let i = 0; i <= classTime; i++) {
+      $("." + tabnum + '_' + i).removeClass("d-none");
+    }
+    for (let i = classTime; i < totaltime; i++) {
+      $("." + tabnum + '_' + i).addClass("d-none");
+    }
+
+    if ($('#primaryProtectionModal').hasClass('show') && percentage <= 68) {
+      $('.first-content').removeClass('d-none');
+      $('.next-content').addClass('d-none');
+    }
+  };  
+  
+  $(document).on('click', '#jp_container_1 .jp-volume-max', function() {
+    $('#jp_container_1').find('.jp-volume-bar').toggleClass('d-none');
+  });
+
+</script>
+
+</html>

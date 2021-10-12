@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Advantages of ICCP</title>
+  <style type="text/css">
+    #pageDiv{
+      padding-top: 11%;
+    }
+    /* HEADING STYLING */
+    .t4-heading {
+      font-size: 35px;
+      font-weight: normal;
+      margin: 25px 0px 0px 130px;
+    }
+
+    .t4-heading span {
+      font-family: "PLinotte-Bold";
+    }
+
+    /* CONTENT STYLING */
+    .page2_content {
+      margin: 40px auto;
+      position: relative;
+      background-size: contain;
+      background-image: url('./content/images/pages/m1_t4_p2/t4_p2_content.png');
+      background-repeat: no-repeat;
+      height: 570px;
+      width: 77%;
+    }
+    .page2_content .col-2 {
+      position: absolute;
+      top: 29%;
+      font-size: 30px;
+      font-weight: normal;
+      text-align: center;
+      line-height: 40px;
+    }
+    .page2_content .col-2.triangle2{
+      top: 32%;
+    }
+    .page2_content span {font-family: "PLinotte-Bold";}
+    .triangle1 {left: 6.5%;}
+    .triangle2 {left: 29%;}
+    .triangle3 {left: 51%;}
+    .triangle4 {left: 74%;}
+  </style>
+</head>
+
+<body>
+  <section id="page-intro">
+    <p class="headingOne"><strong>Basics of Cathodic Protection (CP)</strong></p>
+    <p class="headingTwo">Advantages of ICCP</p>
+  </section>
+  <section id="pageDiv" class="m1t4p2">
+    <section id="audio-video-player"></section>
+    <p class="t4-heading"><span>ICCP system</span> has many advantages over the <span>Galvanic Anode Cathodic Protection</span> system.</p>
+    <div class="row page2_content d-none 1_2">
+      <div class="col-2 triangle1 d-none 1_7">Any <span>metal</span> can be used <span>as an anode</span></div>
+      <div class="col-2 triangle2 d-none 1_15"> Higher <span>current</span> output</div>
+      <div class="col-2 triangle3 d-none 1_17"><span>Cheaper to operate</span> in the long term</div>
+      <div class="col-2 triangle4 d-none 1_20"><span>Ease of monitoring</span> and control</div>
+    </div>
+  </section>
+</body>
+<script>
+  var tabnum = 1;
+  var initialaudio = model.getPageCurrentAudioPath(true, 1);
+  initAudioVideoPlayer(initialaudio, 'audio-video-player', 'm4a');
+
+  $('#audio-video-player').on($.jPlayer.event.timeupdate, function (event) {
+    var classTime = event.jPlayer.status.currentTime.toFixed(0);
+    $("." + tabnum + '_' + classTime).removeClass("d-none");
+  });
+  $('#audio-video-player').on($.jPlayer.event.seeking, function (event) {
+    updateDurationAudio(event);
+  });
+
+  $('#audio-video-player').on($.jPlayer.event.seeked, function (event) { 
+    updateDurationAudio(event);
+  });
+
+  $('#audio-video-player').on($.jPlayer.event.ended, function (event) {
+    $('#player_nextBtn').removeClass("player_nextBtnDisabled_style").addClass("player_nextBtn_style");
+    $('.itextNext').removeClass("d-none");
+    $('#assesmentstart').attr('disabled', false);    
+    $('#player_content_controls').addClass('audio-video-player-stopped');
+  });
+
+  function updateDurationAudio(event) {
+    var percentage = (event.jPlayer.status.currentTime / event.jPlayer.status.duration) * 100;
+    var classTime = event.jPlayer.status.currentTime.toFixed(0);
+    var totaltime = event.jPlayer.status.duration.toFixed(0);
+
+    for (let i = 0; i <= classTime; i++) {
+      $("." + tabnum + '_' + i).removeClass("d-none");
+    }
+    for (let i = classTime; i < totaltime; i++) {
+      $("." + tabnum + '_' + i).addClass("d-none");
+    }
+  };
+  
+</script>
+
+</html>

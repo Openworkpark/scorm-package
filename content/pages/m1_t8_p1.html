@@ -1,0 +1,759 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>CP Surveys</title>
+  <style type="text/css">
+    #pageDiv {
+      padding-top: 11%;
+    }
+
+    .cp-survey-headings {
+      height: 48%;
+      background-image: url('./content/images/pages/m1_t8_p1/cp-survey.png');
+      background-repeat: no-repeat;
+      background-position: 50% 100%;
+      font-size: 35px;
+      line-height: 40px;
+      color: black;
+      position: relative;
+      top: 5%;
+      margin: 0 auto;
+      width: 70%;
+      background-size: 80% 80%;
+    }
+
+    .cp-survey-mouse {
+      position: absolute;
+      bottom: -55%;
+      left: 75%;
+    }
+
+    .cp-survey-mouse p {
+      color: #035F1D;
+      font-size: 25px;
+      margin-left: 47px;
+      font-style: italic;
+    }
+
+    .cp-survey-mouse img {
+      margin-top: -86px;
+    }
+
+    .cp-survey-headings .col-1 {
+      font-family: "PLinotte-Bold";
+      position: absolute;
+      text-align: center;
+      top: 42%;
+      cursor: pointer;
+    }
+
+    .cp-survey-headings .potential,
+    .cp-survey-headings .on-off,
+    .cp-survey-headings .cipl {
+      font-size: 30px;
+      line-height: 35px;
+    }
+
+    .cp-survey-headings .potential span {
+      color: #F57E16;
+      font-size: 35px;
+    }
+
+    .cp-survey-headings .potential {
+      left: 15.5%;
+      width: 15%;
+    }
+
+    .cp-survey-headings .on-off span {
+      color: #068AC5;
+    }
+
+    .cp-survey-headings .on-off {
+      left: 44.2%;
+      width: 12%;
+    }
+
+    .cp-survey-headings .cipl span {
+      color: #399418;
+    }
+
+    .cp-survey-headings .cipl {
+      left: 70.1%;
+      top: 48%;
+      width: 15%;
+    }
+
+    .arrow-up-potential {
+      width: 0;
+      height: 0;
+      border-left: 20px solid transparent;
+      border-right: 20px solid transparent;
+      border-bottom: 20px solid #F8D53B;
+      margin-left: 30.5%;
+      margin-bottom: 3px;
+    }
+
+    .arrow-up-on-off {
+      width: 0;
+      height: 0;
+      border-left: 20px solid transparent;
+      border-right: 20px solid transparent;
+      border-bottom: 20px solid #7CDCF2;
+      margin-left: 50%;
+      margin-bottom: 3px;
+    }
+
+    .arrow-up-cipl {
+      width: 0;
+      height: 0;
+      border-left: 20px solid transparent;
+      border-right: 20px solid transparent;
+      border-bottom: 20px solid #AAE188;
+      margin-left: 68%;
+      margin-bottom: 3px;
+    }
+
+    .cp-potential-survey-content {
+      line-height: 30px;
+      border-radius: 130px;
+      height: 200px;
+      font-size: 30px;
+      font-weight: normal;
+      width: 90%;
+      margin: 0 auto;
+      padding: 3% 5%;
+      background: rgb(250, 224, 120);
+      background: linear-gradient(to bottom, rgba(250, 224, 120, 1) 0%, rgba(252, 223, 140, 1) 30%, rgba(254, 220, 174, 1) 100%);
+    }
+
+    .cp-on-off-survey-content {
+      line-height: 30px;
+      border-radius: 130px;
+      height: 200px;
+      font-size: 30px;
+      font-weight: normal;
+      padding: 1.8% 4%;
+      width: 90%;
+      margin: 0 auto;
+      background: linear-gradient(to bottom, rgba(122, 218, 241, 1) 0%, rgba(155, 226, 243, 1) 30%, rgba(199, 237, 245, 1) 100%);
+    }
+
+    .cp-cipl-survey-content {
+      line-height: 30px;
+      border-radius: 130px;
+      height: 200px;
+      font-size: 30px;
+      font-weight: normal;
+      padding: 25px 55px;
+      width: 90%;
+      margin: 0 auto;
+      background: linear-gradient(to bottom, rgba(176, 230, 145, 1) 0%, rgba(193, 234, 165, 1) 30%, rgba(205, 238, 180, 1) 100%);
+    }
+
+    .cp-cipl-survey-content ul {
+      height: 90px;
+      display: inline-block;
+    }
+
+    .cp-survey-content-section {
+      margin-top: 2.5%;
+    }
+
+    .cp-survey-content-section p {
+      color: black;
+      font-family: "PLinotte-Bold";
+    }
+
+    .cp-survey-content-section ul {
+      padding-left: 45px;
+    }
+
+    .cp-survey-content-section ul li {
+      font-size: 50px;
+      list-style-type: disc;
+    }
+
+    .cp-survey-content-section ul li span {
+      color: black;
+      font-size: 27px;
+      vertical-align: top;
+    }
+
+    .cp-potential-survey-content ul li {
+      color: #FE873B;
+    }
+
+    .cp-on-off-survey-content ul li {
+      color: #0063AB;
+    }
+
+    .cp-cipl-survey-content ul li {
+      color: #1A6F07;
+    }
+
+    .cipl-survey-modal,
+    .dcvg-survey-modal,
+    .click-more {
+      color: red !important;
+      font-size: 30px;
+      cursor: pointer;
+    }
+
+    #cipl-survey-popup .modal-header,
+    #dcvg-survey-popup .modal-header {
+      margin: 15px 0px 0px 20px;
+      background: linear-gradient(to right, #72BF44 0%, #72BD46 25%, #88C265 40%, #BADDA5 65%, #E6F2DE 100%);
+      border-top-left-radius: 53px 50px;
+      border-bottom-left-radius: 55px 46px;
+      box-shadow: -2.7px -2.7px;
+      font-size: 3rem;
+      padding-left: 1em;
+    }
+
+    #cipl-survey-popup .modal-title,
+    #dcvg-survey-popup .modal-title {
+      font-size: 35px;
+      color: #ffffff;
+      font-family: 'PLinotte-Bold';
+    }
+
+    #cipl-survey-popup .row,
+    #dcvg-survey-popup .row {
+      font-size: 30px;
+      font-weight: normal;
+    }
+
+    .pop-up-content {
+      margin: 30px 0 0 70px;
+    }
+
+    #cipl-survey-popup .btn-close,
+    #dcvg-survey-popup .btn-close {
+      box-shadow: 2.5px -1.5px black;
+      border-radius: 50%;
+      background-color: #72BF44;
+      width: 50px;
+      height: 50px;
+      font-size: 4rem;
+      color: white;
+      opacity: 0.8;
+      background-image: none;
+      margin-right: 10px !important;
+    }
+
+    #cipl-survey-popup .btn-close span,
+    #dcvg-survey-popup .btn-close span {
+      display: block;
+      margin-top: -20px;
+      font-size: 5.5rem;
+      font-weight: bold;
+    }
+
+    #cipl-survey-popup .btn-close span:hover,
+    #dcvg-survey-popup .btn-close span:hover {
+      display: block;
+      margin-top: -20px;
+      font-size: 5.5rem;
+      font-weight: bold;
+      color: #ffffff;
+    }
+
+    .potential_visited {
+      left: 25%;
+    }
+
+    .on_visited {
+      left: 52%;
+    }
+
+    .cipl_visited {
+      left: 79%;
+    }
+
+    .tabs-visited {
+      position: absolute;
+      background-image: url('./content/images/shell/tickmark_black.png');
+      background-repeat: no-repeat;
+      height: 57px;
+      width: 57px;
+      top: 27%;
+    }
+
+    #cipl-survey-popup .modal-footer,#dcvg-survey-popup .modal-footer {
+    justify-content: flex-start;
+}
+
+#jp_container_1.jp-audio,
+    #jp_container_1 .jp-type-single .jp-interface {
+      width: 100%;
+      /* background: #ff8c00; */
+      background: white;
+      border-radius: 30px;
+      height: 53px !important;
+      border: none;
+    }
+
+    #jp_container_1 .jp-type-single .jp-gui.jp-interface .jp-controls .jp-play,
+    #jp_container_1 .jp-play:hover,
+    #jp_container_1 .jp-play:focus {
+      background: transparent url('./content/images/shell/play-modal.png') no-repeat;
+    }
+
+    #jp_container_1.jp-audio.jp-state-playing .jp-type-single .jp-gui.jp-interface .jp-controls .jp-play,
+    #jp_container_1.audio-video-player-stopped .jp-type-single .jp-gui.jp-interface .jp-controls .jp-play,
+    #jp_container_1.jp-state-playing .jp-play:hover,
+    #jp_container_1.jp-state-playing .jp-play:focus {
+      background: transparent url('./content/images/shell/pause-modal.png') no-repeat;
+    }
+
+    #jp_container_1.jp-audio .jp-type-single .jp-gui.jp-interface .jp-controls {
+      width: 100%;
+      padding: 8px 20px;
+    }
+    #jp_container_1.jp-audio .jp-type-single .jp-gui.jp-interface .jp-progress {
+      left: 70px;
+      width: 88%;
+    }
+    #jp_container_1.jp-audio .jp-type-single .jp-gui.jp-interface .jp-progress {
+      top: 22px;
+      height: 8px;
+      background: transparent;
+    }
+    #jp_container_1.jp-audio .jp-type-single .jp-gui.jp-interface .jp-progress .jp-play-bar {
+      position: absolute;
+      height: 8px;
+      /* background:#ffffff; */
+      background: #ff8c00;
+    }
+    #jp_container_1.audio-video-player-stopped .jp-type-single .jp-gui.jp-interface .jp-progress .jp-play-bar {
+      width: 100%!important;
+    }
+    #jp_container_1.jp-audio .jp-type-single .jp-gui.jp-interface .jp-progress .jp-seek-bar {
+      position: absolute;
+      /* background: #ffffff; */
+      background: #ff8c00;
+      height: 2px;
+      top: 3px;
+    }
+    #jp_container_1.jp-audio .jp-type-single .jp-gui.jp-interface .jp-volume-controls .jp-volume-max,
+    #jp_container_1  .jp-volume-max:hover,
+    #jp_container_1  .jp-volume-max:focus {
+      background: transparent url('./content/images/shell/volume-modal.png') no-repeat;
+      width: 40px;
+      height: 40px;
+    }
+    #jp_container_1.jp-audio .jp-type-single .jp-gui.jp-interface  .jp-volume-controls {
+      top: 13px;
+      right: 0;
+      left: auto;
+    }
+    #jp_container_1.jp-audio .jp-type-single .jp-gui.jp-interface .jp-volume-controls .jp-volume-max {
+      left: auto;
+      right: 15px;
+    }   
+
+    #jp_container_1.jp-audio .jp-type-single .jp-gui.jp-interface .jp-volume-controls .jp-volume-bar {
+      border-radius: 20px;
+      border: 7px solid #C5D2E1;
+      /* background: #7E7E7E !important; */
+      top: -11rem;
+      left: 9rem;
+      width: 150px !important;
+      height: fit-content;
+      box-shadow: 0px 0px 0px 7px #FFFFFF;
+      transform: rotate(-92deg);
+    }
+
+    #jp_container_1.jp-audio .jp-type-single .jp-gui.jp-interface .jp-volume-controls .jp-volume-bar .jp-volume-bar-value {
+      height: 11px !important;
+      background: linear-gradient(to left, #FFFFFF 5%, #F9A220 10%);
+    }
+    #jp_container_1.jp-audio .jp-type-single .jp-gui.jp-interface .jp-volume-controls .jp-volume-bar .jp-volume-bar-value .jp-volume-bar-knob {
+      position: absolute;
+      right: 0px;
+      margin-top: -6px;
+      z-index: 50;
+    } 
+   
+  </style>
+</head>
+
+<body>
+  <section id="page-intro">
+    <p class="headingOne"><strong>Basics of Cathodic Protection (CP)</strong></p>
+    <p class="headingTwo">CP Surveys</p>
+  </section>
+  <section id="pageDiv" class="m1t8p1">
+    <section id="audio-video-player"></section>
+    <div class="row cp-survey-headings enableTabs d-none 1_6">
+      <div class="col-1 potential animation" tab-num="2">CP ON <span>Potential</span> Survey </div>
+      <div class="potential_visited" id="1"></div>
+      <div class="col-1 on-off animation" tab-num="3">CP <span>ON/OFF</span> Survey </div>
+      <div class="on_visited" id="2"></div>
+      <div class="col-1 cipl animation" tab-num="4"><span>CIPL/DCVG</span> Survey </div>
+      <div class="cipl_visited" id="3"></div>
+
+      <div class="cp-survey-mouse d-none 1_15" tab-num-details="1">
+        <p>Click on each survey to learn more.</p>
+        <img src="./content/images/shell/mouse_click.png" alt="">
+      </div>
+    </div>
+
+    <div class="cp-survey-content-section">
+      <div class="cp-potential-survey clicked d-none">
+        <div class="arrow-up-potential"></div>
+        <div class="cp-potential-survey-content">
+          <p>CP ON Potential Survey</p>
+          <ul>
+            <li class="d-none 2_3">
+              <span>Measurement of CP ON pipe to soil potential along the pipeline at every test stations.</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div class="cp-on-off-survey clicked d-none">
+        <div class="arrow-up-on-off"></div>
+        <div class="cp-on-off-survey-content">
+          <p>CP ON/OFF Survey</p>
+          <ul>
+            <li class="d-none 3_3"><span>Done to check the effectiveness of the CP system.</span></li>
+            <li class="d-none 3_8"><span>The measurement of CP Instant OFF and ON PSP is done at every test station.
+              </span></li>
+            <li class="d-none 3_15"><span>Done by installing the interrupters along the pipeline for each pipeline
+                section with a time On to Off  ratio of 4:1 seconds.</span></li>
+          </ul>
+        </div>
+      </div>
+      <div class="cp-cipl-survey clicked d-none">
+        <div class="arrow-up-cipl"></div>
+        <div class="cp-cipl-survey-content">
+          <p>CIPL/DCVG Survey</p>
+          <ul>
+            <li class="cipl_first_content d-none 4_3"><span>Assesses the cathodic protection effectiveness over the
+                entire
+                length of the pipeline, not solely at the test points.</span></li>
+            <li class="cipl_first_content d-none 4_9"><span>The principle of a close-interval potential survey (CIPS or
+                CIS)
+                is to record the pipe-to-soil
+                (P/S) potential profile of a pipeline over its entire length by measuring potentials at close intervals.
+              </span></li>
+            <li class="show-section d-none"><span>The surveyor walks along the pipeline with the equipment and measures
+                PSP at
+                each meter.
+                <span class="cipl-survey-modal" tab-num="5">Click here to view an image to show CIPL
+                  Survey.</span></span></li>
+          </ul>
+        </div>
+        <div class="cp-cipl-survey-content dcvg d-none">
+          <p>DCVG Survey</p>
+          <ul>
+            <li><span>A direct current (DC) signal is applied to the pipeline and the voltage gradient in the soil above
+                the pipeline is measured. <span class="dcvg-survey-modal" tab-num="7">Click here to view an
+                  image to show DCVG
+                  Survey.</span></span></li>
+          </ul>
+        </div>
+
+        <div class="modal fade" id="cipl-survey-popup" aria-hidden="true" aria-labelledby="exampleModalToggleLabel"
+          tabindex="-1">
+          <div class="modal-dialog modal-dialog-centered" style="max-width: 1267px; padding-top: 4%;">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalToggleLabel">CIPL Survey</h5>
+                <button type="button" class="btn-close modal-link" data-bs-dismiss="modal" aria-label="Close"
+                  tab-num="6">
+                  <span class="modal-link" aria-hidden="true" tab-num="6">×</span>
+                </button>
+              </div>
+              <div class="modal-body">
+                <div id="carouselExampleInterval" class="carousel slide">
+                  <div class="carousel-inner">
+                    <div class="carousel-item active">
+                      <div class="row">
+                        <div class="col-4 pop-up-content">
+                          In CIPL Survey the surveyor walks along the pipeline with the equipment and measures PSP at
+                          each meter.
+                        </div>
+                        <div class="col-6">
+                          <img src="./content/images/pages/m1_t8_p1/cipl-survey-popup.png" alt="" width="750">
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="modal-footer"></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="modal fade" id="dcvg-survey-popup" aria-hidden="true" aria-labelledby="exampleModalToggleLabel"
+          tabindex="-1">
+          <div class="modal-dialog modal-dialog-centered" style="max-width: 1267px; padding-top: 4%;">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalToggleLabel">DCVG Survey</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close">
+                  <span aria-hidden="true">×</span>
+                </button>
+              </div>
+              <div class="modal-body">
+                <div id="carouselExampleInterval" class="carousel slide">
+                  <div class="carousel-inner">
+                    <div class="carousel-item active">
+                      <div class="row">
+                        <div class="col-4 pop-up-content">Voltage gradients, as measured between two calibrated
+                          reference electrodes spaced apart, arise as a result of the current pickup or discharge at
+                          pipeline coating holiday locations.</div>
+                        <div class="col-6">
+                          <img src="./content/images/pages/m1_t8_p1/cipl-survey-popup1.png" width="750" height="500">
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="modal-footer"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</body>
+<script>
+  currentPagenumber = 8;
+  var pagenumber = 1;
+  menuSelection(pagenumber);
+  var curPage = model.currentModule+'_'+model.currentTopic+'_'+model.currentPage;
+  $(document).ready(function(){
+    getPageActivity(curPage, 'tabs-visited');
+  });
+  /**Modal not to be closed when click outside or keyboard events*/
+  $('#cipl-survey-popup, #dcvg-survey-popup').modal({
+    backdrop: 'static',
+    keyboard: true
+  });
+
+  var tabnum = 1;
+  var initialaudio = model.getPageCurrentAudioPath(true, 1);
+  initAudioVideoPlayer(initialaudio, 'audio-video-player', 'm4a');
+
+  $('#audio-video-player').on($.jPlayer.event.timeupdate, function (event) {
+    var classTimes = event.jPlayer.status.currentTime;
+    if (classTimes > 24) {
+      $(".cipl_first_content").css("display", "none").addClass(".d-none");
+      $('.show-section').removeClass('d-none').fadeIn();
+    }
+    else {
+      $(".cipl_first_content").css("display", "list-item");
+      $('.show-section').addClass('d-none');
+    }
+    var classTime = event.jPlayer.status.currentTime.toFixed(0);
+    $("." + tabnum + '_' + classTime).removeClass("d-none");
+  });
+
+  $('#audio-video-player').on($.jPlayer.event.ended, function (event) {
+    $('#player_nextBtn').removeClass("player_nextBtnDisabled_style").addClass("player_nextBtn_style");
+    $('.itextNext').removeClass("d-none");
+    $('.cp-survey-headings').removeClass('enableTabs');
+    $('#player_content_controls').addClass('audio-video-player-stopped');
+  });
+
+  $('#audio-video-player').on($.jPlayer.event.seeking, function (event) {
+    updateDurationAudio(event);
+  });
+
+  $('#audio-video-player').on($.jPlayer.event.seeked, function (event) { 
+    updateDurationAudio(event);
+  });
+
+  $(document).on($.jPlayer.event.timeupdate,'#jquery_jplayer_1', function (event) {
+    updateTimeAudio(event);
+  });
+
+  $(document).on($.jPlayer.event.seeking, '#jquery_jplayer_1',  function (event) {
+    updateDurationAudio(event);
+  });
+
+  $(document).on($.jPlayer.event.seeked, '#jquery_jplayer_1', function (event) {
+    updateDurationAudio(event);
+  });
+
+  $(document).on($.jPlayer.event.ended, '#jquery_jplayer_1', function (event) {
+    $('#jp_container_1').addClass('audio-video-player-stopped');
+  });
+
+  $('.click-more').click(function () {
+    $('.hide-section').addClass('d-none').fadeOut();
+    $('.show-section').removeClass('d-none').fadeIn();
+  });
+
+  $('.cp-survey-headings .col-1').click(function () {
+    $('.cp-survey-mouse').hide();
+    tabnum = $(this).attr('tab-num');
+    var audioLocalFilePath = model.getPageCurrentAudioPath(true, tabnum);
+    initAudioVideoPlayer(audioLocalFilePath, 'audio-video-player', 'm4a');  
+  });
+
+  $('.potential').click(function () {
+    $('.potential_visited').addClass('tabs-visited');
+    $('.clicked').addClass('d-none');
+    $('.cp-potential-survey').removeClass('d-none');
+    $('.cp-cipl-survey-content').removeClass('d-none');
+    $('.dcvg').addClass('d-none');
+    setPageActivity(curPage,'tabs-visited');
+  });
+
+  $('.on-off').click(function () {
+    $('.on_visited').addClass('tabs-visited');
+    $('.clicked').addClass('d-none');
+    $('.cp-on-off-survey').removeClass('d-none');
+    $('.cp-cipl-survey-content').removeClass('d-none');
+    $('.dcvg').addClass('d-none');
+    setPageActivity(curPage,'tabs-visited');
+  });
+
+  $('.cipl').click(function () {
+    $('.cipl_visited').addClass('tabs-visited');
+    $('.clicked').addClass('d-none');
+    $('.cp-cipl-survey, .hide-section').removeClass('d-none');
+    $('.dcvg').addClass('d-none');
+    $('.show-section').addClass('d-none');
+    $(".cipl_first_content").addClass("d-none");
+    setPageActivity(curPage,'tabs-visited');
+  });
+
+  $('.cipl-survey-modal').click(function () {
+    $('#audio-video-player').jPlayer('pause');
+    $('#cipl-survey-popup').find('.modal-footer').html('<div id="jquery_jplayer_1" class="jp-jplayer"></div><div id="jp_container_1" class="jp-audio" role="application" aria-label="media player"><div class="jp-type-single"><div class="jp-gui jp-interface"><div class="jp-controls"><button class="jp-play" role="button" tabindex="0">play</button></div><div class="jp-progress"><div class="jp-play-bar"></div><div class="jp-seek-bar"></div></div><div class="jp-volume-controls"><button class="jp-volume-max" role="button" tabindex="0">max volume</button><div class="jp-volume-bar d-none"><div class="jp-volume-bar-value"><span class="jp-volume-bar-knob"></span></div></div></div></div></div></div>');
+    
+    $("#jquery_jplayer_1").jPlayer({
+      cssSelectorAncestor: "#jp_container_1",
+      supplied: "mp3, oga",
+      useStateClassSkin: true,
+      autoBlur: false,
+      smoothPlayBar: true,
+      keyEnabled: true,
+      remainingDuration: true,
+      toggleDuration: true,
+      volumechange: function (event) {
+        if (event.jPlayer.options.muted) {
+          myControl.volume.slider("value", 0);
+        } else {
+          myControl.volume.slider("value", event.jPlayer.options.volume);
+        }
+      },
+    });    
+    $('#cipl-survey-popup').modal('show');
+    $('.cp-cipl-survey-content').addClass('d-none');
+    $('.dcvg').removeClass('d-none');
+    $('div.modal-backdrop').remove();
+    $('#pageDiv').append('<div class="modal-backdrop fade show"></div>');
+    myControl = {
+      volume: $(".jp-volume-bar-knob")
+    };
+    myControl.volume.slider({
+      animate: "fast",
+      max: 1,
+      range: "min",
+      step: 0.01,
+      value: $.jPlayer.prototype.options.volume,
+      orientation: "vertical",
+      slide: function (event, ui) {
+        $("#jquery_jplayer_1").jPlayer("option", "muted", false);
+        $("#jquery_jplayer_1").jPlayer("option", "volume", ui.value);
+      }
+    });
+    tabnum = $(this).attr('tab-num');
+    playAudio(tabnum);
+  });
+
+  $('.dcvg-survey-modal').click(function () {
+    $('#audio-video-player').jPlayer('pause');
+    $('#dcvg-survey-popup').find('.modal-footer').html('<div id="jquery_jplayer_1" class="jp-jplayer"></div><div id="jp_container_1" class="jp-audio" role="application" aria-label="media player"><div class="jp-type-single"><div class="jp-gui jp-interface"><div class="jp-controls"><button class="jp-play" role="button" tabindex="0">play</button></div><div class="jp-progress"><div class="jp-play-bar"></div><div class="jp-seek-bar"></div></div><div class="jp-volume-controls"><button class="jp-volume-max" role="button" tabindex="0">max volume</button><div class="jp-volume-bar d-none"><div class="jp-volume-bar-value"><span class="jp-volume-bar-knob"></span></div></div></div></div></div></div>');
+    
+    $("#jquery_jplayer_1").jPlayer({
+      cssSelectorAncestor: "#jp_container_1",
+      supplied: "mp3, oga",
+      useStateClassSkin: true,
+      autoBlur: false,
+      smoothPlayBar: true,
+      keyEnabled: true,
+      remainingDuration: true,
+      toggleDuration: true,
+      volumechange: function (event) {
+        if (event.jPlayer.options.muted) {
+          myControl.volume.slider("value", 0);
+        } else {
+          myControl.volume.slider("value", event.jPlayer.options.volume);
+        }
+      },
+    });    
+    $('#dcvg-survey-popup').modal('show');
+    $('div.modal-backdrop').remove();
+    $('#pageDiv').append('<div class="modal-backdrop fade show"></div>');
+    myControl = {
+      volume: $(".jp-volume-bar-knob")
+    };
+    myControl.volume.slider({
+      animate: "fast",
+      max: 1,
+      range: "min",
+      step: 0.01,
+      value: $.jPlayer.prototype.options.volume,
+      orientation: "vertical",
+      slide: function (event, ui) {
+        $("#jquery_jplayer_1").jPlayer("option", "muted", false);
+        $("#jquery_jplayer_1").jPlayer("option", "volume", ui.value);
+      }
+    });
+    tabnum = $(this).attr('tab-num');
+    playAudio(tabnum);
+  });
+
+  $('.btn-close').click(function () {
+    $(document).find("#jquery_jplayer_1").jPlayer("pause").jPlayer("destroy");
+    $("#jquery_jplayer_1").jPlayer("pause").jPlayer("destroy");    
+    $('div.modal-backdrop').remove();
+    $('#cipl-survey-popup, #dcvg-survey-popup').find('.modal-footer').html('');
+  });
+
+  $('.modal-link').click(function () {
+    var audioLocalFilePath = model.getPageCurrentAudioPath(true, 6);
+    initAudioVideoPlayer(audioLocalFilePath, 'audio-video-player', 'm4a');    
+  });
+  
+  function playAudio(tabnum) {
+    var audioLocalFilePath = model.getPageCurrentAudioPath(true, tabnum);
+    $("#jquery_jplayer_1").jPlayer("setMedia", { mp3: audioLocalFilePath }).jPlayer("play");
+  }
+
+  function updateTimeAudio(event) {
+    var percentage = (event.jPlayer.status.currentTime / event.jPlayer.status.duration) * 100;
+    var classTime = event.jPlayer.status.currentTime.toFixed(0);
+    var localThum = tabnum;
+    $("." + localThum + '_' + classTime).removeClass("d-none");
+  };
+
+  function updateDurationAudio(event) {
+    var percentage = (event.jPlayer.status.currentTime / event.jPlayer.status.duration) * 100;
+    var classTime = event.jPlayer.status.currentTime.toFixed(0);
+    var totaltime = event.jPlayer.status.duration.toFixed(0);
+
+    for (let i = 0; i <= classTime; i++) {
+      $("." + tabnum + '_' + i).removeClass("d-none");
+    }
+    for (let i = classTime; i < totaltime; i++) {
+      $("." + tabnum + '_' + i).addClass("d-none");
+    }
+  };
+  
+  $(document).on('click', '#jp_container_1 .jp-volume-max', function() {
+    $('#jp_container_1').find('.jp-volume-bar').toggleClass('d-none');
+  });
+</script>
+
+</html>

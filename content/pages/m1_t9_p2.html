@@ -1,0 +1,1354 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Assessment</title>
+  <script src="https://smtpjs.com/v3/smtp.js"></script>  
+  </script>
+  <style type="text/css">
+    .firstp {
+      margin-bottom: 0px;
+      font-size: 60px;
+      line-height: 60px;
+    }
+
+    .secondp span {
+      color: #E64226;
+      margin-bottom: 40px;
+    }
+
+    .thirdp,
+    .sixthp {
+      font-weight: normal;
+      color: black;
+    }
+
+    .thirdp b,
+    .sixthp b,
+    .secondp b {
+      font-family: 'PLinotte-Bold';
+    }
+
+    .fourthp,
+    .fifthp,
+    .revisit_button {
+      margin-left: 30px;
+      margin-bottom: 15px;
+      font-size: 40px;
+    }
+
+    .post-assessment ul {
+      animation: list 5s 6s forwards;
+      visibility: hidden;
+      list-style: disc;
+      margin-left: 28px;
+      color: #72BF44;
+      font-size: 35px;
+      margin-bottom: 40px;
+      margin-top: 35px;
+    }
+
+    .start {
+      font-size: 24px;
+      margin-left: 64px;
+      color: #035F1D;
+      display: inline-block;
+      font-style: italic;
+    }
+
+    #PoststartButton {
+      background: #70BD44;
+      color: white;
+      padding: 6px 30px;
+      margin-left: 11%;
+      border-radius: 40px;
+      border: 2px solid green;
+      font-size: 35px;
+      font-style: italic;
+      -moz-box-shadow: inset 0 0 10px #254a0d;
+      -webkit-box-shadow: inset 0 0 10px #254a0d;
+      box-shadow: inset 0 0 10px #254a0d;
+      font-family: 'PLinotte-SemiBold';
+    }
+
+    #PoststartButton img {
+      margin-top: -7px;
+      margin-left: 7px;
+    }
+
+    #PoststartButton:disabled {
+      background: #ada4a4;
+      border: 2px solid #ada4a4;
+    }
+
+    .mouse {
+      margin-left: 10px;
+      margin-top: -118px;
+    }
+
+    .post-assessment-test {
+      position: absolute;
+      top: 17%;
+      left: 3.9%;
+      margin: 0 auto;
+      font-size: 40px;
+      font-family: "PLinotte-SemiBold";
+      height: 800px;
+      width: 96.1%;
+      background-image: url(./content/images/pages/post-assessment/post-question.png);
+      background-size: 100% 96%;
+      background-repeat: no-repeat;
+    }
+
+    .post-assessment-test .left {
+      color: white;
+      margin: 155px 0px 0 100px;
+    }
+
+    .post-assessment-test .left p:nth-child(1) {
+      color: #FFD306;
+      font-family: 'PLinotte-Light';
+      font-size: 40px;
+      margin: 0;
+    }
+
+    .post-assessment-test .left p:nth-child(2) {
+      line-height: 55px;
+      height: 350px;
+      overflow: auto;
+      margin-right: 36px;
+      padding: 0px 5px 0 0;
+    }
+
+    .post-assessment-test .left p:nth-child(3) {
+      margin-right: 20px;
+      padding: 10px 40px;
+      text-align: center;
+      border-top: 1px solid #ffffff;
+      color: white;
+      font-size: 25px;
+      font-family: 'PLinotte-Regular';
+      font-style: italic;
+    }
+
+    .post-assessment-test .right {
+      font-family: "PLinotte-Regular";
+      font-weight: normal;
+      font-size: 30px;
+      color: black;
+      margin-top: 239px;
+      margin-left: 90px;
+    }
+
+    .post-assessment-test .right .form-check {
+      margin-bottom: 19px;
+      font-family: 'PLinotte-Regular';
+    }
+
+    .post-assessment-test .right .form-check input:checked {
+      background-image: none;
+      background: #FF8C00;
+    }
+
+    .questions-back {
+      margin-top: 200px;
+      background: white;
+      color: black;
+      padding: 0px 22px;
+      border-radius: 40px;
+      border: 2px solid green;
+    }
+
+    .questions-next {
+      color: white;
+      width: 200px;
+      font-family: "PLinotte-Bold";
+      float: right;
+      margin-right: -95px;
+      background: none;
+      height: 100px;
+      border: 0px;
+      margin-top: 60px;
+    }
+
+    .last-submit {
+      margin-top: 22% !important;
+    }
+
+    .post-assessment-passresult {
+      background-image: url('./content/images/pages/post-assessment/pass.gif');
+      background-repeat: no-repeat;
+      background-size: 100% 100%;
+      background-position: 70px 0px;
+      height: 100%;
+      width: 100%;
+      position: relative;
+      font-size: 40px;
+    }
+
+    .post-assessment-failresult {
+      background-image: url('./content/images/pages/post-assessment/fail.gif');
+      background-repeat: no-repeat;
+      height: 100%;
+      width: 100%;
+      background-position: 70px 0px;
+      background-size: 100% 100%;
+      position: relative;
+      font-size: 40px;
+    }
+
+    .post-assessment-passresult p {
+      position: absolute;
+    }
+
+    .post-assessment-failresult p {
+      position: absolute;
+    }
+
+    .post-assessment-failresult .booster,
+    .post-assessment-failresult .revisit_module_text {
+      font-size: 30px;
+      font-style: italic;
+      margin-left: 58px;
+      color: #035F1D;
+    }
+
+    .post-assessment-failresult button {
+      background: #70BD44;
+      color: white;
+      padding: 0px 22px;
+      border-radius: 40px;
+      border: 2px solid green;
+    }
+
+    .post-assessment-failresult .mouse {
+      margin-left: 10px;
+      margin-top: -115px;
+    }
+
+    .congrats {
+      top: 11%;
+      left: 36%;
+      font-size: 65px;
+      color: white;
+    }
+
+    .successfully {
+      top: 29%;
+      left: 45%;
+    }
+
+    .score {
+      top: 59%;
+      left: 62%;
+    }
+
+    .score span {
+      color: #5FAD34;
+      font-size: 35px;
+      font-weight: bold;
+      margin-top: 4px;
+      display: inline-block;
+    }
+
+    .fail-score-color {
+      color: red !important;
+    }
+
+    .criteria {
+      top: 50%;
+      left: 45%;
+      font-size: 30px;
+      font-weight: normal;
+    }
+
+    .post-assessment-failresult .fifthp,
+    .post-assessment-failresult .revisit_button {
+      top: 77%;
+      left: 49%;
+    }
+
+    .form-check-input[type=radio] {
+      border-radius: 50%;
+      background: #D9D9D9;
+      border: 7px solid #ffffff;
+      width: 1.3em;
+      height: 1.3em;
+    }
+
+    .form-check-label {
+      vertical-align: text-top;
+    }
+
+    .disabledButton {
+      color: #adabab;
+    }
+
+    .nomargin {
+      margin-right: 0px !important;
+    }
+
+    .post-start {
+      position: absolute;
+      top: 80%;
+      width: 100%;
+      left: 60%;
+    }
+
+    .last-question-content {
+      margin-top: 180px !important;
+      padding-right: 223px;
+    }
+
+    .post-assessment-video {
+      position: fixed;
+      top: 0%;
+    }
+
+    .vjs-control-bar {
+      display: none !important;
+    }
+
+    .video-js {
+      background-color: transparent !important;
+      padding: 0;
+    }
+
+    .question_10_submit {
+      margin-top: -9% !important;
+      margin-right: -45% !important;
+    }
+
+    #booster_video_modal .modal-dialog {
+      max-width: 1500px !important;
+    }
+
+    #booster_video_modal .btn-color {
+      padding: 1px;
+      margin: -2.5rem -2.5rem -0.5rem auto;
+      opacity: 1 !important;
+      z-index: 99;
+      right: 10px;
+      width: 30px;
+      height: 30px;
+      line-height: 30px;
+      top: 10px;
+      font-size: 18px;
+      position: absolute;
+      color: #fdfbfb;
+    }
+
+    #booster_video_modal .btn-color::before {
+      content: "";
+      width: 100%;
+      height: 100%;
+      background-color: #f10808;
+      position: absolute;
+      top: 0;
+      left: 0;
+      z-index: -1;
+      border-radius: 50%;
+    }
+
+    .assessment_not_clered {
+      top: 46%;
+      left: 50%;
+      width: 24%;
+      font-family: 'PLinotte-Bold';
+      line-height: 44px;
+      font-size: 40px;
+    }
+
+    .score_required {
+      top: 66%;
+      left: 50%;
+      font-size: 35px;
+      font-style: italic;
+    }
+
+    .score_required span {
+      font-family: 'PLinotte-Bold';
+    }
+
+    .your_score {
+      font-family: 'PLinotte-Bold';
+      top: 59%;
+      left: 50%;
+    }
+
+        /* audio modal controller css  */
+        #jp_container_1.jp-audio,
+    #jp_container_1 .jp-type-single .jp-interface {
+      width: 100%;
+      /* background: #ff8c00; */
+      background: white;
+      border-radius: 30px;
+      height: 53px !important;
+      border: none;
+    }
+
+    #jp_container_1 .jp-type-single .jp-gui.jp-interface .jp-controls .jp-play,
+    #jp_container_1 .jp-play:hover,
+    #jp_container_1 .jp-play:focus {
+      background: transparent url('./content/images/shell/play-modal.png') no-repeat;
+    }
+
+    #jp_container_1.jp-audio.jp-state-playing .jp-type-single .jp-gui.jp-interface .jp-controls .jp-play,
+    #jp_container_1 .jp-state-playing .jp-play:hover,
+    #jp_container_1 .jp-state-playing .jp-play:focus {
+      background: transparent url('./content/images/shell/pause-modal.png') no-repeat;
+    }
+
+    #jp_container_1.jp-audio .jp-type-single .jp-gui.jp-interface .jp-controls {
+      width: 100%;
+      padding: 8px 20px;
+    }
+
+    #jp_container_1.jp-audio .jp-type-single .jp-gui.jp-interface .jp-progress {
+      left: 70px;
+      width: 88%;
+    }
+
+    #jp_container_1.jp-audio .jp-type-single .jp-gui.jp-interface .jp-progress {
+      top: 22px;
+      height: 8px;
+      background: transparent;
+    }
+
+    #jp_container_1.jp-audio .jp-type-single .jp-gui.jp-interface .jp-progress .jp-play-bar {
+      position: absolute;
+      height: 8px;
+      /* background: #ffffff;
+       */
+       background: #ff8c00;
+    }
+
+    #jp_container_1.audio-video-player-stopped .jp-type-single .jp-gui.jp-interface .jp-progress .jp-play-bar {
+      width: 100% !important;
+    }
+
+    #jp_container_1.jp-audio .jp-type-single .jp-gui.jp-interface .jp-progress .jp-seek-bar {
+      position: absolute;
+      /* background: #ffffff; */
+      background: #ff8c00;
+      height: 2px;
+      top: 3px;
+    }
+
+    #jp_container_1.jp-audio .jp-type-single .jp-gui.jp-interface .jp-volume-controls .jp-volume-max,
+    #jp_container_1 .jp-volume-max:hover,
+    #jp_container_1 .jp-volume-max:focus {
+      background: transparent url('./content/images/shell/volume-modal.png') no-repeat;
+      width: 40px;
+      height: 40px;
+    }
+
+    #jp_container_1.jp-audio .jp-type-single .jp-gui.jp-interface .jp-volume-controls {
+      top: 13px;
+      right: 0;
+      left: auto;
+    }
+
+    #jp_container_1.jp-audio .jp-type-single .jp-gui.jp-interface .jp-volume-controls .jp-volume-max {
+      left: auto;
+      right: 15px;
+    }
+
+    #jp_container_1.jp-audio .jp-type-single .jp-gui.jp-interface .jp-volume-controls .jp-volume-bar {
+      border-radius: 20px;
+      border: 7px solid #C5D2E1;
+      /* background: #7E7E7E !important; */
+      top: -11rem;
+      left: 8.5rem;
+      width: 150px !important;
+      height: fit-content;
+      box-shadow: 0px 0px 0px 7px #FFFFFF;
+      transform: rotate(-92deg);
+    }
+
+    #jp_container_1.jp-audio .jp-type-single .jp-gui.jp-interface .jp-volume-controls .jp-volume-bar .jp-volume-bar-value {
+      height: 11px !important;
+      background: linear-gradient(to left, #FFFFFF 5%, #F9A220 10%);
+    }
+
+    #jp_container_1.jp-audio .jp-type-single .jp-gui.jp-interface .jp-volume-controls .jp-volume-bar .jp-volume-bar-value .jp-volume-bar-knob {
+      position: absolute;
+      right: 0px;
+      margin-top: -6px;
+      z-index: 50;
+    }
+    #jp_container_1.jp-audio .jp-type-single .jp-gui.jp-interface .jp-toggles .jp-repeat{
+      background: transparent;
+    position: absolute;
+    background-image: url(./content/images/shell/replay-modal.png);
+    top: 20%;
+    left: 93.5%;
+    height: 35px;
+    width: 30px;
+    background-size: 100% 100%;
+    }
+  </style>
+</head>
+
+<body>
+  <section id="page-intro">
+    <p class="headingOne"><strong>Basics of Cathodic Protection (CP)</strong></p>
+    <p class="headingTwo">Post-Assessment</p>
+  </section>
+  <section id="pageDiv" class="m1t9p2">
+    <section id="audio-video-player"></section>
+    <div class="post-assessment-welcome">
+      <p class="post-start">
+        <span>
+          <button id='PoststartButton' class="d-none"><span>START</span><img
+              src="./content/images/shell/start-arrow.png" alt=""></button>
+        </span>
+      </p>
+    </div>
+
+    <div class="row post-assessment-test d-none question-1">
+      <div class="col-3 left">
+        <p>Question <b>1</b> </p>
+        <p>What does 'ICCP' stand for ?​</p>
+        <p>Select the correct option, and then click <b>'Submit'.</b></p>
+      </div>
+      <div class="col-6 right">
+        <div class="form-check">
+          <input class="form-check-input" type="radio" name="flexRadioDefault1" id="flexRadioDefault11" value="0"
+            onchange="radioSelect('question-1')">
+          <label class="form-check-label" for="flexRadioDefault11">Induced Current Cathodic Protection</label>
+        </div>
+        <div class="form-check">
+          <input class="form-check-input" type="radio" name="flexRadioDefault1" id="flexRadioDefault12" value="1"
+            onchange="radioSelect('question-1')">
+          <label class="form-check-label" for="flexRadioDefault12">Impressed Current Cathodic Protection</label>
+        </div>
+        <div class="form-check">
+          <input class="form-check-input" type="radio" name="flexRadioDefault1" id="flexRadioDefault13" value="0"
+            onchange="radioSelect('question-1')">
+          <label class="form-check-label" for="flexRadioDefault13">Induced Current Close Potential</label>
+        </div>
+        <div class="form-check">
+          <input class="form-check-input" type="radio" name="flexRadioDefault1" id="flexRadioDefault14" value="0"
+            onchange="radioSelect('question-1')">
+          <label class="form-check-label" for="flexRadioDefault14">Impressed Current Continuous Protection</label>
+        </div>
+        <button class="questions-next">SUBMIT</button>
+      </div>
+    </div>
+    <div class="row post-assessment-test d-none question-2">
+      <div class="col-3 left">
+        <p>Question <b>2</b> </p>
+        <p>In a galvanic CP system which material can be used as an anode for protection of carbon steel:</p>
+        <p>Select the correct option, and then click <b>'Submit'.</b></p>
+      </div>
+      <div class="col-6  right">
+        <div class="form-check">
+          <input class="form-check-input" type="radio" name="flexRadioDefault2" id="flexRadioDefault21" value="0"
+            onchange="radioSelect('question-2')">
+          <label class="form-check-label" for="flexRadioDefault21">
+            Mixed metal oxide
+          </label>
+        </div>
+        <div class="form-check">
+          <input class="form-check-input" type="radio" name="flexRadioDefault2" id="flexRadioDefault22" value="0"
+            onchange="radioSelect('question-2')">
+          <label class="form-check-label" for="flexRadioDefault22">
+            Platinum
+          </label>
+        </div>
+        <div class="form-check">
+          <input class="form-check-input" type="radio" name="flexRadioDefault2" id="flexRadioDefault23" value="1"
+            onchange="radioSelect('question-2')">
+          <label class="form-check-label" for="flexRadioDefault23">
+            Zinc
+          </label>
+        </div>
+        <div class="form-check">
+          <input class="form-check-input" type="radio" name="flexRadioDefault2" id="flexRadioDefault24" value="0"
+            onchange="radioSelect('question-2')">
+          <label class="form-check-label" for="flexRadioDefault24">
+            Gold
+          </label>
+        </div>
+        <button class="questions-next">SUBMIT</button>
+      </div>
+    </div>
+    <div class="row post-assessment-test d-none question-3">
+      <div class="col-3 left">
+        <p>Question <b>3</b> </p>
+        <p>The ICCP system uses external power to force current to flow from the anode to the structure through the
+          ______.
+          ​</p>
+        <p>Select the correct option, and then click <b>'Submit'.</b></p>
+      </div>
+      <div class="col-6 right">
+        <div class="form-check">
+          <input class="form-check-input" type="radio" name="flexRadioDefault3" id="flexRadioDefault31" value="0"
+            onchange="radioSelect('question-3')">
+          <label class="form-check-label" for="flexRadioDefault31">
+            metallic path
+          </label>
+        </div>
+        <div class="form-check">
+          <input class="form-check-input" type="radio" name="flexRadioDefault3" id="flexRadioDefault32" value="0"
+            onchange="radioSelect('question-3')">
+          <label class="form-check-label" for="flexRadioDefault32">
+            air
+          </label>
+        </div>
+        <div class="form-check">
+          <input class="form-check-input" type="radio" name="flexRadioDefault3" id="flexRadioDefault33" value="1"
+            onchange="radioSelect('question-3')">
+          <label class="form-check-label" for="flexRadioDefault33">
+            electrolyte
+          </label>
+        </div>
+        <div class="form-check">
+          <input class="form-check-input" type="radio" name="flexRadioDefault3" id="flexRadioDefault34" value="0"
+            onchange="radioSelect('question-3')">
+          <label class="form-check-label" for="flexRadioDefault34">
+            backfill
+          </label>
+        </div>
+        <button class="questions-next">SUBMIT</button>
+      </div>
+    </div>
+    <div class="row post-assessment-test d-none question-4">
+      <div class="col-3 left">
+        <p>Question <b>4</b> </p>
+        <p>In a galvanic cell corrosion occurs at the ___________.
+          ​</p>
+        <p>Select the correct option, and then click <b>'Submit'.</b></p>
+      </div>
+      <div class="col-6 right">
+        <div class="form-check">
+          <input class="form-check-input" type="radio" name="flexRadioDefault4" id="flexRadioDefault41" value="0"
+            onchange="radioSelect('question-4')">
+          <label class="form-check-label" for="flexRadioDefault41">
+            metallic path
+          </label>
+        </div>
+        <div class="form-check">
+          <input class="form-check-input" type="radio" name="flexRadioDefault4" id="flexRadioDefault42" value="1"
+            onchange="radioSelect('question-4')">
+          <label class="form-check-label" for="flexRadioDefault42">
+            anode
+          </label>
+        </div>
+        <div class="form-check">
+          <input class="form-check-input" type="radio" name="flexRadioDefault4" id="flexRadioDefault43" value="0"
+            onchange="radioSelect('question-4')">
+          <label class="form-check-label" for="flexRadioDefault43">
+            cathode
+          </label>
+        </div>
+        <div class="form-check">
+          <input class="form-check-input" type="radio" name="flexRadioDefault4" id="flexRadioDefault44" value="0"
+            onchange="radioSelect('question-4')">
+          <label class="form-check-label" for="flexRadioDefault44">
+            electrolyte
+          </label>
+        </div>
+        <button class="questions-next">SUBMIT</button>
+      </div>
+    </div>
+    <div class="row post-assessment-test d-none question-5">
+      <div class="col-3 left">
+        <p>Question <b>5</b> </p>
+        <p> Which of the following reaction occurs at anode?
+          ​</p>
+        <p>Select the correct option, and then click <b>'Submit'.</b></p>
+      </div>
+      <div class="col-6  right">
+        <div class="form-check">
+          <input class="form-check-input" type="radio" name="flexRadioDefault5" id="flexRadioDefault51" value="0"
+            onchange="radioSelect('question-5')">
+          <label class="form-check-label" for="flexRadioDefault51">
+            Endothermic reaction
+          </label>
+        </div>
+        <div class="form-check">
+          <input class="form-check-input" type="radio" name="flexRadioDefault5" id="flexRadioDefault52" value="0"
+            onchange="radioSelect('question-5')">
+          <label class="form-check-label" for="flexRadioDefault52">
+            Reduction reaction
+          </label>
+        </div>
+        <div class="form-check">
+          <input class="form-check-input" type="radio" name="flexRadioDefault5" id="flexRadioDefault53" value="1"
+            onchange="radioSelect('question-5')">
+          <label class="form-check-label" for="flexRadioDefault53">
+            Oxidation reaction
+          </label>
+        </div>
+        <div class="form-check">
+          <input class="form-check-input" type="radio" name="flexRadioDefault5" id="flexRadioDefault54" value="0"
+            onchange="radioSelect('question-5')">
+          <label class="form-check-label" for="flexRadioDefault54">
+            All of the above
+          </label>
+        </div>
+        <button class="questions-next">SUBMIT</button>
+      </div>
+    </div>
+    <div class="row post-assessment-test d-none question-6">
+      <div class="col-3 left">
+        <p>Question <b>6</b> </p>
+        <p> Which type of corrosion generally occurs under pipe supports:
+          ​</p>
+        <p>Select the correct option, and then click <b>'Submit'.</b></p>
+      </div>
+      <div class="col-6  right">
+        <div class="form-check">
+          <input class="form-check-input" type="radio" name="flexRadioDefault6" id="flexRadioDefault61" value="0"
+            onchange="radioSelect('question-6')">
+          <label class="form-check-label" for="flexRadioDefault61">
+            Microbial induced corrosion
+          </label>
+        </div>
+        <div class="form-check">
+          <input class="form-check-input" type="radio" name="flexRadioDefault6" id="flexRadioDefault62" value="0"
+            onchange="radioSelect('question-6')">
+          <label class="form-check-label" for="flexRadioDefault62">
+            Erosion corrosion
+          </label>
+        </div>
+        <div class="form-check">
+          <input class="form-check-input" type="radio" name="flexRadioDefault6" id="flexRadioDefault63" value="0"
+            onchange="radioSelect('question-6')">
+          <label class="form-check-label" for="flexRadioDefault63">
+            Stress corrosion
+          </label>
+        </div>
+        <div class="form-check">
+          <input class="form-check-input" type="radio" name="flexRadioDefault6" id="flexRadioDefault64" value="1"
+            onchange="radioSelect('question-6')">
+          <label class="form-check-label" for="flexRadioDefault64">
+            Crevice corrosion
+          </label>
+        </div>
+        <button class="questions-next">SUBMIT</button>
+      </div>
+    </div>
+    <div class="row post-assessment-test d-none question-7">
+      <div class="col-3 left">
+        <p>Question <b>7</b> </p>
+        <p class="nomargin"> As per Thermodynamics law – material always seeks the _________ energy.
+          ​</p>
+        <p>Select the correct option, and then click <b>'Submit'.</b></p>
+      </div>
+      <div class="col-6  right">
+        <div class="form-check">
+          <input class="form-check-input" type="radio" name="flexRadioDefault7" id="flexRadioDefault71" value="1"
+            onchange="radioSelect('question-7')">
+          <label class="form-check-label" for="flexRadioDefault71">
+            lowest
+          </label>
+        </div>
+        <div class="form-check">
+          <input class="form-check-input" type="radio" name="flexRadioDefault7" id="flexRadioDefault72" value="0"
+            onchange="radioSelect('question-7')">
+          <label class="form-check-label" for="flexRadioDefault72">
+            highest
+          </label>
+        </div>
+        <div class="form-check">
+          <input class="form-check-input" type="radio" name="flexRadioDefault7" id="flexRadioDefault73" value="0"
+            onchange="radioSelect('question-7')">
+          <label class="form-check-label" for="flexRadioDefault73">
+            moderate
+          </label>
+        </div>
+        <div class="form-check">
+          <input class="form-check-input" type="radio" name="flexRadioDefault7" id="flexRadioDefault74" value="0"
+            onchange="radioSelect('question-7')">
+          <label class="form-check-label" for="flexRadioDefault74">
+            none of the above
+          </label>
+        </div>
+        <button class="questions-next">SUBMIT</button>
+      </div>
+    </div>
+    <div class="row post-assessment-test d-none question-8">
+      <div class="col-3 left">
+        <p>Question <b>8</b> </p>
+        <p> As per PIL, what is the standard limit of ON PSP with respect to saturated Cu/CuSO<sub>4</sub> reference
+          electrode for
+          underground pipeline?
+          ​</p>
+        <p>Select the correct option, and then click <b>'Submit'.</b></p>
+      </div>
+      <div class="col-6 right">
+        <div class="form-check">
+          <input class="form-check-input" type="radio" name="flexRadioDefault8" id="flexRadioDefault81" value="0"
+            onchange="radioSelect('question-8')">
+          <label class="form-check-label" for="flexRadioDefault81">
+            (-)ve 0.80 volts to (-) 1.5 volts
+          </label>
+        </div>
+        <div class="form-check">
+          <input class="form-check-input" type="radio" name="flexRadioDefault8" id="flexRadioDefault82" value="0"
+            onchange="radioSelect('question-8')">
+          <label class="form-check-label" for="flexRadioDefault82">
+            (+)ve 0.95 volts to (-) 1.5 volts
+          </label>
+        </div>
+        <div class="form-check">
+          <input class="form-check-input" type="radio" name="flexRadioDefault8" id="flexRadioDefault83" value="0"
+            onchange="radioSelect('question-8')">
+          <label class="form-check-label" for="flexRadioDefault83">
+            (-)ve 0.85 volts to (-) 2.0 volts
+          </label>
+        </div>
+        <div class="form-check">
+          <input class="form-check-input" type="radio" name="flexRadioDefault8" id="flexRadioDefault84" value="1"
+            onchange="radioSelect('question-8')">
+          <label class="form-check-label" for="flexRadioDefault84">
+            (-)ve 0.95 volts to (-) 1.5 volts
+          </label>
+        </div>
+        <button class="questions-next">SUBMIT</button>
+      </div>
+
+    </div>
+    <div class="row post-assessment-test d-none question-9">
+      <div class="col-3 left">
+        <p>Question <b>9</b> </p>
+        <p> Frequency of CP ON/OFF survey in PIL is conducted________.
+          ​</p>
+        <p>Select the correct option, and then click <b>'Submit'.</b></p>
+      </div>
+      <div class="col-6  right">
+        <div class="form-check">
+          <input class="form-check-input" type="radio" name="flexRadioDefault9" id="flexRadioDefault91" value="0"
+            onchange="radioSelect('question-9')">
+          <label class="form-check-label" for="flexRadioDefault91">
+            monthly
+          </label>
+        </div>
+        <div class="form-check">
+          <input class="form-check-input" type="radio" name="flexRadioDefault9" id="flexRadioDefault92" value="0"
+            onchange="radioSelect('question-9')">
+          <label class="form-check-label" for="flexRadioDefault92">
+            quarterly
+          </label>
+        </div>
+        <div class="form-check">
+          <input class="form-check-input" type="radio" name="flexRadioDefault9" id="flexRadioDefault93" value="1"
+            onchange="radioSelect('question-9')">
+          <label class="form-check-label" for="flexRadioDefault93">
+            yearly
+          </label>
+        </div>
+        <div class="form-check">
+          <input class="form-check-input" type="radio" name="flexRadioDefault9" id="flexRadioDefault94" value="0"
+            onchange="radioSelect('question-9')">
+          <label class="form-check-label" for="flexRadioDefault94">
+            half yearly
+          </label>
+        </div>
+        <button class="questions-next">SUBMIT</button>
+      </div>
+
+    </div>
+    <div class="row post-assessment-test d-none question-10">
+      <div class="col-3 left">
+        <p>Question <b>10</b> </p>
+        <p> Instant OFF Pipe to Soil Potential (PSP) means:
+          ​</p>
+        <p>Select the correct option, and then click <b>'Submit'.</b></p>
+      </div>
+      <div class="col-6  right last-question-content">
+        <div class="form-check">
+          <input class="form-check-input" type="radio" name="flexRadioDefault10" id="flexRadioDefault101" value="1"
+            onchange="radioSelect('question-10')">
+          <label class="form-check-label" for="flexRadioDefault101">
+            PSP measured immediately after switching OFF the CP system
+          </label>
+        </div>
+        <div class="form-check">
+          <input class="form-check-input" type="radio" name="flexRadioDefault10" id="flexRadioDefault102" value="0"
+            onchange="radioSelect('question-10')">
+          <label class="form-check-label" for="flexRadioDefault102">
+            PSP measured immediately after switching ON the CP system
+          </label>
+        </div>
+        <div class="form-check">
+          <input class="form-check-input" type="radio" name="flexRadioDefault10" id="flexRadioDefault103" value="0"
+            onchange="radioSelect('question-10')">
+          <label class="form-check-label" for="flexRadioDefault103">
+            PSP measured 5 minutes after immediately after switching off the CP system
+          </label>
+        </div>
+        <div class="form-check">
+          <input class="form-check-input" type="radio" name="flexRadioDefault10" id="flexRadioDefault104" value="0"
+            onchange="radioSelect('question-10')">
+          <label class="form-check-label" for="flexRadioDefault104">
+            PSP measured next day after switching off the CP system
+          </label>
+        </div>
+        <button class="questions-next question_10_submit">SUBMIT</button>
+      </div>
+    </div>
+    <div class="row post-assessment-test d-none question-11">
+      <div class="col-3 left">
+        <p>Question <b>11</b> </p>
+        <p>DCVG survey is conducted to identify:
+          ​</p>
+        <p>Select the correct option, and then click <b>'Submit'.</b></p>
+      </div>
+      <div class="col-6  right ">
+        <div class="form-check">
+          <input class="form-check-input" type="radio" name="flexRadioDefault11" id="flexRadioDefault111" value="0"
+            onchange="radioSelect('question-11')">
+          <label class="form-check-label" for="flexRadioDefault111">
+            Cathodic Protection Effectiveness
+          </label>
+        </div>
+        <div class="form-check">
+          <input class="form-check-input" type="radio" name="flexRadioDefault11" id="flexRadioDefault112" value="0"
+            onchange="radioSelect('question-11')">
+          <label class="form-check-label" for="flexRadioDefault112">
+            Soil Resistivity
+          </label>
+        </div>
+        <div class="form-check">
+          <input class="form-check-input" type="radio" name="flexRadioDefault11" id="flexRadioDefault113" value="1"
+            onchange="radioSelect('question-11')">
+          <label class="form-check-label" for="flexRadioDefault113">
+            Coating Defects
+          </label>
+        </div>
+        <div class="form-check">
+          <input class="form-check-input" type="radio" name="flexRadioDefault11" id="flexRadioDefault114" value="0"
+            onchange="radioSelect('question-11')">
+          <label class="form-check-label" for="flexRadioDefault114">
+            None of the above
+          </label>
+        </div>
+        <button class="questions-next">SUBMIT</button>
+      </div>
+    </div>
+    <div class="row post-assessment-test d-none question-12">
+      <div class="col-3 left">
+        <p>Question <b>12</b> </p>
+        <p>Which terminal of a multimeter should be connected to the reference cell for PSP measurement?
+          ​</p>
+        <p>Select the correct option, and then click <b>'Submit'.</b></p>
+      </div>
+      <div class="col-6  right ">
+        <div class="form-check">
+          <input class="form-check-input" type="radio" name="flexRadioDefault12" id="flexRadioDefault121" value="0"
+            onchange="radioSelect('question-12')">
+          <label class="form-check-label" for="flexRadioDefault121">
+            Positive
+          </label>
+        </div>
+        <div class="form-check">
+          <input class="form-check-input" type="radio" name="flexRadioDefault12" id="flexRadioDefault122" value="1"
+            onchange="radioSelect('question-12')">
+          <label class="form-check-label" for="flexRadioDefault122">
+            Negative
+          </label>
+        </div>
+        <div class="form-check">
+          <input class="form-check-input" type="radio" name="flexRadioDefault12" id="flexRadioDefault123" value="0"
+            onchange="radioSelect('question-12')">
+          <label class="form-check-label" for="flexRadioDefault123">
+            Both
+          </label>
+        </div>
+        <div class="form-check">
+          <input class="form-check-input" type="radio" name="flexRadioDefault12" id="flexRadioDefault124" value="0"
+            onchange="radioSelect('question-12')">
+          <label class="form-check-label" for="flexRadioDefault124">
+            None of the above
+          </label>
+        </div>
+        <button class="questions-next">SUBMIT</button>
+      </div>
+    </div>
+    <div class="row post-assessment-test d-none question-13">
+      <div class="col-3 left">
+        <p>Question <b>13</b> </p>
+        <p>Which of the following are advantages of impressed current systems:
+          ​</p>
+        <p>Select the correct option, and then click <b>'Submit'.</b></p>
+      </div>
+      <div class="col-6  right ">
+        <div class="form-check">
+          <input class="form-check-input" type="radio" name="flexRadioDefault13" id="flexRadioDefault131" value="0"
+            onchange="radioSelect('question-13')">
+          <label class="form-check-label" for="flexRadioDefault131">
+            No external power is required
+          </label>
+        </div>
+        <div class="form-check">
+          <input class="form-check-input" type="radio" name="flexRadioDefault13" id="flexRadioDefault132" value="1"
+            onchange="radioSelect('question-13')">
+          <label class="form-check-label" for="flexRadioDefault132">
+            Voltage and current outputs can be adjusted
+          </label>
+        </div>
+        <div class="form-check">
+          <input class="form-check-input" type="radio" name="flexRadioDefault13" id="flexRadioDefault133" value="0"
+            onchange="radioSelect('question-13')">
+          <label class="form-check-label" for="flexRadioDefault133">
+            They are less susceptible to damage from lightning
+          </label>
+        </div>
+        <div class="form-check">
+          <input class="form-check-input" type="radio" name="flexRadioDefault13" id="flexRadioDefault134" value="0"
+            onchange="radioSelect('question-13')">
+          <label class="form-check-label" for="flexRadioDefault134">
+            No routine inspection is required
+          </label>
+        </div>
+        <button class="questions-next">SUBMIT</button>
+      </div>
+    </div>
+    <div class="row post-assessment-test d-none question-14">
+      <div class="col-3 left">
+        <p>Question <b>14</b> </p>
+        <p>As per Galvanic Series, Gold is more active than Carbon Steel.
+          ​</p>
+        <p>Select the correct option, and then click <b>'Submit'.</b></p>
+      </div>
+      <div class="col-6  right ">
+        <div class="form-check">
+          <input class="form-check-input" type="radio" name="flexRadioDefault14" id="flexRadioDefault141" value="0"
+            onchange="radioSelect('question-14')">
+          <label class="form-check-label" for="flexRadioDefault141">
+            True
+          </label>
+        </div>
+        <div class="form-check">
+          <input class="form-check-input" type="radio" name="flexRadioDefault14" id="flexRadioDefault142" value="1"
+            onchange="radioSelect('question-14')">
+          <label class="form-check-label" for="flexRadioDefault142">
+            False
+          </label>
+        </div>
+        <button class="questions-next last-submit">SUBMIT</button>
+      </div>
+    </div>
+    <div class="row post-assessment-test d-none question-15">
+      <div class="col-3 left">
+        <p>Question <b>15</b> </p>
+        <p>Nobel metals are less prone to corrosion
+          ​</p>
+        <p>Select the correct option, and then click <b>'Submit'.</b></p>
+      </div>
+      <div class="col-6  right ">
+        <div class="form-check">
+          <input class="form-check-input" type="radio" name="flexRadioDefault15" id="flexRadioDefault151" value="1"
+            onchange="radioSelect('question-15')">
+          <label class="form-check-label" for="flexRadioDefault151">
+            True
+          </label>
+        </div>
+        <div class="form-check">
+          <input class="form-check-input" type="radio" name="flexRadioDefault15" id="flexRadioDefault152" value="0"
+            onchange="radioSelect('question-15')">
+          <label class="form-check-label" for="flexRadioDefault152">
+            False
+          </label>
+        </div>
+        <button class="questions-next last-submit">SUBMIT</button>
+      </div>
+    </div>
+    <div class="row post-assessment-test d-none question-16">
+      <div class="col-3 left">
+        <p>Question <b>16</b> </p>
+        <p>Galvanic Anode CP system is used on bare or poorly coated pipeline.
+          ​</p>
+        <p>Select the correct option, and then click <b>'Submit'.</b></p>
+      </div>
+      <div class="col-6  right ">
+        <div class="form-check">
+          <input class="form-check-input" type="radio" name="flexRadioDefault16" id="flexRadioDefault161" value="0"
+            onchange="radioSelect('question-16')">
+          <label class="form-check-label" for="flexRadioDefault161">
+            True
+          </label>
+        </div>
+        <div class="form-check">
+          <input class="form-check-input" type="radio" name="flexRadioDefault16" id="flexRadioDefault162" value="1"
+            onchange="radioSelect('question-16')">
+          <label class="form-check-label" for="flexRadioDefault162">
+            False
+          </label>
+        </div>
+        <button class="questions-next question-submit last-submit">SUBMIT</button>
+      </div>
+    </div>
+
+    <div class="post-assessment-passresult d-none">
+      <p class="assessment_not_clered 2_1 d-none">You have successfully cleared this Assessment.</p>
+      <p class="your_score 2_2 d-none">Your Score is</p>
+      <p class="score 2_3 d-none"> <span class="user-score"></span></p>
+      <p class="score_required 2_4 d-none">Score required to clear the Assessment: <span>80%</span></p>
+    </div>
+    <div class="post-assessment-failresult d-none">
+      <p class="assessment_not_clered d-none 3_1 4_1 5_1">You have not cleared this Assessment.</p>
+      <p class="your_score d-none 3_2 4_2 5_2">Your Score is</p>
+      <p class="score d-none 3_3 4_3 5_3"> <span class="user-score fail-score-color"></span></p>
+
+      <p class="score_required d-none 3_4 4_4 5_4">Score required to clear the Assessment: <span>80%</span></p>
+
+      <p class="revisit_button d-none 4_7 5_7">
+        <span class="revisit_module_text">Click this button for revisit the module.</span>
+        <span>
+          <button id="revisit_module_button_id"><span>Revisit module</span> <img
+              src="./content/images/shell/start-arrow.png" alt=""></button>
+        </span>
+        <img src="./content/images/shell/mouse_click.png" alt="" class="mouse">
+      </p>
+      <p class="fifthp 3_8 d-none">
+        <span class="booster">Click this button to see a booster video.</span>
+        <span>
+          <button id='boosterButton'><span>Booster Video</span> <img src="./content/images/shell/start-arrow.png"
+              alt=""></button>
+        </span>
+        <img src="./content/images/shell/mouse_click.png" alt="" class="mouse">
+      </p>
+    </div>
+  </section>
+  <div class="modal fade" id="booster_video_modal" aria-hidden="true" aria-labelledby="exampleModalToggleLabel"
+    tabindex="-1">
+    <div class="modal-dialog modal-dialog-centered ">
+      <div class="modal-content"></div>
+    </div>
+  </div>
+</body>
+<script>
+  var tabnum = 1;
+  initAudioVideoPlayer('./content/video/Screen_25.mp4', 'audio-video-player', 'm4v');
+
+  $('#audio-video-player').on($.jPlayer.event.timeupdate, function (event) {
+    $('#player_nextBtn').removeClass("player_nextBtn_style").addClass("player_nextBtnDisabled_style");
+    var classTimes = event.jPlayer.status.currentTime;
+    if (classTimes > 15) {
+      $('#PoststartButton').removeClass('d-none');
+    }
+    var classTime = event.jPlayer.status.currentTime.toFixed(0);
+    $("." + tabnum + '_' + classTime).removeClass("d-none");
+  });
+
+  $('#audio-video-player').on($.jPlayer.event.seeking, function (event) {
+    updateDurationAudio(event);
+  });
+
+  $('#audio-video-player').on($.jPlayer.event.seeked, function (event) {
+    updateDurationAudio(event);
+  });
+
+  $('#audio-video-player').on($.jPlayer.event.ended, function (event) {
+    $('#PoststartButton').attr('disabled', false);
+    $('#player_content_controls').addClass('audio-video-player-stopped');
+  });
+
+  $('#PoststartButton').attr('disabled', true);
+  var counter = 1
+  var userscore = 0
+  var question_count = 16;
+  var question_pass = 80;
+
+  $('#PoststartButton').click(function () {
+    $('.transcriptDilog').html('');
+    $('#audio-video-player').jPlayer('destroy');
+    $('.post-assessment-welcome').hide();
+    $('.question-1').removeClass('d-none');
+    $('.question-1 .questions-back').addClass('invisible');
+    $('.question-1 button').attr('disabled', true).addClass('disabledButton');
+  });
+
+  $('.questions-next').click(function () {
+    if (counter < question_count) {
+      counter++;
+      $('.post-assessment-test').addClass('d-none');
+      $('.question-' + counter).removeClass('d-none');
+      $('.question-' + counter + ' button').attr('disabled', true).addClass('disabledButton');
+      countUerAns();
+    }
+  });
+
+  $('.questions-back').click(function () {
+    if (counter != 0) {
+      counter--;
+      $('.post-assessment-test').addClass('d-none');
+      $('.question-' + counter).removeClass('d-none');
+      countUerAns();
+    }
+  });
+
+  $('.question-submit').click(function () {
+    countUerAns();
+    var totalScore = parseInt(userscore) / question_count * 100;
+    if (totalScore >= question_pass) {
+      tabnum = 2;
+      var initialaudio = model.getPageCurrentAudioPath(true, tabnum);
+      initAudioVideoPlayer(initialaudio, 'audio-video-player', 'm4a');
+      $('.user-score').html(totalScore + '%');
+      $('#pageDiv').css('padding-top', '3%');
+      $('.post-assessment-passresult').removeClass('d-none');
+      $('.post-assessment-test').hide();
+      ReportScore(question_pass,totalScore,totalScore,100,0);
+      SetLessonStatus('completed');
+      SetSuccessStatus('passed');
+    } else {
+      if (counterbooster == 1) {
+        tabnum = 3;
+        var initialaudio = model.getPageCurrentAudioPath(true, tabnum);
+        initAudioVideoPlayer(initialaudio, 'audio-video-player', 'm4a');
+      }
+      if (counterbooster == 2) {
+        tabnum = 4;
+        var initialaudio = model.getPageCurrentAudioPath(true, tabnum);
+        initAudioVideoPlayer(initialaudio, 'audio-video-player', 'm4a');
+        $('.post-assessment-failresult .fifthp').addClass('d-none');
+      }
+      if (counterbooster == 3) {
+        //sendEmail();
+        tabnum = 5;
+        var initialaudio = model.getPageCurrentAudioPath(true, tabnum);
+        initAudioVideoPlayer(initialaudio, 'audio-video-player', 'm4a');
+        $('.post-assessment-failresult p').addClass('d-none');
+        $('.post-assessment-failresult .fifthp').addClass('d-none');
+      }
+      if (counterbooster == 4) {
+        tabnum = 5;
+        var initialaudio = model.getPageCurrentAudioPath(true, tabnum);
+        initAudioVideoPlayer(initialaudio, 'audio-video-player', 'm4a');
+        $('.post-assessment-failresult p').addClass('d-none');
+        $('.post-assessment-failresult .fifthp').addClass('d-none');
+      }
+
+
+      $('.user-score').html(totalScore + '%');
+      $('#pageDiv').css('padding-top', '3%');
+      $('.post-assessment-failresult').removeClass('d-none');
+      $('.post-assessment-test').hide();
+      ReportScore(question_pass,totalScore,totalScore,100,0);
+      SetLessonStatus('incomplete');
+      SetSuccessStatus('failed');
+    }
+  })
+
+  function countUerAns() {
+    var selectedValue = $("input[type='radio']:checked");
+    userscore = 0;
+    var listofTopic = '';
+    var valofTopic = '';
+
+    for (i = 0; i < selectedValue.length; i++) {
+      userscore += parseInt(selectedValue[i].getAttribute("value"));
+      var inputName = selectedValue[i].getAttribute("name");
+      var inputRadio = $("input[name='" + inputName + "']");
+      for (j = 0; j < inputRadio.length; j++) {
+        var radioId = inputRadio[j].getAttribute("id");
+        $("#" + radioId).attr("disabled", "true");
+        $("#" + radioId).attr("style", "")
+      }
+    }
+  }
+
+  function radioSelect(question) {
+    $('.' + question + ' button').attr('disabled', false).removeClass('disabledButton');
+  }
+  /**Modal not to be closed when click outside or keyboard events*/
+  $('#booster_video_modal').modal({
+    backdrop: 'static',
+    keyboard: true
+  });
+
+  $('#boosterButton').click(function () {
+    $('#booster_video_modal').modal('show');
+    $('#booster_video_modal .modal-content').html(`<button type="button" class="btn-close btn-color" data-bs-dismiss="modal" aria-label="Close"><span>&times;</span></button>  <div class="modal-footer"><div id="jquery_jplayer_1" class="jp-jplayer"></div><div id="jp_container_1" class="jp-audio" role="application" aria-label="media player"><div class="jp-type-single"><div class="jp-gui jp-interface"><div class="jp-controls"><button class="jp-play" role="button" tabindex="0">play</button></div><div class="jp-progress"><div class="jp-play-bar"></div><div class="jp-seek-bar"></div></div> <div class="jp-toggles">
+                    <button  class="jp-repeat" role="button" tabindex="0">repeat</button>
+                  </div><div class="jp-volume-controls"><!-- <button class="jp-mute" role="button" tabindex="0">mute</button> --><button class="jp-volume-max" role="button" tabindex="0">max volume</button><div class="jp-volume-bar d-none"><div class="jp-volume-bar-value"><span class="jp-volume-bar-knob"></span></div></div></div></div></div></div></div>`)
+    $("#jquery_jplayer_1").jPlayer({
+      cssSelectorAncestor: "#jp_container_1",
+      supplied: "m4v, oga",
+      useStateClassSkin: true,
+      autoBlur: false,
+      smoothPlayBar: true,
+      keyEnabled: true,
+      remainingDuration: true,
+      toggleDuration: true,
+      size: {
+            width: '100%',
+            height: 'auto'
+          },
+      volumechange: function (event) {
+        if (event.jPlayer.options.muted) {
+          myControl.volume.slider("value", 0);
+        } else {
+          myControl.volume.slider("value", event.jPlayer.options.volume);
+        }
+      },
+    });
+    $('div.modal-backdrop').remove();
+    $('#pageDiv').append('<div class="modal-backdrop fade show"></div>');
+
+    myControl = {volume: $(".jp-volume-bar-knob")};
+    myControl.volume.slider({
+      animate: "fast",
+      max: 1,
+      range: "min",
+      step: 0.01,
+      value: $.jPlayer.prototype.options.volume,
+      orientation: "vertical",
+      slide: function (event, ui) {
+        $("#jquery_jplayer_1").jPlayer("option", "muted", false);
+        $("#jquery_jplayer_1").jPlayer("option", "volume", ui.value);
+      }
+    });
+    $("#jquery_jplayer_1").jPlayer("setMedia", { m4v: './content/video/Basic of Cathodic Protection.mp4.mp4' }).jPlayer("play");
+    counterbooster++
+  });
+
+  $('#booster_video_modal').on('click', '.btn-close', function () {
+    controller.updateView();
+  });
+
+  $('#revisit_module_button_id').on('click', function () {
+    model.showPage(1, 2, 1);
+    if (counterbooster == 2 || counterbooster == 3) {
+      counterbooster++
+    }
+  });
+
+  function updateDurationAudio(event) {
+    var percentage = (event.jPlayer.status.currentTime / event.jPlayer.status.duration) * 100;
+    var classTime = event.jPlayer.status.currentTime.toFixed(0);
+    var totaltime = event.jPlayer.status.duration.toFixed(0);
+
+    for (let i = 0; i <= classTime; i++) {
+      $("." + tabnum + '_' + i).removeClass("d-none");
+    }
+    for (let i = classTime; i < totaltime; i++) {
+      $("." + tabnum + '_' + i).addClass("d-none");
+    }
+  };
+
+  function sendEmail() {
+			Email.send({
+				Host: "smtp.gmail.com",
+				Username : "sumit.sharma@openworkpark.com",
+				Password : "ejdkfnmurjwtulbc",
+				To : 'sharad@sarmentum.co.in',
+				From : "sumit.sharma@openworkpark.com",
+				Subject : "User failed",
+				Body : "User failed in third attempt",
+			})
+		}
+
+    $(document).off('click', '#jp_container_1 .jp-volume-max').on('click', '#jp_container_1 .jp-volume-max', function () {
+    $('#jp_container_1').find('.jp-volume-bar').toggleClass('d-none');
+  });
+
+</script>
+
+</html>

@@ -1,0 +1,459 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Process</title>
+  <style type="text/css">
+    #pageDiv {
+      padding-top: 11%;
+    }
+
+    #pageDiv ul li span {
+      color: black;
+      font-size: 25px;
+    }
+
+    #page-info {
+      font-size: 30px;
+      color: black;
+    }
+
+    h1 {
+      color: black;
+    }
+
+    .click-info {
+      position: absolute;
+      bottom: 20px;
+    }
+
+    p.click-info span {
+      margin-left: 113px;
+      color: green;
+      font-size: 24px;
+      margin-top: -76px;
+      font-style: italic;
+    }
+
+    p.click-info img {
+      margin-bottom: 2px;
+      margin-left: -356px;
+    }
+
+    .content-section {
+      border-top-right-radius: 35px;
+      border-bottom-left-radius: 35px;
+      padding: 35px;
+    }
+
+    .content-section ul {
+      padding-left: 30px;
+      font-size: 25px;
+      list-style-type: disc;
+    }
+
+    .ml-70 {
+      margin-left: 74px;
+    }
+
+    .mt-50 {
+      margin-top: 50px;
+    }
+
+    .mt-5 {
+      margin-top: 5rem;
+    }
+
+    #tab-section {
+      position: relative;
+    }
+
+    .nav-tabs {
+      border-bottom: none;
+    }
+
+    .nav-tabs .nav-item.show .nav-link,
+    .nav-tabs .nav-link.active,
+    .nav-tabs .nav-link:focus,
+    .nav-tabs .nav-link:hover {
+      border-color: transparent;
+    }
+
+    #tab-section .nav-tabs li {
+      position: absolute;
+    }
+
+    #tab-section .nav-tabs li.anode {
+      left: 150px;
+      top: 0px;
+    }
+
+    #tab-section .nav-tabs li.anode p {
+      font-size: 25px;
+      font-weight: bold;
+      position: absolute;
+      bottom: 50px;
+      left: 135px
+    }
+
+    #tab-section .nav-tabs li.cathode {
+      top: 285px;
+      left: 369px;
+    }
+
+    #tab-section .nav-tabs li.cathode p {
+      font-size: 25px;
+      font-weight: bold;
+      position: absolute;
+      bottom: 85px;
+      left: 129px;
+    }
+
+    #tab-section .nav-tabs li.metallicpath {
+      top: -21px;
+      right: 414px;
+    }
+
+    #tab-section .nav-tabs li.metallicpath p {
+      font-size: 25px;
+      font-weight: bold;
+      position: absolute;
+      bottom: 70px;
+      left: 110px;
+    }
+
+    #tab-section .nav-tabs li.electrolyte {
+      right: 120px;
+      top: 136px;
+    }
+
+    #tab-section .nav-tabs li.electrolyte p {
+      font-size: 25px;
+      font-weight: bold;
+      position: absolute;
+      bottom: 90px;
+      left: 115px;
+    }
+
+    #tab-section .nav-tabs li a {
+      background-repeat: no-repeat;
+      background-size: contain;
+      background-color: transparent;
+      padding: 170px;
+    }
+
+    .tab-content .anode {
+      background: #DEEFD4;
+    }
+
+    .tab-content .anode ul li {
+      color: #71BE44;
+    }
+
+    .tab-content .cathode {
+      background: #FFE5C4;
+    }
+
+    .tab-content .metallicpath {
+      background: #CEF1FB;
+    }
+
+    .tab-content .metallicpath ul li {
+      color: #0097C3
+    }
+
+    .tab-content .electrolyte {
+      background: #FFEFC3;
+    }
+
+    .tab-content .electrolyte ul li {
+      color: #FFC72E;
+    }
+
+
+    .show-initial-screen #anode-tab,
+    #anode-tab.active {
+      background-image: url('./content/images/pages/m1_t2_p6/anode.png');
+    }
+
+    #anode-tab {
+      background-image: url('./content/images/pages/m1_t2_p6/anode_disabled.png');
+    }
+
+    .show-initial-screen #cathode-tab,
+    #cathode-tab.active {
+      background-image: url('./content/images/pages/m1_t2_p6/cathode.png');
+    }
+
+    #cathode-tab {
+      background-image: url('./content/images/pages/m1_t2_p6/cathode_disabled.png');
+    }
+
+    .show-initial-screen #metallicpath-tab,
+    #metallicpath-tab.active {
+      background-image: url('./content/images/pages/m1_t2_p6/metallic_path.png');
+    }
+
+    #metallicpath-tab {
+      background-image: url('./content/images/pages/m1_t2_p6/metallic_path_disabled.png');
+    }
+
+    .show-initial-screen #electrolyte-tab,
+    #electrolyte-tab.active {
+      background-image: url('./content/images/pages/m1_t2_p6/electrolyte.png');
+    }
+
+    #electrolyte-tab {
+      background-image: url('./content/images/pages/m1_t2_p6/electrolyte_disabled.png');
+    }
+
+    .tab-content .anode h1 span {
+      background: #71BE44;
+      width: 15%;
+      display: block;
+      height: 3px;
+
+    }
+
+    .tab-content .cathode h1 span {
+      background: #FF8C00;
+      width: 20%;
+      display: block;
+      height: 3px;
+    }
+
+    .tab-content .metallicpath h1 span {
+      background: #0097C3;
+      width: 35%;
+      display: block;
+      height: 3px;
+    }
+
+    .tab-content .electrolyte h1 span {
+      background: #FFC72E;
+      width: 22%;
+      display: block;
+      height: 3px;
+    }
+
+    .tabs-visited {
+      position: absolute;
+      background-image: url('./content/images/shell/tickmark_black.png');
+      background-repeat: no-repeat;
+      height: 57px;
+      width: 57px;
+    }
+
+    .anode-visited{
+      top: 24%;
+      left: 62%;
+    }
+
+    .cathode-visited {
+      top: 12%;
+      left: 63%;
+    }
+
+    .metallicpath-visited {
+      top: 25%;
+      left: 66%;
+    }
+
+    .electrolyte-visited {
+      top: 16%;
+      left: 62%;
+    }
+  </style>
+</head>
+
+<body>
+  <section id="page-intro">
+    <p class="headingOne"><strong>Basics of Cathodic Protection (CP)</strong></p>
+    <p class="headingTwo">Process</p>
+  </section>
+  <section id="pageDiv" class="m1t2p6">
+    <section id="audio-video-player"></section>
+    <div class="row">
+      <!-- LEFT CONTENT SECTION  -->
+      <div class="col-3 ml-70 mt-50">
+        <div id="page-info" class="d-none 1_1 first_content_corrosion">
+          <p>The <b>corrosion process</b> involves the <span style="color: rgba(255, 123, 0, 0.938)"><b>removal of
+                electrons (oxidation reaction)</b></span> from the metal i.e. anode and the consumption of those
+            electrons
+            <b>(reduction reaction)</b> by some other metal i.e. cathode in the presence of an electrolyte and
+            metallic path connecting that anode and cathode.
+          </p>
+          <p class="d-none 1_21"><b>The four parts of corrosion cell:</b></p>
+        </div>
+        <p class="click-info mt-5 d-none 1_28"><span>Click each part to learn more. </span>
+          <img src="./content/images/shell/mouse_click.png" alt="">
+        </p>
+
+        <div class="tab-content">
+          <div class="tab-pane fade content-section anode" id="anode" role="tabpanel">
+            <div class="row mb-5">
+              <div class="col">
+                <h1><b>Anode</b><span></span></h1>
+                <ul>
+                  <li class="d-none 2_12"><span>It is the area where oxidation reaction or loss of electrons
+                      occurs</span></li>
+                  <li class="d-none 2_17"><span>The loss of electrons causes the metal to corrode</span></li>
+                </ul>
+              </div>
+            </div>
+            <div class="row" style="text-align: center;">
+              <div class="col"><img src="./content/images/pages/m1_t2_p6/common.gif" class="img-fluid" alt="...">
+              </div>
+            </div>
+          </div>
+          <div class="tab-pane fade content-section cathode" id="cathode" role="tabpanel">
+            <div class="row mb-5">
+              <div class="col">
+                <h1><b>Cathode</b><span></span></h1>
+                <ul>
+                  <li class="d-none 3_2"><span>Area of corrosion cell where no metal loss occurs and reduction reaction
+                      or gain of
+                      electrons
+                      occurs</span></li>
+                </ul>
+              </div>
+            </div>
+            <div class="row text-center">
+              <div class="col"><img src="./content/images/pages/m1_t2_p6/common.gif" class="img-fluid" alt="..."></div>
+            </div>
+          </div>
+          <div class="tab-pane fade content-section metallicpath" id="metallicpath" role="tabpanel">
+            <div class="row mb-5">
+              <div class="col">
+                <h1><b>Metalic path</b><span></span></h1>
+                <ul>
+                  <li class="d-none 4_3"><span>Is the connection between the electrodes through which the
+                      transfer of electrons
+                      from anode to cathode takes place
+                    </span></li>
+                </ul>
+              </div>
+            </div>
+            <div class="row text-center">
+              <div class="col">
+                <img src="./content/images/pages/m1_t2_p6/common.gif" class="img-fluid" alt="...">
+              </div>
+            </div>
+          </div>
+          <div class="tab-pane fade content-section electrolyte" id="electrolyte" role="tabpanel">
+            <div class="row mb-5">
+              <div class="col">
+                <h1><b>Electrolyte</b><span></span></h1>
+                <ul>
+                  <li class="d-none 5_2"><span>Is conductive environment (generally soil in case of underground
+                      pipelines) containing the
+                      anode and cathode.</span></li>
+                </ul>
+              </div>
+            </div>
+            <div class="row text-center">
+              <div class="col">
+                <img src="./content/images/pages/m1_t2_p6/electrolyte.gif" class="img-fluid" alt="...">
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- RIGHT IMAGES SECTION  -->
+      <div id="tab-section" class="col-8 show-initial-screen">
+        <ul class="nav nav-tabs enableTabs " role="tablist">
+          <li class="nav-item anode 1_23 d-none" role="presentation" tab-num="2">
+            <a href="javascript:void(0)" class="nav-link" id="anode-tab" data-bs-toggle="tab" data-bs-target="#anode"
+              type="button" role="tab" aria-controls="anode" aria-selected="true"></a>
+            <p>Anode</p>
+            <div class="clicked anode-visited" id="1"></div>
+          </li>
+          <li class="nav-item cathode 1_24 d-none" role="presentation" tab-num="3">
+            <a href="javascript:void(0)" class="nav-link" id="cathode-tab" data-bs-toggle="tab"
+              data-bs-target="#cathode" type="button" role="tab" aria-controls="cathode" aria-selected="false"></a>
+            <p>Cathode</p>
+            <div class="clicked cathode-visited " id="2"></div>
+          </li>
+          <li class="nav-item metallicpath 1_25 d-none" role="presentation" tab-num="4">
+            <a href="javascript:void(0)" class="nav-link" id="metallicpath-tab" data-bs-toggle="tab"
+              data-bs-target="#metallicpath" type="button" role="tab" aria-controls="metallicpath"
+              aria-selected="false"></a>
+            <p>Metallic path</p>
+            <div class="clicked metallicpath-visited" id="3"></div>
+
+          </li>
+          <li class="nav-item electrolyte 1_26 d-none" role="presentation" tab-num="5">
+            <a href="javascript:void(0)" class="nav-link" id="electrolyte-tab" data-bs-toggle="tab"
+              data-bs-target="#electrolyte" type="button" role="tab" aria-controls="electrolyte"
+              aria-selected="false"></a>
+            <p>Electrolyte</p>
+            <div class="clicked electrolyte-visited" id="4"></div>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </section>
+</body>
+<script>
+  var suspendData;
+  var suspendArr;
+  var curPage = model.currentModule+'_'+model.currentTopic+'_'+model.currentPage;
+  $(document).ready(function(){
+    getPageActivity(curPage, 'tabs-visited');
+  });
+  var initialaudio = model.getPageCurrentAudioPath(true, 1);
+  initAudioVideoPlayer(initialaudio, 'audio-video-player', 'm4a');
+  var tabnum = 1;
+
+  $('#audio-video-player').on($.jPlayer.event.timeupdate, function (event) {
+    var classTime = event.jPlayer.status.currentTime.toFixed(0);
+    $("." + tabnum + '_' + classTime).removeClass("d-none");
+  });
+
+  $('#audio-video-player').on($.jPlayer.event.ended, function (event) {
+    $('#player_nextBtn').removeClass("player_nextBtnDisabled_style").addClass("player_nextBtn_style");
+    $('.itextNext').removeClass("d-none");
+    $('.enableTabs').removeClass('enableTabs');
+    $('#player_content_controls').addClass('audio-video-player-stopped');
+  });
+
+  $('#audio-video-player').on($.jPlayer.event.seeking, function (event) {
+    updateDurationAudio(event);
+  });
+
+  $('#audio-video-player').on($.jPlayer.event.seeked, function (event) { 
+    updateDurationAudio(event);
+  });
+ 
+  $('#tab-section ul li').click(function () {
+   
+    var activity = '';
+    
+    var audioLocalFilePath = model.getPageCurrentAudioPath(true, tabnum);
+    initAudioVideoPlayer(audioLocalFilePath, 'audio-video-player', 'm4a');  
+    $(this).find('.clicked').addClass('tabs-visited');
+    $('#page-info').hide();
+    $('#tab-section').removeClass('show-initial-screen');
+    
+    tabnum = $(this).attr('tab-num');
+    setPageActivity(curPage,'tabs-visited');
+    
+    
+  }); 
+
+  function updateDurationAudio(event) {
+    var percentage = (event.jPlayer.status.currentTime / event.jPlayer.status.duration) * 100;
+    var classTime = event.jPlayer.status.currentTime.toFixed(0);
+    var totaltime = event.jPlayer.status.duration.toFixed(0);
+
+    for (let i = 0; i <= classTime; i++) {
+      $("." + tabnum + '_' + i).removeClass("d-none");
+    }
+    for (let i = classTime; i < totaltime; i++) {
+      $("." + tabnum + '_' + i).addClass("d-none");
+    }
+  };
+</script>
+
+</html>

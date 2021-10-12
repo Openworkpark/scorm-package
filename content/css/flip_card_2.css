@@ -1,0 +1,447 @@
+/* entire container, keeps perspective */
+
+.flip-container {
+    perspective: 1000;
+    transform-style: preserve-3d;
+    /* for IE support*/
+    /* float: left; */
+     
+      border: 0px #fff solid;
+}
+
+
+/* flip the pane when hovered */
+
+
+/* .flip-container:hover .flipper, .flip-container.hover .flipper {
+        transform: rotateY(180deg);
+    }*/
+
+
+/*  UPDATED! flip the pane when hovered */
+
+
+/* .flip-container:hover .back {
+        transform: rotateY(0deg);
+    }
+    .flip-container:hover .front {
+        transform: rotateY(180deg);
+    }*/
+
+
+/*for click*/
+
+.flipped .front {
+    -webkit-transform: rotateY(180deg);
+    -moz-transform: rotateY(180deg);
+    -ms-transform: rotateY(180deg);
+    -o-transform: rotateY(180deg);
+    transform: rotateY(180deg);
+}
+
+.flipped .back {
+    -webkit-transform: rotateY(0deg);
+    -moz-transform: rotateY(0deg);
+    -ms-transform: rotateY(0deg);
+    -o-transform: rotateY(0deg);
+    transform: rotateY(0deg);
+}
+
+.flip-container,
+.front,
+.back {
+    width: 228px;
+    height: 278px;
+}
+
+
+/* flip speed goes here */
+
+.flipper {
+    -webkit-transition: 1s;
+    -moz-transition: 1s;
+    -o-transition: 1s;
+    transition: 1s;
+    /*transform-style: preserve-3d;*/
+    position: relative;
+}
+
+
+/* hide back of pane during swap */
+
+.front,
+.back {
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+    -webkit-transition: 0.6s;
+    transition: 0.6s;
+    /* for IE support
+    /*transform-style: preserve-3d;*/
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+
+/* front pane, placed above back */
+
+.front {
+    z-index: 2;
+    /* for firefox 31 */
+    -webkit-transform: rotateY(0deg);
+    -moz-transform: rotateY(0deg);
+    -ms-transform: rotateY(0deg);
+    -o-transform: rotateY(0deg);
+    transform: rotateY(0deg);
+}
+
+
+/* back, initially hidden pane */
+
+.back {
+    -webkit-transform: rotateY(180deg);
+    -moz-transform: rotateY(180deg);
+    -ms-transform: rotateY(180deg);
+    -o-transform: rotateY(180deg);
+    transform: rotateY(180deg);
+    /*background-color: #45b239;*/
+}
+
+.back_txt {
+    width:100%;
+    height:100%;
+    margin:0px;
+    overflow: auto;
+}
+ 
+#flip1 {
+    background: url("../images/pages/m1_t1_p1/Page_02_img_01.png");
+}
+
+#flip2 {
+    background: url("../images/pages/m1_t1_p1/Page_02_img_01.png");
+}
+
+#flip3 {
+    background: url("../images/pages/m1_t1_p1/Page_02_img_01.png");
+}
+
+#flip4 {
+    background: url("../images/pages/m1_t1_p1/Page_02_img_01.png");
+}
+
+#flip5 {
+    background: url("../images/pages/m1_t1_p1/Page_02_img_01.png");
+}
+
+.bottom_heading {
+    /*background-color: #45b239;*/
+    /*bottom: 0;*/
+    color: #fff;
+    height: 35px;
+    position: absolute;
+    text-align: center;
+    width: 100%;
+}
+
+.top_heading {
+    /*background-color: #45b239;*/
+    top: 0;
+    color: #fff;
+    height: 35px;
+    position: absolute;
+    text-align: center;
+    width: 100%;
+    background:#ca0b2d;
+}
+
+
+
+
+.inner_txt {
+    padding: 0px;
+    position: relative;
+    top: 50%;  
+    -webkit-transform: translateY(-50%);
+    -ms-transform: translateY(-50%);
+    -o-transform: translateY(-50%);
+    transform: translateY(-50%);
+}
+
+
+/* style 2 css*/
+
+.grid {
+    position: relative;
+    clear: both;
+    margin: 0 auto;
+    padding: 1em 0 4em;
+    max-width: 90%;
+    list-style: none;
+    text-align: center;
+}
+
+
+/* Common style */
+
+.grid figure {
+    cursor: pointer;
+    float: left;
+    height: auto;
+    margin: 10px 1%;
+    max-height: 300px;
+    max-width: 400px;
+    min-width: 250px;
+    overflow: hidden;
+    position: relative;
+    text-align: center;
+    width: 48%;
+    background: #3085a3;
+}
+
+.grid figure img {
+    position: relative;
+    display: block;
+    min-height: 100%;
+    max-width: 100%;
+    opacity: 0.8;
+}
+
+.grid figure figcaption {
+    padding: 2em;
+    color: #fff;
+    text-transform: uppercase;
+    font-size: 1.25em;
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+}
+
+.grid figure figcaption::before,
+.grid figure figcaption::after {
+    pointer-events: none;
+}
+
+.grid figure figcaption,
+.grid figure figcaption > a {
+    position: absolute;
+    height: 77%;
+    left: 0;
+    position: absolute;
+    top: 0;
+    width: 83%;
+}
+
+
+/* Anchor will cover the whole item by default */
+
+
+/* For some effects it will show as a button */
+
+.grid figure figcaption > a {
+    z-index: 1000;
+    text-indent: 200%;
+    white-space: nowrap;
+    font-size: 0;
+    opacity: 0;
+}
+
+.grid figure h2 {
+    word-spacing: -0.15em;
+    font-weight: 300;
+}
+
+.grid figure h2 span {
+    font-weight: 800;
+}
+
+.grid figure h2,
+.grid figure p {
+    margin: 0;
+}
+
+.grid figure p {
+    letter-spacing: 1px;
+    font-size: 68.5%;
+}
+
+
+/* Individual effects */
+
+
+/*---------------*/
+
+
+/***** Julia *****/
+
+
+/*---------------*/
+
+figure.effect-one {
+    background: #2f3238;
+}
+
+figure.effect-one img {
+    max-width: 100%;
+    height: 300px;
+    -webkit-transition: opacity 1s, -webkit-transform 1s;
+    transition: opacity 1s, transform 1s;
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+}
+
+figure.effect-one figcaption {
+    text-align: left;
+}
+
+figure.effect-one h2 {
+    position: relative;
+    padding: 0.5em 0;
+}
+
+figure.effect-one p {
+    display: inline-block;
+    margin: 0 0 0.25em;
+    padding: 0.4em 1em;
+    background: rgba(255, 255, 255, 0.9);
+    color: #2f3238;
+    text-transform: none;
+    font-weight: 500;
+    font-size: 75%;
+    -webkit-transition: opacity 0.35s, -webkit-transform 0.35s;
+    transition: opacity 0.35s, transform 0.35s;
+    -webkit-transform: translate3d(-360px, 0, 0);
+    transform: translate3d(-360px, 0, 0);
+}
+
+figure.effect-one p:first-child {
+    -webkit-transition-delay: 0.15s;
+    transition-delay: 0.15s;
+}
+
+figure.effect-one p:nth-of-type(2) {
+    -webkit-transition-delay: 0.1s;
+    transition-delay: 0.1s;
+}
+
+figure.effect-one p:nth-of-type(3) {
+    -webkit-transition-delay: 0.05s;
+    transition-delay: 0.05s;
+}
+
+figure.effect-one.selected p:first-child {
+    -webkit-transition-delay: 0s;
+    transition-delay: 0s;
+}
+
+figure.effect-one.selected p:nth-of-type(2) {
+    -webkit-transition-delay: 0.05s;
+    transition-delay: 0.05s;
+}
+
+figure.effect-one.selected p:nth-of-type(3) {
+    -webkit-transition-delay: 0.1s;
+    transition-delay: 0.1s;
+}
+
+figure.effect-one.selected img {
+    opacity: 0.4;
+    -webkit-transform: scale3d(1.1, 1.1, 1);
+    transform: scale3d(1.1, 1.1, 1);
+}
+
+figure.effect-one.selected p {
+    opacity: 1;
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+}
+
+
+/* style*/
+
+
+/*---------------*/
+
+
+/***** Ming *****/
+
+
+/*---------------*/
+
+figure.effect-two {
+    background: #030c17;
+}
+
+figure.effect-two img {
+    opacity: 0.9;
+    height: 400px;
+    max-width: none;
+    -webkit-transition: opacity 0.35s;
+    transition: opacity 0.35s;
+}
+
+figure.effect-two figcaption::before {
+    position: absolute;
+    top: 30px;
+    right: 30px;
+    bottom: 30px;
+    left: 30px;
+    border: 2px solid #fff;
+    box-shadow: 0 0 0 30px rgba(255, 255, 255, 0.2);
+    content: '';
+    opacity: 0;
+    -webkit-transition: opacity 0.35s, -webkit-transform 0.35s;
+    transition: opacity 0.35s, transform 0.35s;
+    -webkit-transform: scale3d(1.4, 1.4, 1);
+    transform: scale3d(1.4, 1.4, 1);
+}
+
+figure.effect-two h2 {
+    margin: 20% 0 10px 0;
+    -webkit-transition: -webkit-transform 0.35s;
+    transition: transform 0.35s;
+}
+
+figure.effect-two p {
+    padding: 1em;
+    opacity: 0;
+    -webkit-transition: opacity 0.35s, -webkit-transform 0.35s;
+    transition: opacity 0.35s, transform 0.35s;
+    -webkit-transform: scale(1.5);
+    transform: scale(1.5);
+}
+
+figure.effect-two.selected h2 {
+    -webkit-transform: scale(0.9);
+    transform: scale(0.9);
+}
+
+figure.effect-two.selected figcaption::before,
+figure.effect-two.selected p {
+    opacity: 1;
+    -webkit-transform: scale3d(1, 1, 1);
+    transform: scale3d(1, 1, 1);
+}
+
+figure.effect-two.selected figcaption {
+    background-color: rgba(58, 52, 42, 0);
+}
+
+figure.effect-two.selected img {
+    opacity: 0.4;
+}
+
+
+/* Media queries */
+
+@media screen and (max-width: 50em) {
+    .content {
+        padding: 0 10px;
+        text-align: center;
+    }
+    .grid figure {
+        display: inline-block;
+        float: none;
+        margin: 10px auto;
+        width: 100%;
+    }
+}

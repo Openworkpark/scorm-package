@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Codes and Standards related to CP </title>
+  <style type="text/css">
+    #pageDiv {
+      padding-top: 11%;
+    }
+
+    .third {
+      margin-left: 10%;
+      margin-top: 3%;
+      padding: 0px;
+    }
+
+    .col p {
+      margin-bottom: 0px;
+      font-size: 30px;
+      font-family: "PLinotte-Bold";
+      color: black;
+      padding: 25px;
+      height: 100px;
+      text-align: center;
+      border-top-left-radius: 30px;
+      border-top-right-radius: 30px;
+    }
+
+    .tab1 {
+      cursor: pointer;
+      background: #ABEB87;
+      width: 305px;
+      margin-left: 35px;
+      box-shadow: inset 0px -1px 8px #000000;
+      -moz-box-shadow: inset 0px -1px 8px #000000;
+      -webkit-box-shadow: inset 0px -1px 8px #000000;
+    }
+
+    .tab2 {
+      cursor: pointer;
+      background: #84D9F0;
+      width: 632px;
+      margin: 0px 47px;
+      box-shadow: inset 0px -1px 8px #000000;
+      -moz-box-shadow: inset 0px -1px 8px #000000;
+      -webkit-box-shadow: inset 0px -1px 8px #000000;
+    }
+
+    .box {
+      padding: 15px;
+      background-image: radial-gradient(#Ffffff, #f6f6f6, #E1E2EE);
+      width: 95%;
+    }
+
+    table tr {
+      border-bottom: 2px solid gray;
+      border-style: dotted;
+      font-size: 30px;
+    }
+
+    table tr:last-child {
+      border-bottom: none;
+    }
+
+    table th {
+      padding: 15px 15px 15px 60px;
+      width: 22%;
+      font-family: "PLinotte-Bold";
+    }
+
+    table td {
+      border-left: 2px solid gray;
+      border-style: dotted;
+      padding: 0px 70px 0 50px;
+    }
+  </style>
+</head>
+
+<body>
+  <section id="page-intro">
+    <p class="headingOne"><strong>Basics of Cathodic Protection (CP)</strong></p>
+    <p class="headingTwo">Codes and Standards Related to CP </p>
+  </section>
+  <section id="pageDiv" class="m1t8p3">
+    <section id="audio-video-player"></section>
+    <div class="col third">
+      <div class="row box d-none 1_5">
+        <div class="col">
+          <table>
+            <tr class="row1 d-none 1_5">
+              <th>NACE SP 0169</th>
+              <td> Control of external corrosion on underground or submerged metallic piping systems
+              </td>
+            </tr>
+            <tr class="row2 d-none 1_8">
+              <th>NACE SP 0177</th>
+              <td>Mitigation of alternating current and lightning effects on metallic structures and corrosion 
+                control systems</td>
+            </tr>
+            <tr class="row3 d-none 1_10">
+              <th>IS-8062</th>
+              <td>Code of practice for cathodic protection of steel structures</td>
+            </tr>
+            <tr class="row4 d-none 1_13">
+              <th>PNGRB T4S</th>
+              <td>Regulation for natural gas pipeline
+              </td>
+            </tr>
+            <tr class="row5 d-none 1_16">
+              <th>PNGRB IMS</th>
+              <td>Regulation for natural gas pipeline
+              </td>
+            </tr>
+          </table>
+        </div>
+      </div>
+    </div>    
+  </section>
+</body>
+<script>
+  currentPagenumber = 9;
+  var pagenumber = 1;
+  menuSelection(pagenumber);
+
+  var tabnum = 1;
+  var initialaudio = model.getPageCurrentAudioPath(true, 1);
+  initAudioVideoPlayer(initialaudio, 'audio-video-player', 'm4a');
+
+  $('#audio-video-player').on($.jPlayer.event.timeupdate, function (event) {
+    var classTime = event.jPlayer.status.currentTime.toFixed(0);
+    $("." + tabnum + '_' + classTime).removeClass("d-none");
+  });
+
+  $('#audio-video-player').on($.jPlayer.event.seeking, function (event) {
+    updateDurationAudio(event);
+  });
+
+  $('#audio-video-player').on($.jPlayer.event.seeked, function (event) { 
+    updateDurationAudio(event);
+  });
+
+  $('#audio-video-player').on($.jPlayer.event.ended, function (event) {
+    $('#player_nextBtn').removeClass("player_nextBtnDisabled_style").addClass("player_nextBtn_style");
+    $('.itextNext').removeClass("d-none");
+    $('#player_content_controls').addClass('audio-video-player-stopped');
+  });
+
+  function updateDurationAudio(event) {
+    var percentage = (event.jPlayer.status.currentTime / event.jPlayer.status.duration) * 100;
+    var classTime = event.jPlayer.status.currentTime.toFixed(0);
+    var totaltime = event.jPlayer.status.duration.toFixed(0);
+
+    for (let i = 0; i <= classTime; i++) {
+      $("." + tabnum + '_' + i).removeClass("d-none");
+    }
+    for (let i = classTime; i < totaltime; i++) {
+      $("." + tabnum + '_' + i).addClass("d-none");
+    }
+  };
+    
+</script>
+
+</html>

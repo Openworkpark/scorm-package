@@ -1,0 +1,427 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Check Your Understanding</title>
+  <style type="text/css">
+    .knowledge-check {
+      position: absolute;
+      top: 17%;
+      font-size: 45px;
+      font-family: "PLinotte-SemiBold";
+      height: 75%;
+      background-image: url('./content/images/pages/m1_t4_p4/screen14-asset.png');
+      background-size: 100% 100%;
+      background-repeat: no-repeat;
+      width: 100%;
+      margin: 0 auto;
+    }
+
+    .knowledge-check .left {
+      color: white;
+      margin: 155px 0px 0 100px;
+    }
+
+    .knowledge-check .left p:nth-child(1) {
+      color: #FFD306;
+      font-family: 'PLinotte-Light';
+      font-size: 40px;
+      margin: 0;
+    }
+
+    .knowledge-check .left p:nth-child(2) {
+      line-height: 55px;
+      height: 350px;
+      overflow: auto;
+      margin-right: 36px;
+      padding: 0px 5px 0 0;
+    }
+
+    .knowledge-check .left p:nth-child(3) {
+      margin-right: 20px;
+      padding: 10px 40px;
+      text-align: center;
+      border-top: 1px solid #ffffff;
+      color: white;
+      font-size: 25px;
+      font-family: 'PLinotte-Regular';
+      font-style: italic;
+    }
+
+    .knowledge-check .right {
+      font-family: "PLinotte-Regular";
+      font-weight: normal;
+      font-size: 30px;
+      color: black;
+      margin-top: 239px;
+      margin-left: 255px;
+    }
+
+    .knowledge-check .right .form-check {
+      margin-bottom: 19px;
+      font-family: 'PLinotte-Regular';
+    }
+
+    .result_show {
+      color: white;
+      width: 200px;
+      font-family: "PLinotte-Bold";
+      float: right;
+      margin-right: 53px;
+      background: none;
+      height: 100px;
+      border: 0px;
+      margin-top: 31%;
+    }
+
+    .knowledge-check .right .form-check>input {
+      border-radius: 50%;
+      background: #D9D9D9;
+      border: 7px solid #ffffff;
+      width: 1.3em;
+      height: 1.3em;
+    }
+
+    .knowledge-check .right .form-check input:checked {
+      background-image: none;
+      border: 7px solid white;
+      background: #FF8C00;
+    }
+
+    .form-check span.rightOne{
+      position: absolute;
+      left: 68%;
+      height: 70px;
+      width: 70px;
+      background-size: 100% 100%; 
+      background-image: url('./content/images/pages/m1_t4_p4/correct.png');
+      background-repeat: no-repeat;
+    }
+
+    .form-check span.wrongOne{
+      position: absolute;
+      left: 68%;
+      height: 70px;
+      width: 70px;
+      background-size: 100% 100%; 
+      background-image: url('./content/images/pages/m1_t4_p4/incorrect.png');
+      background-repeat: no-repeat;
+    }
+
+    .modal-dialog {
+      min-width: 1190px;
+    }
+
+    .modal-header {
+      margin: 15px 0px 0px 20px;
+      background: linear-gradient(to right, #72BF44 0%, #72BD46 25%, #88C265 40%, #BADDA5 65%, #E6F2DE 100%);
+      border-top-left-radius: 53px 50px;
+      border-bottom-left-radius: 55px 46px;
+      box-shadow: -2.7px -2.7px;
+      font-size: 3rem;
+      padding-left: 1em;
+    }
+
+    #incorrectModal .modal-header {
+      background: linear-gradient(to right, #F58270 0%, #F28271 25%, #F2A599 40%, #FAD0C9 65%, #FDEDEB 100%);
+    }
+    .modalTitle {
+      color: white;
+      margin-left: 20px;
+    }
+
+    #incorrectModal button.close,
+    #incorrectModal button.close:hover,
+    #correctModal button.close,
+    #correctModal button.close:hover {
+      box-shadow: 2.5px -1.5px black;
+      border-radius: 50%;
+      background-color: #72BF44;
+      width: 50px;
+      height: 50px;
+      font-size: 4rem;
+      color: white;
+      opacity: 0.8;
+      background-image: none;
+      margin-right: 10px !important;
+    }
+
+    #incorrectModal button.close,
+    #incorrectModal button.close:hover {
+      background-color: #F58270;
+    }
+
+    .m1t3p3 .close span {
+      display: block;
+      font-size: 5rem;
+      font-weight: bold;
+      margin-top:-6px;
+    }
+
+    #incorrectModal .modal-title img,
+    #correctModal .modal-title img {
+      height: 100px;
+      width: 100px;
+      position: absolute;
+      left: -45px;
+      top: 3px;
+    }
+    .listText {
+      font-size: 2.5rem;
+      margin: 15px;
+    }
+    .result_show:disabled {
+      color: #ada4a4;
+    }
+
+    .knowledge-check .form-check-label {
+      cursor: pointer;
+      vertical-align: text-top;
+    }
+    .knowledge-check_continue_p{
+      position: absolute;
+    bottom: 0;
+    right: 3%;
+    }
+    .continue_knowledge_check_btn{
+      background: #70BD44;
+      color: white;
+      padding: 6px 15px;
+      border-radius: 40px;
+      border: 2px solid green;
+      font-size: 30px;
+      font-style: italic;
+      -moz-box-shadow: inset 0 0 10px #254a0d;
+      -webkit-box-shadow: inset 0 0 10px #254a0d;
+      box-shadow: inset 0 0 10px #254a0d;
+      font-family: 'PLinotte-SemiBold';
+    }
+    .question2_padding{
+      padding-right: 6%;
+    }
+    .modal-body{
+      padding-bottom: 40px;
+    }
+  </style>
+</head>
+
+<body>
+  <div id="page-intro">
+    <p class="headingOne"><strong>Basics of Cathodic Protection (CP)</strong></p>
+    <p class="headingTwo">Check Your Understanding</p>
+  </div>
+
+  <section id="pageDiv" class="m1t7p4">
+    <section id="audio-video-player"></section>
+
+    <!-- QUESTION-1 -->
+    <div class="row knowledge-check question-1">
+      <div class="col-5 left">
+        <p>Question <b>1</b> </p>
+        <p>One of the way to mitigate stray current interference is by installing a Diode bond to drain the stray current back to its source.
+          ​</p>
+        <p>Select True and False and then click <b>'Submit'.</b></p>
+      </div>
+      <div class="col-4 right">
+        <div class="form-check">
+          <input class="form-check-input" type="radio" name="flexRadioDefault1" id="flexRadioDefault11" value="1" disabled>
+          <label class="form-check-label" for="flexRadioDefault11">True</label>
+          <span class="showIcon"></span>
+        </div>
+        <div class="form-check">
+          <input class="form-check-input" type="radio" name="flexRadioDefault1" id="flexRadioDefault21" value="0" disabled>
+          <label class="form-check-label" for="flexRadioDefault21">False
+          </label>
+          <span class="showIcon"></span>
+        </div>
+        <button class="result_show" disabled question-num="1">SUBMIT</button>
+      </div>
+    </div>
+
+    <!-- QUESTION-2  -->
+    <div class="row knowledge-check question-2 d-none">
+      <div class="col-5 left">
+        <p>Question <b>2</b></p>
+        <p>Stray currents are caused by sources of current flowing through intended paths. 
+          ​</p>
+        <p>Select True and False and then click <b>'Submit'.</b></p>
+      </div>
+      <div class="col-4 right">
+        <div class="form-check">
+          <input class="form-check-input" type="radio" name="flexRadioDefault2" id="flexRadioDefault12" value="0" disabled>
+          <label class="form-check-label" for="flexRadioDefault12">True</label>
+          <span class="showIcon"></span>
+        </div>
+        <div class="form-check">
+          <input class="form-check-input" type="radio" name="flexRadioDefault2" id="flexRadioDefault22" value="1" disabled>
+          <label class="form-check-label" for="flexRadioDefault22">False 
+          </label>
+          <span class="showIcon"></span>
+        </div>
+        <button class="result_show" disabled question-num="2">SUBMIT</button>
+      </div>
+    </div> 
+    
+    <!-- QUESTION-3  -->
+    <div class="row knowledge-check question-3 d-none">
+      <div class="col-5 left">
+        <p>Question <b>3</b></p>
+        <p>Zinc or Magnesium are generally used anodes for sacrificial system. 
+          ​</p>
+        <p>Select True and False and then click <b>'Submit'.</b></p>
+      </div>
+      <div class="col-4 right">
+        <div class="form-check">
+          <input class="form-check-input" type="radio" name="flexRadioDefault3" id="flexRadioDefault13" value="1" disabled>
+          <label class="form-check-label" for="flexRadioDefault13">True</label>
+          <span class="showIcon"></span>
+        </div>
+        <div class="form-check">
+          <input class="form-check-input" type="radio" name="flexRadioDefault3" id="flexRadioDefault23" value="0" disabled>
+          <label class="form-check-label" for="flexRadioDefault23">False 
+          </label>
+          <span class="showIcon"></span>
+        </div>
+        <button class="result_show" disabled question-num="3">SUBMIT</button>
+      </div>
+    </div>
+
+    <div class="modal fade feedback-modal" tabindex="-1" role="dialog">
+      <div class="modal-dialog modal-lg modal-dialog-centered" role="document">
+        <div class="modal-content"></div>
+      </div>
+    </div>
+  </section>
+  
+</body>
+
+<script>
+  currentPagenumber = 11;
+  var pagenumber = 1;
+  menuSelection(pagenumber);
+  var question_num;
+
+  /**Modal not to be closed when click outside or keyboard events*/
+  $('.feedback-modal').modal({
+    backdrop: 'static',
+    keyboard: true
+  })
+
+  var tabnum = 1;
+  var initialaudio = model.getPageCurrentAudioPath(true, 1);
+  initAudioVideoPlayer(initialaudio, 'audio-video-player', 'm4a');
+
+  $('#audio-video-player').on($.jPlayer.event.timeupdate, function (event) {
+    var classTime = event.jPlayer.status.currentTime.toFixed(0);
+    $("." + tabnum + '_' + classTime).removeClass("d-none");
+  });
+
+  $('#audio-video-player').on($.jPlayer.event.seeking, function (event) {
+    updateDurationAudio(event);
+  });
+
+  $('#audio-video-player').on($.jPlayer.event.seeked, function (event) { 
+    updateDurationAudio(event);
+  });
+
+  $('#audio-video-player').on($.jPlayer.event.ended, function (event) {
+    $('#player_nextBtn').removeClass("player_nextBtnDisabled_style").addClass("player_nextBtn_style");
+    $('.itextNext').removeClass("d-none");
+    $('.form-check-input').attr('disabled', false);
+    $('.result_show').attr('disabled', false);
+    $('#player_content_controls').addClass('audio-video-player-stopped');
+  });
+
+  function updateDurationAudio(event) {
+    var percentage = (event.jPlayer.status.currentTime / event.jPlayer.status.duration) * 100;
+    var classTime = event.jPlayer.status.currentTime.toFixed(0);
+    var totaltime = event.jPlayer.status.duration.toFixed(0);
+
+    for (let i = 0; i <= classTime; i++) {
+      $("." + tabnum + '_' + i).removeClass("d-none");
+    }
+    for (let i = classTime; i < totaltime; i++) {
+      $("." + tabnum + '_' + i).addClass("d-none");
+    }
+  };
+
+  $('.result_show').click(function () {
+    question_num = $(this).attr('question-num');
+    var selectedValue = $('.question-'+Number(question_num)+' input[type="radio"]:checked');
+    switch (question_num) {
+      case '1':
+        if (selectedValue.attr('value') == 1) {
+          var audioLocalFilePath = model.getPageCurrentAudioPath(true, 2);
+          initAudioVideoPlayer(audioLocalFilePath, 'audio-video-player', 'm4a'); 
+          
+          $('.feedback-modal').modal('show');
+          $('.feedback-modal').attr('id', 'correctModal');
+          $('.feedback-modal .modal-content').html('<div class="modal-header"><p class="modal-title modalTitle"><img src="./content/images/pages/m1_t4_p4/correct.png" />That’s correct</p></div><div class="modal-body"><div class="row listText"><div class="column"><p>One of the way to mitigate stray current interference is by installing a Diode bond to drain the stray current back to its source.</p></div></div><p class="knowledge-check_continue_p"><button id="continue_Button" class="continue_knowledge_check_btn"><span>Continue</span> <img src="./content/images/shell/start-arrow.png" alt=""></button></p></div>');
+        } else {
+          var audioLocalFilePath = model.getPageCurrentAudioPath(true, 3);
+          initAudioVideoPlayer(audioLocalFilePath, 'audio-video-player', 'm4a'); 
+          
+          $('.feedback-modal').modal('show');
+          $('.feedback-modal').attr('id', 'incorrectModal');
+          $('.feedback-modal .modal-content').html('<div class="modal-header"><p class="modal-title modalTitle"> <img src="./content/images/pages/m1_t4_p4/incorrect.png" />That’s not quite right!</p></div><div class="modal-body"><div class="row listText"><div class="column"><p>One of the way to mitigate stray current interference is by installing a Diode bond to drain the stray current back to its source.</p></div></div><p class="knowledge-check_continue_p"><button id="continue_Button" class="continue_knowledge_check_btn"><span>Continue</span> <img src="./content/images/shell/start-arrow.png" alt=""></button></p></div>');
+        }
+        break;
+      case '2':
+        if (selectedValue.attr('value') == 1) {
+          var audioLocalFilePath = model.getPageCurrentAudioPath(true, 5);
+          initAudioVideoPlayer(audioLocalFilePath, 'audio-video-player', 'm4a'); 
+          
+          $('.feedback-modal').modal('show');
+          $('.feedback-modal').attr('id', 'correctModal');
+          $('.feedback-modal .modal-content').html('<div class="modal-header"><p class="modal-title modalTitle"><img src="./content/images/pages/m1_t4_p4/correct.png" />That’s correct</p></div><div class="modal-body"><div class="row listText"><div class="column"><p class="question2_padding">Stray currents are not caused by sources of current flowing through intended paths.</p></div></div><p class="knowledge-check_continue_p"><button id="continue_Button" class="continue_knowledge_check_btn"><span>Continue</span> <img src="./content/images/shell/start-arrow.png" alt=""></button></p></div>');
+        } else {
+          var audioLocalFilePath = model.getPageCurrentAudioPath(true, 6);
+          initAudioVideoPlayer(audioLocalFilePath, 'audio-video-player', 'm4a'); 
+          
+          $('.feedback-modal').modal('show');
+          $('.feedback-modal').attr('id', 'incorrectModal');
+          $('.feedback-modal .modal-content').html('<div class="modal-header"><p class="modal-title modalTitle"> <img src="./content/images/pages/m1_t4_p4/incorrect.png" />That’s not quite right!</p></div><div class="modal-body"><div class="row listText"><div class="column"><p class="question2_padding">Stray currents are not caused by sources of current flowing through intended paths. </p></div></div><p class="knowledge-check_continue_p"><button id="continue_Button" class="continue_knowledge_check_btn"><span>Continue</span> <img src="./content/images/shell/start-arrow.png" alt=""></button></p></div>');
+        }
+        break;
+      case '3':
+        if (selectedValue.attr('value') == 1) {
+          var audioLocalFilePath = model.getPageCurrentAudioPath(true, 8);
+          initAudioVideoPlayer(audioLocalFilePath, 'audio-video-player', 'm4a'); 
+          
+          $('.feedback-modal').modal('show');
+          $('.feedback-modal').attr('id', 'correctModal');
+          $('.feedback-modal .modal-content').html('<div class="modal-header"><p class="modal-title modalTitle"><img src="./content/images/pages/m1_t4_p4/correct.png" />That’s correct</p></div><div class="modal-body"><div class="row listText"><div class="column"><p>Zinc or Magnesium are generally used anodes for sacrificial system.</p></div></div><p class="knowledge-check_continue_p"><button id="continue_Button" class="continue_knowledge_check_btn"><span>Continue</span> <img src="./content/images/shell/start-arrow.png" alt=""></button></p></div>');
+        } else {
+          var audioLocalFilePath = model.getPageCurrentAudioPath(true, 9);
+          initAudioVideoPlayer(audioLocalFilePath, 'audio-video-player', 'm4a'); 
+          
+          $('.feedback-modal').modal('show');
+          $('.feedback-modal').attr('id', 'incorrectModal');
+          $('.feedback-modal .modal-content').html('<div class="modal-header"><p class="modal-title modalTitle"> <img src="./content/images/pages/m1_t4_p4/incorrect.png" />That’s not quite right!</p></div><div class="modal-body"><div class="row listText"><div class="column"><p>Zinc or Magnesium are generally used anodes for sacrificial system.</p></div></div><p class="knowledge-check_continue_p"><button id="continue_Button" class="continue_knowledge_check_btn"><span>Continue</span> <img src="./content/images/shell/start-arrow.png" alt=""></button></p></div>');
+        }
+        break;
+      default:
+    }
+
+    $('div.modal-backdrop').remove();
+    $('#pageDiv').append('<div class="modal-backdrop fade show"></div>');
+  });
+
+
+  $('.m1t7p4').on('click', '#continue_Button', function () {
+    $("#audio-video-player").jPlayer("pause");
+    if (Number(question_num) < 3) {
+      $('.question-' + question_num).addClass('d-none');
+      $('.question-' + (Number(question_num) + 1)).removeClass('d-none');
+    } else {
+      model.showPage(1, 8, 1);
+    }
+
+    $('div.modal-backdrop').remove();
+    $('.feedback-modal').removeAttr('id');
+    $('.feedback-modal').modal('hide');
+    $('.feedback-modal .modal-content').html('');
+  });
+
+</script>
+</html>

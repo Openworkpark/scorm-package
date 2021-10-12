@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Types of Stray Current Interference</title>
+
+  <style type="text/css">
+    #page-intro {
+      width: 100%;
+    }
+
+    #pageDiv {
+      padding-top: 11%;
+    }
+
+    .m1-t7-p2 {
+      font-size: 30px;
+      height: 82%;
+      margin: 1% 1.5% 0% 4.2%;
+    }
+
+
+    .nav-tabs {
+      margin-left: 45px;
+      border-bottom: none;
+    }
+
+    .stray-current-interference-tabs {
+      color: white;
+      background: #AFAFAF;
+      text-align: center;
+      border-top-left-radius: 30px;
+      border-top-right-radius: 30px;
+      font-family: 'PLinotte-Semibold';
+      font-size: 28px;
+      background: linear-gradient(to right, #B7B7B7 0%, #B0B0B0 10%, #ACACAB 40%, #A3A2A3 75%, #9F9F9F 100%);
+      outline: none;
+    }
+
+
+    .nav-link.active {
+      border: none;
+      background-color: #61AC36 !important;
+      color: #FFFFFF !important;
+      text-align: center;
+    }
+
+    .nav-tabs .nav-link {
+      border-top-left-radius: 30px;
+      border-top-right-radius: 30px;
+    }
+
+    .ac-stray {
+      margin-left: 10px;
+    }
+
+    .stray-current-interference {
+      border-radius: 50px;
+      text-align: center;
+      border: 8px solid #B8B8B8;
+      background: #FFFFFF;
+      height: 89%;
+      box-shadow: inset 1px 5px 25px #e2e2e2;
+    }
+
+    .stray-current-interference p {
+      margin-right: 11%;
+      margin-top: 220px;
+      color: #035F1D;
+      font-size: 25px;
+      font-style: italic;
+    }
+
+    .stray-current-interference img {
+      margin-top: -86px;
+    }
+
+    .nav-link {
+      color: white;
+      padding: 1rem 1rem;
+    }
+
+    .nav-link:hover {
+      color: white;
+      border-color: transparent !important;
+    }
+
+    .tab-content>.active {
+      border: 8px solid #71BF44;
+      border-radius: 50px;
+      background: #FFFFFF;
+      box-shadow: inset 1px 5px 25px #e2e2e2;
+      height: 530px;
+    }
+
+    .row {
+      overflow-y: visible;
+      overflow-x: hidden;
+      line-height: 35px;
+      padding: 5px 40px 20px 60px;
+      margin-right: 45px;
+    }
+
+    .row p,
+    .first-tab-heading {
+      font-family: "PLinotte-Bold";
+    }
+
+    .first-tab-heading {
+      margin: 10px 0 0 45px;
+    }
+
+    #home .row .col-7 ul {
+      padding-left: 35px;
+    }
+
+    #profile .row .col-7 ul {
+      padding-left: 25px;
+    }
+
+    .sub-child {
+      padding-left: 32px;
+    }
+
+    .sub-child li {
+      color: #B2B2B2 !important;
+    }
+
+    .row .col-7 ul li {
+      list-style: disc;
+      font-size: 40px;
+      color: #72BF44;
+    }
+
+    .row .col-7 span {
+      color: black;
+      font-size: 29px;
+    }
+
+    .image-section img {
+      padding-bottom: 40px;
+    }
+
+    .click-more {
+      color: red !important;
+      font-size: 30px;
+      cursor: pointer;
+    }
+
+    .padding {
+      padding-right: 72px;
+    }
+
+    .image-section img,
+    .second-ost {
+      display: none;
+    }
+
+    .ac_img {
+      height: 500px !important;
+    }
+
+    .sub-child li {
+      list-style-image: url('./content/images/shell/sub-list-style.png') !important;
+    }
+
+    .v-hidden {
+      visibility: hidden;
+    }
+  </style>
+</head>
+
+<body>
+  <section id="page-intro">
+    <p class="headingOne"><strong>Basics of Cathodic Protection (CP)</strong></p>
+    <p class="headingTwo">Types of Stray Current Interference</p>
+  </section>
+  <section id="pageDiv" class="m1t7p2">
+    <section id="audio-video-player"></section>
+    <div class="m1-t7-p2">
+      <ul class="nav nav-tabs enableTabs" id="myTab" role="tablist">
+        <li class="nav-item stray-current-interference-tabs dc-stray v-hidden 1_5" role="presentation" tab-num="2">
+          <button class="nav-link" id="home-tab" data-bs-toggle="tab" data-bs-target="#home" type="button" role="tab"
+            aria-controls="home" aria-selected="true">DC Stray current interference</button>
+        </li>
+        <li class="nav-item stray-current-interference-tabs ac-stray v-hidden 1_7" role="presentation" tab-num="3">
+          <button class="nav-link" id="profile-tab" data-bs-toggle="tab" data-bs-target="#profile" type="button"
+            role="tab" aria-controls="profile" aria-selected="false">AC Stray current interference</button>
+        </li>
+      </ul>
+
+      <div class="stray-current-interference">
+        <p class="d-none 1_10">Click each tab to learn more.</p>
+        <img class="d-none 1_10" src="./content/images/shell/mouse_click.png" alt="">
+      </div>
+
+      <div class="tab-content" id="myTabContent">
+        <div class="tab-pane fade " id="home" role="tabpanel" aria-labelledby="home-tab">
+          <p class="first-tab-heading d-none 2_1">DC Stray current interference occurs when DC travels along a non-intended path.</p>
+          <div class="row">
+            <div class="col-7">
+              <ul class="main-listing">
+                <li class="d-none 2_7"><span> Where DC stray current is received by a structure, the area becomes cathodic and generally, no corrosion occurs. </span></li>
+                <li class="d-none 2_16"><span> Where DC stray current exits the structure to return to its source, corrosion occurs. </span></li>
+                <li class="d-none 2_22"><span> The quantum of corrosion failures depends on the magnitude of the stray current.</span></li>
+                <li class="d-none 2_28"> <span> Reasons for DC interference:</span>
+                  <ul class="sub-child">
+                    <li class="d-none 2_30"><span> DC railway tractions.</span></li>
+                    <li class="d-none 2_33"><span> Sharing of the common corridor by pipelines having ICCP.</span></li>
+                    <li class="d-none 2_38"><span> HVDC substations near to pipeline. </span> </li>
+                  </ul>
+                </li>
+              </ul>
+            </div>
+            <div class="col-5 image-section">
+              <img src="./content/images/pages/m1_t7_p2/first-tab-image.png" alt="" width="680px">
+              <img src="./content/images/pages/m1_t7_p2/first-tab-image1.png" alt="" width="680px">
+            </div>
+          </div>
+        </div>
+
+        <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">
+          <div class="row">
+            <div class="col-7 padding">
+              <div class="first-ost">
+                <ul class="first-ost-listing">
+                  <li class="d-none 3_1"><span> AC interference occurs due to the presence of unwanted AC potential on
+                      the pipeline. </span></li>
+                  <li class="d-none 3_6"><span> Direct and indirect effects of AC interference:</span>
+                    <ul class="sub-child">
+                      <li class="d-none 3_10"><span> AC Corrosion on Steel. </span></li>
+                      <li class="d-none 3_12"><span> Coating damage due to excessive stress voltages and fault currents.
+                        </span></li>
+                      <li class="d-none 3_17"><span>Damages insulating flanges, rectifiers and other equipment. </span>
+                      </li>
+                      <li class="d-none 3_22"><span> Personnel Shock Hazard. </span></li>
+                    </ul>
+                  </li>
+                  <li class="d-none 3_24"><span>As per NACE standard SP0177, Max. AC voltage allowed on the pipeline is
+                      15V. </span></li>
+                  <li class="d-none 3_32"> <span> AC corrosion typically occurs at AC densities greater than 100 A/m2.
+                    </span></li>
+                  <!-- <li class="d-none 3_35"><span> AC Potential between 1000 volts - 3000 volts causes coating
+                      damage.</span></li> -->
+                </ul>
+              </div>
+
+              <div class="second-ost">
+                <p>Reasons for AC interference</p>
+                <ul class="second-ost-listing">
+                  <li class="d-none 4_3"><span> AC Extra High Voltage (EHV) power lines crossing or running parallel
+                      along the pipeline.</span></li>
+                  <li class="d-none 4_10"><span> Single Wire Earth Return Transformer (SWER) nearby the pipeline.
+                    </span></li>
+                  <li class="d-none 4_16"><span> Improper earthing of electrical systems. </span></li>
+                  <li class="d-none 4_19"><span> Continuous welding works near pipeline ROU. </span></li>
+                  <li class="d-none 4_23"><span> AC Traction.</span></li>
+                </ul>
+              </div>
+            </div>
+            <div class="col-5" style="padding-left: 120px;">
+              <img src="./content/images/pages/m1_t7_p2/Rounded Rectangle 9.png" alt="" class="ac_img">
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </section>
+</body>
+<script>
+  var tabnum = 1;
+  var initialaudio = model.getPageCurrentAudioPath(true, 1);
+  initAudioVideoPlayer(initialaudio, 'audio-video-player', 'm4a');
+
+  $('#audio-video-player').on($.jPlayer.event.timeupdate, function (event) {
+    var classTimes = event.jPlayer.status.currentTime;
+    if ($('#home').hasClass('show')) {
+      if (classTimes > 33) {
+        $('.image-section img:nth-child(1)').fadeOut('fast');
+        $('.image-section img:nth-child(2)').fadeIn();
+      } else if (classTimes > 30) {
+        $('.image-section img:nth-child(1)').fadeIn();
+      }
+    }
+
+    if ($('#profile').hasClass('show')) {
+      if (classTimes > 40) {
+        tabnum = 4;
+        var initialaudio = model.getPageCurrentAudioPath(true, tabnum);
+        initAudioVideoPlayer(initialaudio, 'audio-video-player', 'm4a');
+        $('.first-ost').fadeOut('fast');
+        $('.second-ost').fadeIn('slow');
+      }
+    }
+
+    var classTime = event.jPlayer.status.currentTime.toFixed(0);
+    $("." + tabnum + '_' + classTime).removeClass("d-none").removeClass('v-hidden');
+  });
+
+  $('#audio-video-player').on($.jPlayer.event.seeking, function (event) {
+    updateDurationAudio(event);
+  });
+
+  $('#audio-video-player').on($.jPlayer.event.seeked, function (event) {
+    updateDurationAudio(event);
+  });
+
+  $('#audio-video-player').on($.jPlayer.event.ended, function (event) {
+    $('#player_nextBtn').removeClass("player_nextBtnDisabled_style").addClass("player_nextBtn_style");
+    $('.itextNext').removeClass("d-none");
+    $('.nav-tabs').removeClass('enableTabs');
+    $('#player_content_controls').addClass('audio-video-player-stopped');
+  });
+
+  function updateDurationAudio(event) {
+    var percentage = (event.jPlayer.status.currentTime / event.jPlayer.status.duration) * 100;
+    var classTime = event.jPlayer.status.currentTime.toFixed(0);
+    var totaltime = event.jPlayer.status.duration.toFixed(0);
+
+    for (let i = 0; i <= classTime; i++) {
+      $("." + tabnum + '_' + i).removeClass("d-none").removeClass('v-hidden');;
+    }
+    for (let i = classTime; i < totaltime; i++) {
+      $("." + tabnum + '_' + i).addClass("d-none").removeClass('v-hidden');;
+    }
+  };
+
+  $('#myTab li').click(function () {
+    $('#home ul li, #profile ul li').addClass('d-none');
+    $('.stray-current-interference').hide();
+    tabnum = $(this).attr('tab-num');
+    var audioLocalFilePath = model.getPageCurrentAudioPath(true, tabnum);
+    initAudioVideoPlayer(audioLocalFilePath, 'audio-video-player', 'm4a');
+  });
+
+  $(".ac-stray").click(() => {
+    $(".first-ost").css("display", "block");
+    $(".second-ost").css("display", "none");
+  })
+
+</script>
+
+</html>

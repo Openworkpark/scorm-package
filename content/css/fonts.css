@@ -1,0 +1,24 @@
+@font-face {
+  font-family: "PLinotte-Bold";
+  src: url("fonts/PLinotte-Bold.otf");
+}
+
+@font-face {
+  font-family: "PLinotte-Heavy";
+  src: url("fonts/PLinotte-Heavy.otf");
+}
+
+@font-face {
+  font-family: "PLinotte-Light";
+  src: url("fonts/PLinotte-Light.otf");
+}
+
+@font-face {
+  font-family: "PLinotte-Regular";
+  src: url("fonts/PLinotte-Regular.otf");
+}
+
+@font-face {
+  font-family: "PLinotte-SemiBold";
+  src: url("fonts/PLinotte-SemiBold.otf");
+}

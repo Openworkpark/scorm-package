@@ -1,0 +1,554 @@
+/**Header styling**/
+.player_contentArea_style {
+    background-image: url("../images/shell/body_bg.png");
+    background-color: #ffffff;
+    background-repeat: no-repeat;
+    background-position: 0px 0px;
+}
+
+.header {
+    background-repeat: no-repeat;
+    background-position: 0px 0px;
+    background-color: transparent;
+    height: 185px;
+    width: 100%;
+    z-index: 9999;
+    background-image: url("../images/shell/top-header.png");
+}
+
+.header ul {
+    float: right;
+    margin-right: 5px;
+    margin-top: 30px;
+}
+
+.header ul li {
+    display: inline-block;
+    text-align: center;
+    width: 90px;
+    height: auto;
+    padding: 5px;
+}
+
+.header ul li:hover {
+    background-image: url("../images/shell/nav_hover.png");
+    background-repeat: no-repeat;
+    background-position: 45% 42%;
+    background-size: contain;
+}
+
+.header ul li span {
+    visibility: hidden;
+    color: white;
+    font-size: 14px;
+}
+.header ul li:hover span {
+    visibility: visible;
+}
+.headerIcon {
+    background-image: url("../images/shell/menuBox.png");
+    background-repeat: no-repeat;
+    height: 50px;
+    width: 50px;
+    display: inline-block;
+    cursor: pointer;
+}
+
+.menu-icon {
+    background-position: 5px 7px;
+}
+.transcript-icon {
+    background-position: -82px 7px;
+}
+.glossary-icon {
+    background-position: -171px 7px;
+}
+.resources-icon {
+    background-position: -258px 7px;
+}
+.help-icon {
+    background-position: -347px 7px;
+}
+.exit-icon {
+    background-position: -434px 7px;
+}
+
+/**Footer styling**/
+footer {
+    width: 100%;
+    position: absolute;
+    bottom: 0;
+    border-bottom: 5px solid #ff8c00;
+}
+
+.footarea {
+    width: 560px;
+    position: absolute;
+    right: 40px;
+    bottom: 30px;
+    border-radius: 30px;
+    height: 53px;
+}
+
+.playerCenterBtns ul li {
+    float: left;
+    position: absolute;
+}
+
+.playerCenterBtns ul li.plydv4 {
+    top: 8px;
+    left: 55px;
+}
+
+.playerCenterBtns ul li.plydv5 {
+    left: 15px;
+    top: 10px;
+}
+
+.playerCenterBtns ul li.plydv8 {
+    left: 101px;
+    top: 7px;
+}
+
+.playerCenterBtns ul li.plydv3 {
+    width: 250px;
+    pointer-events: none;
+    left: 150px;
+    top: 9px;
+}
+
+.playerCenterBtns ul li.plydv2 {
+    top: 7px;
+    right: 102px;
+}
+
+.playerCenterBtns ul li.plydv6 {
+    right: 42px;
+    top: 12px;
+}
+
+.player_pageNumber_style {
+    font-family: "centralesanslight", Arial, Helvetica, sans-serif;
+    font-size: 20px;
+    height: 28px;
+    width: 58px;
+    color: #fff;
+    text-align: center;
+}
+
+.bottom_logo_1 {
+    background: transparent url("../images/shell/logo_bottom.png") no-repeat scroll 0px 0px !important;
+    height: 106px;
+    width: 317px;
+    margin: 0 auto;
+}
+
+.footer .backBtn {
+    background: transparent url("../images/shell/Back.png") no-repeat scroll 0px 0px !important;
+    height: 40px;
+    width: 40px;
+}
+
+.footer .nextBtn {
+    background: transparent url("../images/shell/Next.png") no-repeat scroll 0px 0px !important;
+    height: 40px;
+    width: 40px;
+}
+
+.footer .playBtn {
+    background: transparent url("../images/shell/play.png") no-repeat scroll 0px 0px !important;
+    height: 40px;
+    width: 40px;
+}
+
+.footer .pauseBtn {
+    background: transparent url("../images/shell/pause.png") no-repeat scroll 0px 0px !important;
+    height: 40px;
+    width: 40px;
+    cursor: pointer;
+}
+
+.replayBtn {
+    background: transparent url("../images/shell/replay.png") no-repeat scroll 0px 0px !important;
+    height: 40px;
+    width: 40px;
+    cursor: pointer;
+}
+
+.footer .audioOFF {
+    background: transparent url("../images/shell/volume_off.png") no-repeat scroll 0px 1px !important;
+    height: 40px;
+    width: 40px;
+    cursor: pointer;
+}
+
+.footer .audioON {
+    background: transparent url("../images/shell/audio_on.png") no-repeat scroll 0px 5px !important;
+    height: 40px;
+    width: 40px;
+    cursor: pointer;
+}
+
+#progressSlider {
+    width: 100% !important;
+    height: 0px;
+    top: 16px;
+    left: 0px;
+    position: relative;
+    background: #fff;
+    z-index: 0;
+}
+/* menu listing */
+.menu_listing h1 {
+    margin-left: 50px;
+    margin-bottom: 20px;
+}
+.menu_listing h2 {
+    margin-left: 50px;
+    color: red;
+}
+.menu_listing ul li {
+    font-weight: 500;
+    font-size: 30px;
+    border-bottom: 3px solid gray;
+    display: grid;
+    grid-template-columns: 60px 1fr;
+    grid-template-rows: 75px;
+}
+.menu_listing ul li div:nth-child(1) {
+    color: #aebec3;
+    font-size: 65px;
+    font-weight: bolder;
+    grid-column: 1;
+    grid-row: 1;
+    height: 100%;
+    align-self: center;
+}
+.menu_listing ul li div:nth-child(2):hover {
+    color: green;
+    border-bottom: 5px solid green;
+    cursor: pointer;
+    padding-bottom: 20px;
+    line-height: 35px;
+}
+.menu_listing ul li div:nth-child(2) {
+    position: absolute;
+    margin-left: 40px;
+    margin-top: 0;
+    line-height: 35px;
+    grid-column: 2;
+    grid-row: 1;
+    height: 100%;
+    align-self: center;
+    padding-top: 30px;
+}
+.non-padding {
+    padding-top: 15px !important;
+}
+.list-group-item {
+    padding: 10px !important;
+    /* margin: .5rem 1.5rem; */
+}
+.disabled-list div:nth-child(2):hover {
+    color: #80808096 !important;
+    border-bottom: none !important;
+    cursor: default !important;
+}
+
+/* menu-modal-popup */
+#menu-modal .modal-content {
+    background-color: #fff;
+    /*height: 945px;*/
+    background-image: url("../images/shell/body_bg.png");
+    background-repeat: no-repeat;
+    width: 100%;
+    background-position: 0px -1px;
+    padding-bottom: 30px;
+}
+#menu-modal .btn-close {
+    /* font-size: 16px; */
+    color: #fff;
+    font-size: 20px;
+    font-weight: bold;
+    line-height: 21px;
+}
+.modal-header {
+    border: none;
+}
+#menu-modal .modal-body {
+    padding: 8% 0% 0% 2.2%
+}
+#menu-modal .modal-dialog {
+    max-width: 80%;
+    height: 100%;
+    margin: 0px;
+    position: absolute;
+    width: 100%;
+    transform: translate(-50%, -50%);
+    top: 50%;
+    left: 50%;
+    z-index: 9999999;
+}
+
+#menu-modal .menu_listing {
+    padding-top: 0%;
+    padding-left: 0%;
+}
+
+.modal-backdrop {
+    z-index: -1 !important;
+}
+.btn-close {
+    position: relative;
+}
+
+#menu-modal .btn-color:before,
+#help-modal .btn-color:before {
+    content: "";
+    width: 100%;
+    height: 100%;
+    background-color: #f10808;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    border-radius: 50%;
+}
+
+#menu-modal .modal-header {
+    background: none;
+    box-shadow: none;
+}
+#menu-modal .modal-header .btn-color {
+    padding: 1px;
+    margin: -2.5rem -2.5rem -0.5rem auto;
+    opacity: 1 !important;
+    z-index: 99;
+    right: 10px;
+}
+
+.modal {
+    background: #1d1c1c47;
+    z-index: 999999;
+}
+
+#menu-modal #page-intro {
+    top: 25px;
+    margin-left: 10px
+}
+
+/* help-modal-popup  */
+
+#help-modal .modal-body {
+    background-color: transparent;
+    height: 866px;
+    background-image: url(../images/shell/UI_Help.png);
+    background-repeat: no-repeat;
+    /* width: 1920px; */
+    background-position: center;
+    background-size: cover;
+}
+#help-modal .btn-close,
+#menu-modal .btn-close {
+    font-size: 18px;
+    position: absolute;
+    right: -8px;
+    color: #fdfbfb;
+    opacity: 1;
+    padding: 0;
+    margin: 0;
+    width: 30px;
+    height: 30px;
+    line-height: 30px;
+    top: 10px;
+    z-index: 99;
+}
+#help-modal .btn-close{
+    top: -11px;
+}
+#help-modal .help-content {
+    background: none;
+    width: 80%;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+}
+#help-modal .modal-header {
+    border: none;
+    background: none;
+    padding: 0;
+}
+
+#help-modal .modal-dialog {
+    max-width: 1920px;
+    height: 100%;
+    margin: 0px;
+}
+.enableTabs {
+    pointer-events: none;
+}
+
+.enableTabs .headerIcon {
+    opacity: 0.5;
+}
+
+.header ul li.enableTabs:hover {
+    background-image: none;
+}
+
+.menu-modal-instruction {
+    position: relative;
+}
+
+.menu-modal-instruction .instruction {
+    position: absolute;
+    color: green;
+    font-size: 24px;
+    bottom: 80px;
+    font-style: italic;
+    right: -45%;
+    width: 100%;
+}
+
+.instruction span {
+    background-image: url(../images/shell/mouse_click.png);
+    height: 50px;
+    width: 100%;
+    display: inline-block;
+    background-repeat: no-repeat;
+    background-position: left center;
+    padding-left: 55px;
+}
+
+#slider-vertical_volume{
+    width: 65% !important;
+    position: absolute;
+    top: -219px;
+    left: 4%;
+    height: 200px;
+    background: #7E7E7E;
+    box-shadow: 0px 0px 0px 7px white;
+    border: 8px solid #C7D3E2;
+    border-radius: 20px !important;
+    height: 200px;
+}
+
+
+#slider-vertical_volume  .ui-slider-active{
+background: white;
+border-radius: 20px;
+}
+#slider-vertical_volume .ui-widget-header{
+    background: #F9A220;
+    color: #333333;
+    font-weight: bold;
+}
+#slider-vertical_volume .ui-slider-handle.ui-state-default.ui-corner-all{
+    background: blue;
+    font-weight: normal;
+    border-radius: 20px;   
+}
+
+/* Module  player css */
+#player_content_controls{
+    border: none;
+    width: 100%;
+    background-color: transparent;
+}
+#player_content_controls .jp-type-single .jp-gui.jp-interface{
+    height: 55px;
+    background-color:#ff8c00;
+    border-radius: 35px;
+}
+#player_content_controls .jp-type-single .jp-gui.jp-interface .jp-controls .jp-play,
+#player_content_controls .jp-play:hover,
+#jp_container_1 .jp-play:focus {
+  background: transparent url('../images/shell/play.png') no-repeat;
+}
+
+#player_content_controls.jp-state-playing .jp-type-single .jp-gui.jp-interface .jp-controls .jp-play,
+#player_content_controls.jp-state-playing .jp-play:hover,
+#player_content_controls.jp-state-playing .jp-play:focus {
+  background: transparent url('../images/shell/pause.png') no-repeat;
+}
+
+#player_content_controls .jp-type-single .jp-gui.jp-interface .jp-controls-holder {
+    width: 63%;
+    left: 8.5%;
+    top: -1%;
+    height: 55px;
+    margin: 0px;
+}
+#player_content_controls .jp-type-single .jp-gui.jp-interface .jp-controls-holder .jp-progress{
+    height: 8px;
+    width: 75%;
+    top: 24px;
+    background: transparent;
+    left: 98px;
+}
+#player_content_controls .jp-type-single .jp-gui.jp-interface .jp-controls-holder .jp-progress .jp-seek-bar {
+    background: white;
+    height: 2px;
+    width: 100%;
+    top: 3px;
+    position: absolute;
+}
+#player_content_controls .jp-type-single .jp-gui.jp-interface .jp-controls-holder .jp-progress .jp-play-bar {
+    height: 8px;
+    background: white;
+    width: 0%;
+}
+#player_content_controls.audio-video-player-stopped .jp-type-single .jp-gui.jp-interface .jp-controls-holder .jp-progress .jp-play-bar {
+    width: 100%!important;
+}
+#player_content_controls .jp-type-single .jp-gui.jp-interface .jp-volume-controls{
+    left: 61%;
+    top: 25%;
+}
+#player_content_controls .jp-type-single .jp-gui.jp-interface .jp-volume-controls .jp-volume-max{
+    background: transparent url('../images/shell/audio_on.png') no-repeat ;
+    width: 40px;
+    height: 40px;
+}
+#player_content_controls .jp-type-single .jp-gui.jp-interface .jp-controls-holder .jp-controls {
+    padding: 10px 5px;
+}
+#player_content_controls .jp-type-single .jp-gui.jp-interface .jp-controls-holder .jp-toggles{
+    height: 37px;
+    left: 15%;
+    position: absolute;
+    top: 15%;
+    width: 10%;
+}
+#player_content_controls .jp-type-single .jp-gui.jp-interface .jp-controls-holder .jp-toggles .jp-repeat{
+    background: transparent url('../images/shell/replay.png') no-repeat ;
+    width: 100%;
+    height: 100%;
+}
+
+#player_content_controls .jp-type-single .jp-gui.jp-interface .jp-volume-controls .jp-volume-bar {
+    border-radius: 20px;
+    border: 7px solid #C5D2E1;
+    background: #7E7E7E !important;
+    top: -11rem;
+    left: 1.4rem;
+    width: 150px !important;
+    height: fit-content;
+    box-shadow: 0px 0px 0px 7px #FFFFFF;
+    z-index: 1111111;
+    transform: rotate(-92deg);
+  }
+
+  #player_content_controls .jp-type-single .jp-gui.jp-interface .jp-volume-controls .jp-volume-bar .jp-volume-bar-value {
+    height: 11px !important;
+    background: linear-gradient(to left, #FFFFFF 5%, #F9A220 10%);
+  }
+
+  #player_content_controls .jp-type-single .jp-gui.jp-interface .jp-volume-controls .jp-volume-bar .jp-volume-bar-value 
+  .jp-volume-bar-knob {
+    position: absolute;
+    right: 0px;
+    margin-top: -6px;
+    z-index: 50;
+  } 

@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<settings>
+    <!-- Used for saving local data asdasds -->
+    <courseName val="" />
+    <isScorm val="true" />
+    <isBookmarked val="true" />
+    <!--isForced 1:All forced, 2:non forced, 3:based on value defined in xml-->
+    <isForced val="2" />
+    <!--delayBtwnAudio in miliseconds -->
+    <delayBtwnAudio val="500" />
+    <!--pageNumberLevel 1:All pages in course, 2:All pages in module, 3:All Pages in topic-->
+    <pageNumberLevel val="1" />
+    <!--menuLevel 1, 2, 3-->
+    <menuLevel val="3" /> 
+    <isGlossary val="true" />
+    <hasSplash val="true" />    
+    <isResource val="true" />
+    <isAutoAdvance val="false" />
+    <isTranscript val="true" />
+    <isExitEnable val="false" />
+    <isDebugger val="false" />
+    <assessmentPassPercent val="80" />
+    <isUserOverride val="false"/> 
+    <overrideBookmarkData val="1**1**1" /> 
+    <overrideSuspendData val="1,1,0" />
+    <isDilogEffect val="fade" />
+    <useAudio val="true" />
+    <useDelay val="true" />
+    <useAnimation val="true" />
+    <!-- animate_top, animate_right, animate_left, animate_bottom -->
+    <defaultAnimationType val="animate_top" />
+    <!--defaultAnimationDuration in seconds -->
+    <defaultAnimationDuration val="1" />
+    <defaultEaseType val="Power2.easeOut" />
+    <attempts val="3" />
+    <submitbtn val="true" />
+    <feedbck val="true" />
+    <isFloatingNavigation val="true" />
+
+    <!-- passing color theme of course-->
+    <CourseColor mainBG="#0b6ca4" lighterBGColor="#663333" borderColor="#0b6ca4" gradientHover="#cc6633, #663333" gradientColor="#663333, #cc6633" gradientFontColor="#0b6ca4" headingcolor="#0b6ca4" contentcolor="#000" disabledColor="#666, #999"/>
+    <userDefineTitle val="##"/>
+</settings>

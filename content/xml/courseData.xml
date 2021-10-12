@@ -1,0 +1,496 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<courseData>
+  <courseTitle>
+    <![CDATA[PIL]]>
+  </courseTitle>
+  <module id="1">
+    <title><![CDATA[]]></title>
+    <topic id="1">
+      <title><![CDATA[]]></title>
+      <page id="1" target="m1_t1_p1">
+        <title><![CDATA[Introduction]]></title>
+        <transcript>
+          <![CDATA[
+          Let’s quickly walk through this module.
+           <br />
+            It will take approximately 40 minutes to complete this module.<br />
+            This eLearning module has audio, so please use a headset or switch on your speakers.​<br />
+            You must attempt the Pre-Assessment to proceed with the module.<br />
+            You need to complete the Assessment at the end of the module to finish.
+            <br />
+            You must score 80% or higher in the assessment to complete the module.
+            <br />
+            Use the Next and Back buttons to navigate through the module. 
+          ]]>
+        </transcript>
+      </page>
+      <page id="2" target="m1_t1_p2">
+        <title><![CDATA[Menu]]></title>
+        <transcript>
+          <![CDATA[
+          Hello and welcome to the eLearning module on Basics of Cathodic Protection.
+           <br />
+          I am Kabir, your guide for this module.
+          <br />
+          Before we begin with our module, please attempt the Pre-assessment.
+          <br />
+          Based on your performance in the pre-assessment, you will be guided on the list of topics that you must focus on in this module.
+          <br />
+          Here are the list of the topics that we will cover in this module.
+          <br />
+          Click the Next button to attempt the Pre-assessment section.
+          ]]>
+        </transcript>
+      </page>
+      <page id="3" target="m1_t1_p3">
+        <title><![CDATA[Pre-Assesment]]></title>
+        <transcript>
+          <![CDATA[
+            Welcome to the Pre- Assessment.​<br />
+            There are 10 questions in this Assessment​<br />
+            You won't be graded for this Pre-Assessment; however, this is to check your understanding of the topic based on your prior learning.
+            <br /> 
+            You will be guided on the list of topics that you must focus on in this module after Pre-Assessment.​<br /><br />
+            Good Luck!
+            <br />
+            To proceed, click the Start button. 
+            ]]>
+        </transcript>
+      </page>
+    </topic>
+    <topic id="2">
+      <title><![CDATA[]]></title>
+      <page id="1" target="m1_t2_p1">
+        <title><![CDATA[Course Objectives]]></title>
+        <transcript>
+          <![CDATA[
+            After completing this module , you will be able to:
+            <ul>
+                <li>Explain the Cathodic Protection (CP) method.</li>
+                <li>Describe Pipe to Soil Potential PSP and criteria for CP.</li>
+                <li>List types of CP assests and</li>
+                <li>Recognize the CP challenges.</li>
+            </ul>
+          ]]>
+        </transcript>
+      </page>
+      <page id="2" target="m1_t2_p2">
+        <title><![CDATA[Introduction]]></title>
+        <transcript>
+          <![CDATA[Let us begin this module by understanding the basic refining process of metal.<br /><br />
+            This image depicts the refining and corrosion process for iron and steel. Iron is mined from the ground from its as ore Iron oxide. Energy is used to convert this iron oxide into iron and steel. When iron comes in contact with an electrolyte, such as the earth or concrete, corrosion occurs. In the corrosion process, energy is lost and the iron combines with oxygen to form iron oxide. This corrosion product called rust, is identical to the iron oxide mined from the ground. Iron is considered thermodynamically unstable; given the right environment, iron will readily corrode to return to its own lower energy state, called rust.<br /><br />
+            Now let’s define what Corrosion is. Corrosion is the deterioration of materials under the influence of the environment.]]>
+        </transcript>
+      </page>
+      <page id="3" target="m1_t2_p3">
+        <title><![CDATA[Examples]]></title>
+        <transcript>
+          <![CDATA[Here are few examples of corrosion  from our day to day life.<br /><br />
+            Corrosion not only leads to loss of valuable assets but can also cause accidents.<br /><br />
+            As per the 11th EGIG report published in December 2020,  27% of pipeline incidents in Europe happened due to Corrosion​.<br /><br />
+            Let’s have a look at this chart which is also extracted from the 11th EGIG report. Even though the failure frequency per 1000 Km/yr of a pipeline is maximum due to external interference, the number of incidents due to corrosion is substantial.<br />
+            As per NACE Global Impact Study, the global cost of corrosion is 2.5 trillion USD that is 3.4% of the GDP.]]>
+        </transcript>
+      </page>
+      <page id="4" target="m1_t2_p4">
+        <title><![CDATA[Galvanic Series]]></title>
+        <transcript>
+          <![CDATA[Here we have the metals based on their electrochemical potentials, this list here is called Galvanic series. The galvanic series determines the electrochemical potential and nobility of metals and metal alloys in the order of their reactivity in soil when measured with respect to Cu/CuSO4 reference electrodes.<br /><br />
+          The metal lying at the bottom of this series are active metals; that is they lose electrons easily.<br /><br />
+          As we move up in the galvanic series the metals tend to become more inert, that is they can not lose electrons easily.]]>
+        </transcript>
+      </page>
+      <page id="5" target="m1_t2_p5">
+        <title><![CDATA[Phenomenon]]></title>
+        <transcript>
+          <![CDATA[Now let’s understand how corrosion occurs on the metal. The simplest example to depict the corrosion phenomenon is Galvanic Cell or Corrosion Cell. When two different electrodes are placed in an electrolyte, electrochemical reactions occur on each electrode. If the metallic path connects these two electrodes, the voltage difference will cause the current to flow between them and thus the more active metal will lose electrons and tend to be the anode of the corrosion cell and the metal that gets protected becomes cathode of the corrosion cell.]]>
+        </transcript>
+      </page>
+      <page id="6" target="m1_t2_p6">
+        <title><![CDATA[Process]]></title>
+        <transcript>
+          <![CDATA[The corrosion process involves the removal of electrons (oxidation reaction) from the metal i.e. anode and the consumption of those electrons (reduction reaction) by some other metal i.e. cathode in the presence of an electrolyte and metallic path connecting that anode and cathode.​<br /><br />
+          The four parts of corrosion cell are Anode, Cathode, Metallic Path, and Electrolyte.<br /><br />Click each part to learn more.
+          <br />
+          The Anode is the part of the corrosion cell where the metal ions leave the surface and enters the electrolyte leaving behind electrons that pass through the metallic path.
+          <ul>
+            <li>​It is the area where oxidation reaction or loss of electrons occurs​</li>
+            <li>The loss of electrons causes the metal to corrode.</li>
+          </ul><br /><br />
+          The Cathode is the area of corrosion cell where no metal loss occurs and reduction reaction or gain of electrons occurs.<br /><br />
+          The Metallic path in a corrosion cell is the connection between electrodes through which the transfer of electrons from anode to cathode takes place.<br /><br />
+          The  Electrolyte is conductive environment (generally soil in case of underground pipelines) containing the anode and cathode. ]]>
+        </transcript>
+      </page>
+      <page id="7" target="m1_t2_p7">
+        <title><![CDATA[Types of Corrosion]]></title>
+        <transcript>
+          <![CDATA[Now its time to learn about types of corrosion. <br />
+          Click each tab to learn about types of corrosion.​<br /><br />
+          Galvanic Corrosion ​is the  most common form of corrosion. It occurs when two different metals are located together in an electrolyte and is connected by a metallic path.<br />
+          The metal lying in the bottom of the Galvanic series becomes anode as it is more active and gets corroded while the other metal lying comparatively above in the galvanic series becomes the cathode and gets protected.<br /><br />
+          Pitting Corrosion occurs under specific certain conditions, which leads to accelerated corrosion in certain areas rather than uniform corrosion throughout the surface. Conditions include low concentrations of oxygen or high concentrations of chlorides (as in sea water), presence of non uniformities in metal structure . The deterioration of this small area can penetrate the metal, causing pits, and can lead to failure.<br /><br />
+          Similar to pitting, crevice corrosion occurs at a specific location. This type of corrosion is often associated with a stagnant micro-environment, like those found under gaskets and washers, and clamps.<br /><br />
+          Microbial Induced Corrosion as the name suggests is caused by microorganisms. It applies to both metallic and non-metallic materials with or without oxygen. When oxygen is absent, sulfate-reducing bacteria are active and produce hydrogen sulfide causing sulfide stress cracking. When oxygen is present, some bacteria may directly oxidize iron to iron oxides and hydroxides leading to corrosion.<br /><br />
+          Uniform corrosion refers to the corrosion that proceeds at approximately the same rate over the exposed metal surface, instead of at the localized spots.<br /><br />
+          Stress Corrosion Cracking is a failure mechanism that is caused by the environment, susceptible material, and tensile stresses.<br />
+          Stress Corrosion Cracking leads to the formation of a colony of cracks which not have developed by the action of stress or environment alone. ]]>
+        </transcript>
+      </page>     
+    </topic>
+    <topic id="3">
+      <title><![CDATA[]]></title>
+      <page id="1" target="m1_t3_p1">
+        <title><![CDATA[PIL]]></title>
+        <transcript>
+          <![CDATA[So how to protect the metal from corrosion?Click each tab to learn about corrosion protection methods.
+                  <br />
+                  <ul>
+                      <li>Noble metals like gold, platinum are less prone to corrosion. Hence the usage of noble metals is considered as one of the methods for corrosion protection. However, these are very costly metals.</li>
+                      <li>Carbon steel is used for the pipeline in the oil and gas industry. Though it is prone to corrosion, carbon steel is highly resistant to shock and vibration, has high tensile strength, elasticity and ductility.</li>
+                  </ul>
+                  <br />
+                  Providing a good coating to the metal is another way of protecting it from corrosion. It acts as primary protection against corrosion.
+                  <ul>
+                      <li>Coating isolates the metal from direct contact with the surrounding electrolyte.</li>
+                      <li>Paint can be applied for above the ground pipelines and  can also be reapplied effectively.</li>
+                      <li>For underground structures such as pipelines, epoxy and polyethylene coatings are provided instead of painting as they possess high insulating properties and a large life span.</li>
+                      <li>Despite all precautions, coatings also develop holes, referred to as holidays, during application/transport/installation.</li>
+                      <li>Types of coating used for pipelines are
+                      <ul>
+                          <li>Coal-Tar Enamel (CTE) </li>
+                          <li>Fusion Bonded Epoxy (FBE) </li>
+                          <li>3-Layer Polyethylene (3LPE) </li>
+                          <li>3-Layer Polypropylene (3LPP)</li>
+                      </ul>
+                      </li>
+                      <li>Types of coating used for the pipeline in PIL is 3-Layer Polyethylene (3LPE)</li>
+                  </ul>
+                  <br />
+                  The next technique to prevent the metals from corroding is application of Cathodic Protection. Cathodic Protection is considered to be the secondary source of protection, primary source is the coating. 
+                  <br />
+                  <ul>
+                      <li>As per the National Association of Corrosion Engineers (NACE) standard SP 0169, Cathodic protection is a technique to reduce the corrosion of a metal surface by making that metal surface the cathode of an electrochemical cell.</li>
+                      <li>In the case of buried pipelines, metal to be protected or cathode are the carbon steel pipelines.</li>
+                      <li>The electrolyte is soil and the metal that corrodes or the anode is any specific material laid in the vicinity of the pipeline and connected electrically to the cathode.</li>
+                  </ul>]]>
+        </transcript>
+      </page>
+    </topic>
+    <topic id="4">
+      <title><![CDATA[]]></title>
+      <page id="1" target="m1_t4_p1">
+        <title><![CDATA[PIL]]></title>
+        <transcript>
+          <![CDATA[ There are 2 types of Cathodic Protection methods.
+          <ul>
+            <li>Galvanic Cathodic Protection system</li>
+            <li>Impressed Current Cathodic Protection system</li>
+          </ul>  
+          <br />
+          Let us learn about each of them one by one <br />
+          In Galvanic CP or Sacrificial CP, a more active metal (lower in galvanic series) is connected electrically to the pipeline (Carbon Steel) Pipeline gets protected and the anode connected to pipeline gets corroded.
+          <br />
+           Magnesium having a native potential of -1.7 V, Zinc having a potential of -1.1V, Aluminium alloy having a potential of -1.05V, are the most commonly used galvanic anodes.<br /><br /> 
+          Galvanic CP can be applied to 
+          <ul>
+            <li>Pipeline as a temporary CP during construction </li>
+            <li>Small pipelines with a good coating</li>
+            <li>Vessel bottom </li>
+            <li>Plant facilities and equipment</li>
+          </ul><br />
+          In an Impressed Current Cathodic Protection system, a negative potential is impressed on an underground buried structure or pipeline by. using an external power source and ground bed or anode.<br />
+          Any metal can be used as an anode for the ICCP system depending on the consumption rate and current requirement.<br /><br />
+          ICCP system can be applied to 
+          <ul>
+            <li>Cross country pipeline</li>
+            <li>Plant pipeline CP system</li>
+            <li>Tank bottom and underground tank protection</li>
+            <li>Poorly coated pipelines</li>
+          </ul>
+          ]]>
+        </transcript>
+      </page>
+      <page id="2" target="m1_t4_p2">
+        <title><![CDATA[PIL]]></title>
+        <transcript>
+          <![CDATA[ICCP system has many advantages over the Galvanic Anode Cathodic Protection system. Like any metal can be used as an anode. Hence low consumption materials can be used. ICCP systems provide higher current output.
+           <br /> 
+          It is cheaper to operate in the long term and provides ease of monitoring and control.
+          ]]>
+        </transcript>
+      </page>
+      <page id="3" target="m1_t4_p3">
+        <title><![CDATA[PIL]]></title>
+        <transcript>
+          <![CDATA[Corrosion is the result of an electrochemical reaction driven by the potential difference between anode and cathode, connected by an electrical path and immersed in the same electrolyte.  The difference in the potential differences on the pipeline surface can cause corrosion at anodic sites.​<br />
+          Cathodic protection reduces the potential difference between anodic and cathodic sites to zero, that is polarizing the anodic sites. It can be depicted that after the application of cathodic protection, the potential difference between the anodic and cathodic sites reduces to zero, and corrosion stops.​
+          ]]>
+        </transcript>
+      </page>
+      <page id="4" target="m1_t4_p4">
+        <title><![CDATA[PIL]]></title>
+        <transcript>
+          <![CDATA[It is time to check your understanding of the topics covered so far.<br /><br />
+          Select True or False for each sentence and then click ‘Submit’.<br /><br />
+          ]]>
+        </transcript>
+      </page>
+    </topic>
+    <topic id="5">
+      <title><![CDATA[]]></title>
+      <page id="1" target="m1_t5_p1">
+        <title><![CDATA[PIL]]></title>
+        <transcript>
+          <![CDATA[The effectiveness of cathodic protection applied to the pipeline can be assessed by measuring the electrochemical potential of the pipeline with respect to the electrolyte using a standard reference cell.<br />
+          The potential of the pipeline with respect to the reference electrode is generally called the Pipe to soil potential or PSP.<br />
+          Pipe to soil potential is measured at the test lead points or the test station provided along the pipeline route.<br />
+          For measurement of Pipe to soil potential, the positive terminal of the multimeter should be connected to the measurement cable from the pipeline in the test station and the negative terminal is connected to the reference cell which is placed in the soil.<br />
+          ‘ON’ potential is the pipe to soil potential measured after the stabilization of the CP system and feeding the required current.<br />
+          Instant OFF" potential is the pipe-to-soil potential measured immediately after the cathodic protection system is switched off and the applied electrical current stops flowing to the pipeline surface.<br />
+          The difference between ON potential and Instant OFF is the voltage drop in the readings.
+          ]]>
+        </transcript>
+      </page>
+      <page id="2" target="m1_t5_p2">
+        <title><![CDATA[PIL]]></title>
+        <transcript>
+          <![CDATA[At PIL, the Pipeline Criteria for CP is that <br /> <br />
+          <ul> 
+            <li>The Pipe to Soil ON potential shall be in between (-) 0.95V to (-) 1.5V with respect to saturated copper/copper sulfate reference electrode.</li>
+            <li>The Pipe to Soil instant OFF potential shall be in between (-) 0.85V to (-) 1.2V with respect to saturated copper/copper sulfate reference electrode.</li>
+            <li>A positive potential swing of 50mV or more is sufficient to indicate the presence of an interference requiring investigation and mitigation measures.
+            </li>
+          </ul>]]>
+        </transcript>
+      </page>
+    </topic>
+    <topic id="6">
+      <title><![CDATA[]]></title>
+      <page id="1" target="m1_t6_p1">
+        <title><![CDATA[PIL]]></title>
+        <transcript>
+          <![CDATA[At PIL, we use various types CP assets, such as:
+                    <br />
+
+                    <ul>
+                        <li> CP Transformer rectifier units </li>
+                        <li> Anodes </li>
+                        <li> Half Cells </li>
+                        <li> Test Stations</li>
+                    </ul>
+                    <br />
+                    <br />
+                    Click each image to learn more.
+                    <br />
+                    <br /> 
+                    <ul>
+                        <li>The most common type of power supply used for impressed current cathodic protection is a transformer rectifier units (also known as TR or TRU).</li>
+                        <li>It converts the AC power supply voltage to the required output voltage and then converts it to DC</li>
+                        <li>Ratings of the CP rectifier units used in PIL are
+                            <ul>
+                                <li>For Station CP -  50V/75A</li>
+                                <li>For mainline CP – 25V/25A</li>
+                            </ul>
+                        </li>
+                    </ul>
+                    <br />
+                    <br />
+                    <ul>
+                        <li>Anode materials are used for feeding the required current to the pipeline.</li>
+                        <li>For sacrificial system, generally used anodes are Zinc or Magnesium</li>
+                        <li>For the ICCP system the type of anodes used are Mixed Metal oxide and Hi - Silicon cast Chromium</li>
+                    </ul>
+                    </br>
+                    <br />
+                    <ul>
+                        <li>Reference electrodes or half-cells, are used for measuring the potential of a metal surface exposed to an electrolyte.</li>
+                        <li>In the case of underground pipelines the reference electrode used is a saturated Cu/CuSO4 reference cell.</li>
+                        <li>The electrode is composed of a copper rod, immersed in a saturated solution of copper sulfate, held in a non-conducting cylinder with a porous plug at the bottom</li>
+                    </ul>
+                    <br />
+                    <br />
+                    <ul>
+                        <li>Test Stations are junction boxes installed along the pipeline route at every 1km for measurement of PSP</li>
+                        <li>Cable connection from pipeline underground is terminated inside the Test station for measurement of PSP</li>
+                        <li>Different types of test stations are used based on installation location</li>
+                    </ul>
+                ]]>
+        </transcript>
+      </page>
+    </topic>
+    <topic id="7">
+      <title><![CDATA[]]></title>
+      <page id="1" target="m1_t7_p1">
+        <title><![CDATA[PIL]]></title>
+        <transcript>
+          <![CDATA[One of the major challenges for CP is stray current interference. Stray currents are caused by sources of current flowing through unintended paths. These are damaging because large currents might be involved. On the other hand, even small amounts of stray currents can be highly damaging if discharged over a small surface area. Stray currents are particularly destructive at the location where the current leaves the pipeline. This creates a localized anodic area on the pipeline which can overcome the cathodic protection applied. 
+          ]]>
+        </transcript>
+      </page>
+      <page id="2" target="m1_t7_p2">
+        <title><![CDATA[PIL]]></title>
+        <transcript>
+          <![CDATA[Different types of stray current interference observed in pipelines are  <br>
+          <ul>
+            <li>DC Stray current interference </li>
+            <li>AC Stray current interference </li>
+          </ul>
+          Click each tab to know more.<br />  <br />
+          DC Stray current interference occurs when DC travels along a non-intended path.<br>
+          Where DC stray current is received by a structure, the area becomes cathodic and generally, no corrosion occurs. The area from where DC stray current exits the structure to return to its source, corrosion occurs. The quantum of corrosion failures depends on the magnitude of the stray current. Reasons for DC interference include <br>
+          <ul>
+            <li>DC railway tractions</li>
+            <li>Sharing of the common corridor by pipelines having ICCP</li>
+            <li>HVDC substations near to pipeline </li>
+          </ul>
+          AC interference occurs due to the presence of unwanted AC potential on the pipeline  <br>
+          Direct and indirect effects of AC interference are  <br>
+          <ul>
+            <li>AC Corrosion on Steel.</li>
+            <li>Coating damage due to excessive stress voltages and fault currents </li>
+            <li>Damages insulating flanges, rectifiers and other equipment</li>
+            <li>Personnel Shock Hazard.</li>
+          </ul>
+          As per NACE standard SP0177, maximum AC voltage allowed on the pipeline is 15V. AC corrosion typically occurs at AC current densities greater than 100 A/m2.<br>
+          Reasons for AC interference are  <br>
+          <ul>
+            <li>AC Extra High Voltage (EHV) power lines crossing or running parallel along the pipeline</li>
+            <li>Single Wire Earth Return Transformer (SWER) nearby the pipeline</li>
+            <li>Improper earthing of electrical systems</li>
+            <li>Continuous welding works near pipeline ROU and</li>
+            <li>AC Traction</li>
+          </ul>]]>
+        </transcript>
+      </page>
+      <page id="3" target="m1_t7_p3">
+        <title><![CDATA[PIL]]></title>
+        <transcript>
+          <![CDATA[ Here are ways to mitigate stray current interference. These include:
+           <ul>
+            <li>Grounding pipe using distributed galvanic anodes such as Zinc or Magnesium or using DC decouples such as polarization cells.</li>
+            <li>Providing significant separation between pipeline and HVAC system.</li>
+            <li>Applying additional/enhanced coating to the specific area(s).</li>
+            <li>Installing a Diode bond to drain the stray current back to its source.</li>
+            <li>Relocating the existing structures or re-routing the proposed structures.</li>
+            <li>Applying local CP to the affected structure or feeding additional current from the existing CP system.</li>
+            <li>Install Equipotential Ground Mats at valves, test stations (for shock hazard).</li>
+            <li>Using Corrosion Coupons for monitoring.</li>
+           </ul>
+          ]]>
+        </transcript>
+      </page>
+      <page id="4" target="m1_t7_p4">
+        <title><![CDATA[PIL]]></title>
+        <transcript>
+          <![CDATA[It is time to check your understanding of the topics covered so far.<br /><br />
+            Select True or False for each sentence and then click ‘Submit’.<br /><br />
+          ]]>
+        </transcript>
+      </page>
+    </topic>    
+    <topic id="8">
+      <title><![CDATA[]]></title>
+      <page id="1" target="m1_t8_p1">
+        <title><![CDATA[PIL]]></title>
+        <transcript>
+          <![CDATA[  Let us now learn about CP Surveys. <br>
+           There are three types of CP Surveys, these are 
+            <ul>
+            <li> CP ON Potential Survey </li> 
+            <li> CP ON/OFF Survey  </li> 
+            <li> CIPL / DCVG Survey  </li> 
+            </ul>
+            <br> <br />
+            Click on each survey to learn more.
+            <br />
+            CP ON Potential Survey- This survey is done for the measurement of CP ON pipe to soil potential along the pipeline at every test station.
+            <br>
+            CP ON/OFF Survey is done to check the effectiveness of the CP system. In the On/OFF Survey, the measurement of CP Instant OFF and ON PSP is done at every test station. This is done by installing the interrupters along the pipeline for each pipeline section with a time ratio of 4:1 seconds.
+            <br>
+             CIPL Survey assesses the cathodic protection effectiveness over the entire length of the pipeline, not solely at the test points. 
+              The principle of a close-interval potential survey (CIPS or CIS) is to record the pipe-to-soil (P/S) potential profile of a pipeline over its entire length by measuring potentials at close intervals
+               The surveyor walks along the pipeline with the equipment and measures  PSP at each meter.
+              Click here to view an image to show CIPL Survey.
+              <br>
+              In CIPL Survey the surveyor walks along the pipeline with the equipment and measures  PSP at each meter.
+              <br>
+               In a DCVG survey, a direct current (DC) signal is applied to the pipeline and the voltage gradient in the soil above the pipeline is measured. 
+                Click here to view an image to show DCVG Survey.
+                 <br>
+                 Voltage gradients, as measured between two calibrated reference electrodes spaced apart, arise as a result of the current pickup or discharge at pipeline coating holiday locations.
+
+               ]]>
+        </transcript>
+      </page>
+      <page id="2" target="m1_t8_p2">
+        <title><![CDATA[PIL]]></title>
+        <transcript>
+          <![CDATA[ Now let us go through the frequency of various CP surveys and asset inspections. In PIL, the CP surveys and CP asset inspections are done on a monthly, quarterly, half-yearly, and yearly basis.
+           <br>
+           <ul>
+           <li>CP ON Potential Survey is done monthly</li>
+           <li>CP ON/OFF Survey is done yearly</li>
+           <li>TR units/ CPPSM units maintenance and monitoring is monthly basis</li>
+           <li>Reference cell and other instruments calibration is done half-yearly</li>
+           <li>Corrosion coupon inspection is done yearly</li>
+           <li>Anode current measurement is done Quarterly</li>
+           <li>Polarisation cell checking is done on a half-yearly basis</li>
+           <li>Coating Health surveys (CIPL/DCVG) are carried out once in 5 years</li>
+           </ul>
+          ]]>
+        </transcript>
+      </page>
+      <page id="3" target="m1_t8_p3">
+        <title><![CDATA[PIL]]></title>
+        <transcript>
+          <![CDATA[  Various Codes and Standards related to CP are:
+            <ul>
+            <li>NACE SP 0169 </li>
+            <li>NACE SP 0177 </li>
+            <li>IS-8062</li>
+            <li>PNGRB T4S  and PNGRB IMS Regulations for natural gas pipelines</li>
+             </ul>
+
+          ]]>
+        </transcript>
+      </page>
+    </topic>
+    <topic id="9">
+      <title><![CDATA[]]></title>
+      <page id="1" target="m1_t9_p1">
+        <title><![CDATA[Summary]]></title>
+        <transcript>
+          <![CDATA[Let us now recap the important points learned in this module.<br />
+          In this topic, we learned about:​
+          <ul>
+            <li>Different types of Corrosion Prevention Methods</li>
+            <li>Types of Cathodic Protection methods​</li><li>Measuring pipe to soil potential​</li>
+            <li>Various types of CP assets​</li>
+            <li>Types of CP Surveys</li>
+          </ul>]]>
+        </transcript>               
+      </page>
+      <page id="2" target="m1_t9_p2">
+        <title><![CDATA[PIL]]></title>
+        <transcript>
+          <![CDATA[
+          Welcome to the assessment of the module.
+          <br />
+          There are 10 questions in the assessment. You need to attempt all questions and score a minimum of 80% to pass it.
+          <br />
+          After you start the assessment, you must complete it before you exit.
+          <br />
+          You will get three attempts to pass the assessment. If you fail the 1st attempt, you need to watch a booster video for summarising the topics, in case of 2nd failed attempt, topic of improvement will be displayed to brush up on the learning again.
+          <br />
+          After 3 retakes, feedback will be sent to the trainer and you will be required to revisit the module.
+          <br />
+          Good Luck!
+          <br />
+          To proceed, click the Start button.
+           ]]>
+        </transcript>
+      </page>
+    </topic>  
+  </module>
+</courseData>

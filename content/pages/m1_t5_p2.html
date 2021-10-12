@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>PIL Pipeline Criteria for CP</title>
+  <style type="text/css">
+    .background_design {
+      background-image: url('./content/images/pages/m1_t5_p2/base_bg.png');
+      background-repeat: no-repeat;
+      margin: 0px 55px;
+      height: 945px;
+      background-size: 100% 100%;
+    }
+
+    .m1_t5_p2_content .col-2 {
+      padding-right: 30px;
+      position: absolute;
+      font-weight: normal;
+      line-height: 40px;
+    }
+
+    .m1_t5_p2_content1 {
+      font-size: 28px;
+      width: 665px;
+      top: 25%;
+      left: 33%;
+      text-align: center;
+    }
+
+    .m1_t5_p2_content2 {
+      font-size: 28px;
+      width: 550px;
+      top: 63%;
+      left: 7.5%;
+    }
+
+    .m1_t5_p2_content3 {
+      font-size: 28px;
+      width: 550px;
+      top: 63%;
+      left: 65%;
+    }
+
+    .center_content {
+      padding-right: 0px !important;
+      text-align: center;
+      width: 190px;
+      font-size: 35px;
+      top: 55%;
+      left: 44.5%;
+      font-family: "PLinotte-Bold";
+    }
+  </style>
+</head>
+
+<body>
+  <section id="page-intro">
+    <p class="headingOne"><strong>Basics of Cathodic Protection (CP)</strong></p>
+    <p class="headingTwo">PIL Pipeline Criteria for CP</p>
+  </section>
+  <section id="pageDiv" class="m1t5p2">
+    <section id="audio-video-player"></section>
+    <div class="container-fluid background_design">
+      <div class="row m1_t5_p2_content">
+        <div class="col-2 m1_t5_p2_content1 d-none 1_4">
+          The Pipe to Soil ON potential shall be in between (-) 0.95V to (-) 1.5V with respect to saturated
+          copper/copper sulfate reference electrode.
+
+        </div>
+        <div class="col-2 m1_t5_p2_content2 d-none 1_18">
+          The Pipe to Soil instant OFF potential shall be in between (-) 0.85V to (-) 1.2V with respect to saturated
+          copper/copper sulfate reference electrode.
+
+        </div>
+        <div class="col-2 m1_t5_p2_content3 d-none 1_32">
+          A positive potential swing of 50mV or more is sufficient to indicate the presence of an interference requiring
+          investigation and mitigation measures.
+
+        </div>
+        <div class="col-2 center_content">
+          Criteria for Cathodic Protection
+        </div>
+      </div>
+    </div>
+  </section>
+</body>
+<script>
+  currentPagenumber = 6;
+  var pagenumber = 1;
+  menuSelection(pagenumber);
+  var tabnum = 1;
+  var initialaudio = model.getPageCurrentAudioPath(true, 1);
+  initAudioVideoPlayer(initialaudio, 'audio-video-player', 'm4a');
+
+  $('#audio-video-player').on($.jPlayer.event.timeupdate, function (event) {
+    var classTime = event.jPlayer.status.currentTime.toFixed(0);
+    $("." + tabnum + '_' + classTime).removeClass("d-none");
+  });
+  
+  $('#audio-video-player').on($.jPlayer.event.seeking, function (event) {
+    updateDurationAudio(event);
+  });
+
+  $('#audio-video-player').on($.jPlayer.event.seeked, function (event) { 
+    updateDurationAudio(event);
+  });
+
+  $('#audio-video-player').on($.jPlayer.event.ended, function (event) {
+    $('#player_nextBtn').removeClass("player_nextBtnDisabled_style").addClass("player_nextBtn_style");
+    $('.itextNext').removeClass("d-none");
+    $('#player_content_controls').addClass('audio-video-player-stopped');
+  });
+
+  function updateDurationAudio(event) {
+    var percentage = (event.jPlayer.status.currentTime / event.jPlayer.status.duration) * 100;
+    var classTime = event.jPlayer.status.currentTime.toFixed(0);
+    var totaltime = event.jPlayer.status.duration.toFixed(0);
+
+    for (let i = 0; i <= classTime; i++) {
+      $("." + tabnum + '_' + i).removeClass("d-none");
+    }
+    for (let i = classTime; i < totaltime; i++) {
+      $("." + tabnum + '_' + i).addClass("d-none");
+    }
+  };
+  
+</script>
+
+</html>

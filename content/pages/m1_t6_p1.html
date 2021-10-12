@@ -1,0 +1,816 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>CP Assets</title>
+  <style type="text/css">
+    #pageDiv {
+      padding-top: 11%;
+    }
+
+    .m1-t6-p1-cta {
+      justify-content: center;
+      margin-top: -10px;
+    }
+
+    .m1-t6-p1-cta a {
+      color: white
+    }
+
+    .cta-div {
+      padding: 0px 210px 0px 210px;
+      margin-bottom: 50px;
+      box-sizing: border-box;
+    }
+
+    .cta-title {
+      position: absolute;
+      font-size: 27px;
+      font-family: "PLinotte-SemiBold";
+    }
+
+
+    .cta-title.common {
+      top: 295px;
+      margin-left: -336px;
+    }
+
+
+    .cta-title.cp_transformers {
+      line-height: 1.1;
+      top: 285px;
+      margin-left: -342px;
+    }
+
+
+    .cta-img {
+      position: relative;
+      margin-right: 38px;
+      height: 666px;
+      width: 325px;
+    }
+
+    .wrapper {
+      display: flex;
+      justify-content: flex-end;
+    }
+
+    p.click-info span {
+      margin-left: 60px;
+      color: green;
+      font-size: 25px;
+      margin-top: -20px;
+      font-style: italic;
+    }
+
+    .click-info {
+      position: relative;
+      margin-top: -40px;
+      margin-left: -163px;
+    }
+
+    .modal-content {
+      margin-top: 90px;
+    }
+
+    .info-img {
+      width: 606px;
+      padding-left: 89px;
+      margin: 0px;
+    }
+
+    .info-text {
+      color: green;
+      font-size: 2.5rem;
+      position: absolute;
+      top: 8px;
+      left: 75px;
+    }
+
+    .modal-header {
+      margin: 15px 0px 0px 20px;
+      background: linear-gradient(to right, #72BF44 0%, #72BD46 25%, #88C265 40%, #BADDA5 65%, #E6F2DE 100%);
+      border-top-left-radius: 53px 50px;
+      border-bottom-left-radius: 55px 46px;
+      box-shadow: -2.7px -2.7px;
+      font-size: 3rem;
+      padding-left: 1em;
+    }
+
+    .modalTitle {
+      color: white;
+      font-family: 'PLinotte-SemiBold';
+    }
+
+    .main-list {
+      text-indent: -1em;
+      list-style-position: inside;
+      margin-left: 46px;
+      line-height: 3.8rem;
+    }
+
+    .sub-list {
+      list-style-position: inside;
+      text-indent: 0rem;
+    }
+
+    .list .main-list::before {
+      content: "•";
+      color: green;
+      font-weight: bold;
+      font-size: 4rem;
+    }
+
+    .listText {
+      font-size: 2.5rem;
+      margin: 15px;
+    }
+
+    .list {
+      list-style: none;
+    }
+
+    .liSpanText {
+      padding-left: 8px;
+      text-align: justify;
+    }
+
+    .modal-dialog {
+      min-width: 1254px;
+    }
+
+    .nobleMetalsImg {
+      margin-bottom: 10px;
+      height: 150px;
+      width: 262px;
+    }
+
+    .popUpImage {
+      width: 384px;
+      height: 447px;
+    }
+
+    .halfCellImg {
+      height: 230px;
+      padding-bottom: 12px;
+    }
+
+    button.close,
+    button.close:hover {
+      box-shadow: 2.5px -1.5px black;
+      border-radius: 50%;
+      background-color: #72BF44;
+      width: 50px;
+      height: 50px;
+      font-size: 4rem;
+      color: white;
+      opacity: 0.8;
+      background-image: none;
+      margin-right: 10px !important;
+    }
+
+    .close span {
+      display: block;
+      font-size: 5rem;
+      font-weight: bold;
+      margin-top: -4px;
+    }
+
+    .cptransformer_visited {
+      left: 25%;
+    }
+
+    .anode_visited {
+      left: 44%;
+    }
+
+    .halfcells_visited {
+      left: 63%;
+    }
+
+    .teststations_visited {
+      left: 82%;
+    }
+
+    .tabs-visited {
+      position: absolute;
+      background-image: url('./content/images/shell/tickmark_black.png');
+      background-repeat: no-repeat;
+      height: 57px;
+      width: 57px;
+      top: 27%;
+    }
+
+    .sub-list {
+      list-style-image: url('./content/images/shell/sub-list-style.png');
+    }
+
+    #cpTransformersModal .modal-footer,
+    #anodeModal .modal-footer,
+    #halfCellModal .modal-footer,
+    #testStationsModal .modal-footer {
+      justify-content: flex-start;
+    }
+
+    #jp_container_1.jp-audio,
+    #jp_container_1 .jp-type-single .jp-interface {
+      width: 100%;
+      /* background: #ff8c00; */
+      background: white;
+      border-radius: 30px;
+      height: 53px !important;
+      border: none;
+    }
+
+    #jp_container_1 .jp-type-single .jp-gui.jp-interface .jp-controls .jp-play,
+    #jp_container_1 .jp-play:hover,
+    #jp_container_1 .jp-play:focus {
+      background: transparent url('./content/images/shell/play-modal.png') no-repeat;
+    }
+
+    #jp_container_1.jp-audio.jp-state-playing .jp-type-single .jp-gui.jp-interface .jp-controls .jp-play,    
+    #jp_container_1.jp-audio.audio-video-player-stopped .jp-type-single .jp-gui.jp-interface .jp-controls .jp-play,
+    #jp_container_1 .jp-state-playing .jp-play:hover,
+    #jp_container_1 .jp-state-playing .jp-play:focus {
+      background: transparent url('./content/images/shell/pause-modal.png') no-repeat;
+    }
+
+    #jp_container_1.jp-audio .jp-type-single .jp-gui.jp-interface .jp-controls {
+      width: 100%;
+      padding: 8px 20px;
+    }
+
+    #jp_container_1.jp-audio .jp-type-single .jp-gui.jp-interface .jp-progress {
+      left: 70px;
+      width: 88%;
+    }
+
+    #jp_container_1.jp-audio .jp-type-single .jp-gui.jp-interface .jp-progress {
+      top: 22px;
+      height: 8px;
+      background: transparent;
+    }
+
+    #jp_container_1.jp-audio .jp-type-single .jp-gui.jp-interface .jp-progress .jp-play-bar {
+      position: absolute;
+      height: 8px;
+      /* background: #ffffff; */
+      background: #ff8c00;
+    }
+    
+    #jp_container_1.audio-video-player-stopped .jp-type-single .jp-gui.jp-interface .jp-progress .jp-play-bar{
+      width:100%!important;
+    }
+
+    #jp_container_1.jp-audio .jp-type-single .jp-gui.jp-interface .jp-progress .jp-seek-bar {
+      position: absolute;
+      /* background: #ffffff; */
+      background: #ff8c00;
+      height: 2px;
+      top: 3px;
+    }
+
+    #jp_container_1.jp-audio .jp-type-single .jp-gui.jp-interface .jp-volume-controls .jp-volume-max,
+    #jp_container_1 .jp-volume-max:hover,
+    #jp_container_1 .jp-volume-max:focus {
+      background: transparent url('./content/images/shell/volume-modal.png') no-repeat;
+      width: 40px;
+      height: 40px;
+    }
+
+    #jp_container_1.jp-audio .jp-type-single .jp-gui.jp-interface .jp-volume-controls {
+      top: 13px;
+      right: 0;
+      left: auto;
+    }
+
+    #jp_container_1.jp-audio .jp-type-single .jp-gui.jp-interface .jp-volume-controls .jp-volume-max {
+      left: auto;
+      right: 15px;
+    }
+
+    #jp_container_1.jp-audio .jp-type-single .jp-gui.jp-interface .jp-volume-controls .jp-volume-bar {
+      border-radius: 20px;
+      border: 7px solid #C5D2E1;
+      /* background: #7E7E7E !important; */
+      top: -11rem;
+      left: 9rem;
+      width: 150px !important;
+      height: fit-content;
+      box-shadow: 0px 0px 0px 7px #FFFFFF;
+      transform: rotate(-92deg);
+    }
+
+    #jp_container_1.jp-audio .jp-type-single .jp-gui.jp-interface .jp-volume-controls .jp-volume-bar .jp-volume-bar-value {
+      height: 11px !important;
+      background: linear-gradient(to left, #FFFFFF 5%, #F9A220 10%);
+    }
+
+    #jp_container_1.jp-audio .jp-type-single .jp-gui.jp-interface .jp-volume-controls .jp-volume-bar .jp-volume-bar-value .jp-volume-bar-knob {
+      position: absolute;
+      right: 0px;
+      margin-top: -6px;
+      z-index: 50;
+    }
+  </style>
+</head>
+
+<body>
+  <section id="page-intro">
+    <p class="headingOne"><strong>Basics of Cathodic Protection (CP)</strong></p>
+    <p class="headingTwo">CP Assets</p>
+  </section>
+  <section id="pageDiv" class="m1t6p1">
+    <section id="audio-video-player"></section>
+    <div class="cta-div m1-t6-p1-cta enableTabs">
+      <a href="javascript:void(0)" id="cpTransformers" class="tabs d-none 1_5" tab-num="2">
+        <img class="cta-img " src="./content/images/pages/m1_t6_p1/cp_transformers.png" alt="" />
+        <span class="cptransformer_visited" id="1"></span>
+        <span class="cta-title cp_transformers">CP Transformer <br />rectifier units</span>
+      </a>
+      <a href="javascript:void(0)" id="anode" data-toggle="modal" class="tabs d-none 1_8" tab-num="3">
+        <img class="cta-img" src="./content/images/pages/m1_t6_p1/anode.png" alt="" />
+        <span class="anode_visited"  id="2"></span>
+        <span class="cta-title common">Anode</span>
+      </a>
+      <a href="javascript:void(0)" id="halfCells" data-toggle="modal" class="tabs d-none 1_9" tab-num="4">
+        <img class="cta-img" src="./content/images/pages/m1_t6_p1/half_cells.png" alt="" />
+        <span class="halfcells_visited"  id="3"></span>
+        <span class="cta-title common">Half Cells</span>
+      </a>
+      <a href="javascript:void(0)" id="testStations" data-toggle="modal" class="tabs d-none 1_10" tab-num="5">
+        <img class="cta-img" src="./content/images/pages/m1_t6_p1/test_stations.png" alt="" />
+        <span class="teststations_visited" id="4"></span>
+        <span class="cta-title common"  >Test Stations</span>
+      </a>
+      <p class="click-info d-none 1_12" tab-num-details="1"><span class="info-text">Click each image to learn more. </span>
+        <img class="info-img" src="./content/images/shell/mouse_click.png" alt="">
+      </p>
+    </div>
+  </section>
+
+  <div class="modal fade" id="cpTransformersModal">
+    <div class="modal-dialog modal-lg modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header">
+          <p class="modal-title modalTitle">CP Transformer rectifier units</p>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">x</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <div class="row listText">
+            <div class="col-md-8">
+              <ul class="list">
+                <li class="main-list d-none 2_1">
+                  <span class="liSpanText">
+                    Most common type of power supply used for impressed current cathodic protection is a transformer
+                    rectifier units (also known as TR or TRU)
+                  </span>
+                </li>
+              </ul>
+              <ul class="list">
+                <li class="main-list d-none 2_11">
+                  <span class="liSpanText">
+                    Converts the AC power supply voltage to the required output voltage and then converts it to DC
+                  </span>
+                </li>
+              </ul>
+              <ul class="list">
+                <li class="main-list d-none 2_18"><span class="liSpanText">
+                    Ratings of the CP rectifier units used in PIL are
+                    <ul class="nobleMetalsList">
+                      <li class="sub-list d-none 2_23">
+                        <span>For Station CP - 50V/75A</span>
+                      </li>
+                      <li class="sub-list d-none 2_27">
+                        <span>For mainline CP – 25V/25A</span>
+                      </li>
+                    </ul>
+                  </span></li>
+              </ul>
+            </div>
+            <div class="col-md-4">
+              <div class="container">
+                <div class="row">
+                  <div class="col-md-12 w-100">
+                    <img class="popUpImage" src="./content/images/pages/m1_t6_p1/cp_transformers_pop-up.png" alt="">
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="modal-footer"></div>
+      </div>
+    </div>
+  </div>
+  <div class="modal fade" id="anodeModal">
+    <div class="modal-dialog modal-lg modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header">
+          <p class="modal-title modalTitle">Anode</p>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <div class="row listText">
+            <div class="col-md-8">
+              <ul class="list">
+                <li class="main-list d-none 3_1">
+                  <span class="liSpanText">
+                    Materials used for feeding the required current to the pipeline
+                  </span>
+                </li>
+                <li class="main-list d-none 3_5">
+                  <span class="liSpanText">
+                    For sacrificial system, generally used anodes are Zinc or Magnesium
+                  </span>
+                </li>
+                <li class="main-list d-none 3_10">
+                  <span class="liSpanText">
+                    For ICCP system the type of anodes used are Mixed Metal oxide and Hi - Silicon cast Chromium
+                  </span>
+                </li>
+              </ul>
+            </div>
+            <div class="col-md-4">
+              <div class="container">
+                <div class="row">
+                  <div class="col-md-12 w-100">
+                    <img class="popUpImage" src="./content/images/pages/m1_t6_p1/anode_pop-up.png" alt="">
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="modal-footer"></div>
+      </div>
+    </div>
+  </div>
+  <div class="modal fade" id="halfCellModal">
+    <div class="modal-dialog modal-lg modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header">
+          <p class="modal-title modalTitle">Half Cell/Reference cell</p>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <div class="row listText">
+            <div class="col-md-6">
+              <ul class="list">
+                <li class="main-list d-none 4_3">
+                  <span class="liSpanText">
+                    Used for measuring the potential of a metal surface exposed to an electrolyte
+                  </span>
+                </li>
+                <li class="main-list d-none 4_11">
+                  <span class="liSpanText">
+                    Reference electrode used is saturated Cu/CuSO<sub>4</sub> reference cell
+                  </span>
+                </li>
+                <li class="main-list d-none 4_17">
+                  <span class="liSpanText">
+                    Electrode is composed of a copper rod, immersed in a saturated solution of copper sulfate, held in a
+                    non-conducting cylinder with a porous plug at the bottom
+                  </span>
+                </li>
+              </ul>
+            </div>
+            <div class="col-md-6">
+              <div class="row">
+                <img class="halfCellImg" src="./content/images/pages/m1_t6_p1/half_cell_pop-up1.png" alt="">
+              </div>
+              <div class="row">
+                <img class="halfCellImg" src="./content/images/pages/m1_t6_p1/half_cell_pop-up2.png" alt="">
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="modal-footer"></div>
+      </div>
+    </div>
+  </div>
+  <div class="modal fade" id="testStationsModal">
+    <div class="modal-dialog modal-lg modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header">
+          <p class="modal-title modalTitle">Test Stations
+          </p>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <div class="row listText">
+            <div class="col-md-8">
+              <ul class="list">
+                <li class="main-list d-none 5_2">
+                  <span class="liSpanText">
+                    Are junction boxes installed along the pipeline route at every 1km for measurement of PSP
+                  </span>
+                </li>
+                <li class="main-list d-none 5_9">
+                  <span class="liSpanText">
+                    Cable connection from pipeline underground is terminated inside the Test station for measurement of
+                    PSP
+                  </span>
+                </li>
+                <li class="main-list d-none 5_16">
+                  <span class="liSpanText">
+                    Different types of test stations are used based on installation location
+                  </span>
+                </li>
+              </ul>
+            </div>
+            <div class="col-md-4">
+              <div class="container">
+                <div class="row">
+                  <div class="col-md-12 w-100">
+                    <img class="popUpImage" src="./content/images/pages/m1_t6_p1/test_stations_pop-up.png" alt="">
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="modal-footer"></div>
+      </div>
+    </div>
+  </div>
+
+</body>
+
+<script type="text/javascript">
+  currentPagenumber = 7;
+  var pagenumber = 1;
+  menuSelection(pagenumber);
+  var curPage = model.currentModule+'_'+model.currentTopic+'_'+model.currentPage;
+  $(document).ready(function(){
+    getPageActivity(curPage, 'tabs-visited');
+  });
+
+  var tabnum = 1;
+  var initialaudio = model.getPageCurrentAudioPath(true, 1);
+  initAudioVideoPlayer(initialaudio, 'audio-video-player', 'm4a');
+
+  $('#audio-video-player').on($.jPlayer.event.timeupdate, function (event) {
+    var classTime = event.jPlayer.status.currentTime.toFixed(0);
+    $("." + tabnum + '_' + classTime).removeClass("d-none");
+  });
+
+  $('#audio-video-player').on($.jPlayer.event.ended, function (event) {
+    $('#player_nextBtn').removeClass("player_nextBtnDisabled_style").addClass("player_nextBtn_style");
+    $('.itextNext').removeClass("d-none");
+    $('.m1-t6-p1-cta').removeClass('enableTabs');
+    $('#player_content_controls').addClass('audio-video-player-stopped');
+  });
+
+  $('#audio-video-player').on($.jPlayer.event.seeking, function (event) {
+    updateDurationAudio(event);
+  });
+
+  $('#audio-video-player').on($.jPlayer.event.seeked, function (event) {
+    updateDurationAudio(event);
+  });
+
+  /**Modal not to be closed when click outside or keyboard events*/
+  $('#anodeModal, #halfCellModal, #testStationsModal, #cpTransformersModal').modal({
+    backdrop: 'static',
+    keyboard: true
+  });
+
+  $(document).on($.jPlayer.event.timeupdate, '#jquery_jplayer_1', function (event) {
+    updateTimeAudio(event);
+  });
+
+  $(document).on($.jPlayer.event.seeking, '#jquery_jplayer_1', function (event) {
+    updateDurationAudio(event);
+  });
+
+  $(document).on($.jPlayer.event.seeked, '#jquery_jplayer_1', function (event) {
+    updateDurationAudio(event);
+  });
+
+  $(document).on($.jPlayer.event.ended, '#jquery_jplayer_1', function (event) {
+    $('#jp_container_1').addClass('audio-video-player-stopped');
+  });
+
+  $('#cpTransformers').click(function () {
+    $('#cpTransformersModal').find('.modal-footer').html('<div id="jquery_jplayer_1" class="jp-jplayer"></div><div id="jp_container_1" class="jp-audio" role="application" aria-label="media player"><div class="jp-type-single"><div class="jp-gui jp-interface"><div class="jp-controls"><button class="jp-play" role="button" tabindex="0">play</button></div><div class="jp-progress"><div class="jp-play-bar"></div><div class="jp-seek-bar"></div></div><div class="jp-volume-controls"><button class="jp-volume-max" role="button" tabindex="0">max volume</button><div class="jp-volume-bar d-none"><div class="jp-volume-bar-value"><span class="jp-volume-bar-knob"></span></div></div></div></div></div></div>');   
+    $("#jquery_jplayer_1").jPlayer({
+      cssSelectorAncestor: "#jp_container_1",
+      supplied: "mp3, oga",
+      useStateClassSkin: true,
+      autoBlur: false,
+      smoothPlayBar: true,
+      keyEnabled: true,
+      remainingDuration: true,
+      toggleDuration: true,
+      volumechange: function (event) {
+        if (event.jPlayer.options.muted) {
+          myControl.volume.slider("value", 0);
+        } else {
+          myControl.volume.slider("value", event.jPlayer.options.volume);
+        }
+      },
+    });
+    $(".listText ul li").addClass("d-none");
+    $('.cptransformer_visited').addClass('tabs-visited');
+    $('#cpTransformersModal').modal('show');
+    $('div.modal-backdrop').remove();
+    $('#pageDiv').append('<div class="modal-backdrop fade show"></div>');
+
+    myControl = { volume: $(".jp-volume-bar-knob") };
+    myControl.volume.slider({
+      animate: "fast",
+      max: 1,
+      range: "min",
+      step: 0.01,
+      value: $.jPlayer.prototype.options.volume,
+      orientation: "vertical",
+      slide: function (event, ui) {
+        $("#jquery_jplayer_1").jPlayer("option", "muted", false);
+        $("#jquery_jplayer_1").jPlayer("option", "volume", ui.value);
+      }
+    });
+    tabnum = $(this).attr('tab-num');
+    playAudio(tabnum);
+    setPageActivity(curPage,'tabs-visited');
+  })
+
+  $('#anode').click(function () {
+    $('#anodeModal').find('.modal-footer').html('<div id="jquery_jplayer_1" class="jp-jplayer"></div><div id="jp_container_1" class="jp-audio" role="application" aria-label="media player"><div class="jp-type-single"><div class="jp-gui jp-interface"><div class="jp-controls"><button class="jp-play" role="button" tabindex="0">play</button></div><div class="jp-progress"><div class="jp-play-bar"></div><div class="jp-seek-bar"></div></div><div class="jp-volume-controls"><button class="jp-volume-max" role="button" tabindex="0">max volume</button><div class="jp-volume-bar d-none"><div class="jp-volume-bar-value"><span class="jp-volume-bar-knob"></span></div></div></div></div></div></div>');   
+    $("#jquery_jplayer_1").jPlayer({
+      cssSelectorAncestor: "#jp_container_1",
+      supplied: "mp3, oga",
+      useStateClassSkin: true,
+      autoBlur: false,
+      smoothPlayBar: true,
+      keyEnabled: true,
+      remainingDuration: true,
+      toggleDuration: true,
+      volumechange: function (event) {
+        if (event.jPlayer.options.muted) {
+          myControl.volume.slider("value", 0);
+        } else {
+          myControl.volume.slider("value", event.jPlayer.options.volume);
+        }
+      },
+    });
+    $(".listText ul li").addClass("d-none");
+    $('.anode_visited').addClass('tabs-visited');
+    $('#anodeModal').modal('show');
+    $('div.modal-backdrop').remove();
+    $('#pageDiv').append('<div class="modal-backdrop fade show"></div>');
+    myControl = {
+      volume: $(".jp-volume-bar-knob")
+    };
+    myControl.volume.slider({
+      animate: "fast",
+      max: 1,
+      range: "min",
+      step: 0.01,
+      value: $.jPlayer.prototype.options.volume,
+      orientation: "vertical",
+      slide: function (event, ui) {
+        $("#jquery_jplayer_1").jPlayer("option", "muted", false);
+        $("#jquery_jplayer_1").jPlayer("option", "volume", ui.value);
+      }
+    });
+    tabnum = $(this).attr('tab-num');
+    playAudio(tabnum);
+    setPageActivity(curPage,'tabs-visited');
+  })
+
+  $('#halfCells').click(function () {
+    $('#halfCellModal').find('.modal-footer').html('<div id="jquery_jplayer_1" class="jp-jplayer"></div><div id="jp_container_1" class="jp-audio" role="application" aria-label="media player"><div class="jp-type-single"><div class="jp-gui jp-interface"><div class="jp-controls"><button class="jp-play" role="button" tabindex="0">play</button></div><div class="jp-progress"><div class="jp-play-bar"></div><div class="jp-seek-bar"></div></div><div class="jp-volume-controls"><button class="jp-volume-max" role="button" tabindex="0">max volume</button><div class="jp-volume-bar d-none"><div class="jp-volume-bar-value"><span class="jp-volume-bar-knob"></span></div></div></div></div></div></div>');
+
+    $("#jquery_jplayer_1").jPlayer({
+      cssSelectorAncestor: "#jp_container_1",
+      supplied: "mp3, oga",
+      useStateClassSkin: true,
+      autoBlur: false,
+      smoothPlayBar: true,
+      keyEnabled: true,
+      remainingDuration: true,
+      toggleDuration: true,
+      volumechange: function (event) {
+        if (event.jPlayer.options.muted) {
+          myControl.volume.slider("value", 0);
+        } else {
+          myControl.volume.slider("value", event.jPlayer.options.volume);
+        }
+      },
+    });
+    $(".listText ul li").addClass("d-none");
+    $('.halfcells_visited').addClass('tabs-visited');
+    $('#halfCellModal').modal('show');
+    $('div.modal-backdrop').remove();
+    $('#pageDiv').append('<div class="modal-backdrop fade show"></div>');
+    myControl = {volume: $(".jp-volume-bar-knob")};
+    myControl.volume.slider({
+      animate: "fast",
+      max: 1,
+      range: "min",
+      step: 0.01,
+      value: $.jPlayer.prototype.options.volume,
+      orientation: "vertical",
+      slide: function (event, ui) {
+        $("#jquery_jplayer_1").jPlayer("option", "muted", false);
+        $("#jquery_jplayer_1").jPlayer("option", "volume", ui.value);
+      }
+    });
+    tabnum = $(this).attr('tab-num');
+    playAudio(tabnum);
+    setPageActivity(curPage,'tabs-visited');
+  })
+
+  $('#testStations').click(function () {
+    $('#testStationsModal').find('.modal-footer').html('<div id="jquery_jplayer_1" class="jp-jplayer"></div><div id="jp_container_1" class="jp-audio" role="application" aria-label="media player"><div class="jp-type-single"><div class="jp-gui jp-interface"><div class="jp-controls"><button class="jp-play" role="button" tabindex="0">play</button></div><div class="jp-progress"><div class="jp-play-bar"></div><div class="jp-seek-bar"></div></div><div class="jp-volume-controls"><button class="jp-volume-max" role="button" tabindex="0">max volume</button><div class="jp-volume-bar d-none"><div class="jp-volume-bar-value"><span class="jp-volume-bar-knob"></span></div></div></div></div></div></div>');
+    
+    $("#jquery_jplayer_1").jPlayer({
+      cssSelectorAncestor: "#jp_container_1",
+      supplied: "mp3, oga",
+      useStateClassSkin: true,
+      autoBlur: false,
+      smoothPlayBar: true,
+      keyEnabled: true,
+      remainingDuration: true,
+      toggleDuration: true,
+      volumechange: function (event) {
+        if (event.jPlayer.options.muted) {
+          myControl.volume.slider("value", 0);
+        } else {
+          myControl.volume.slider("value", event.jPlayer.options.volume);
+        }
+      },
+    });
+    $(".listText ul li").addClass("d-none");
+    $('.teststations_visited').addClass('tabs-visited');
+    $('#testStationsModal').modal('show');
+    $('div.modal-backdrop').remove();
+    $('#pageDiv').append('<div class="modal-backdrop fade show"></div>');
+    myControl = {
+      volume: $(".jp-volume-bar-knob")
+    };
+    myControl.volume.slider({
+      animate: "fast",
+      max: 1,
+      range: "min",
+      step: 0.01,
+      value: $.jPlayer.prototype.options.volume,
+      orientation: "vertical",
+      slide: function (event, ui) {
+        $("#jquery_jplayer_1").jPlayer("option", "muted", false);
+        $("#jquery_jplayer_1").jPlayer("option", "volume", ui.value);
+      }
+    });
+    tabnum = $(this).attr('tab-num');
+    playAudio(tabnum);
+    setPageActivity(curPage,'tabs-visited');
+  })
+
+  $('.close').click(function () {    
+    $(document).find("#jquery_jplayer_1").jPlayer("pause").jPlayer("destroy");    
+    $('div.modal-backdrop').remove();
+    $('#anodeModal, #halfCellModal, #testStationsModal, #cpTransformersModal').modal('hide');
+    $('#anodeModal, #halfCellModal, #testStationsModal, #cpTransformersModal').find('.modal-footer').html('');
+  });
+
+  function playAudio(tabnum) {
+    var audioLocalFilePath = model.getPageCurrentAudioPath(true, tabnum);
+    $("#jquery_jplayer_1").jPlayer("setMedia", { mp3: audioLocalFilePath }).jPlayer("play");
+  }
+
+  function updateTimeAudio(event) {
+    var percentage = (event.jPlayer.status.currentTime / event.jPlayer.status.duration) * 100;
+    var classTime = event.jPlayer.status.currentTime.toFixed(0);
+    
+    $("." + tabnum + '_' + classTime).removeClass("d-none");
+  };
+
+  function updateDurationAudio(event) {
+    $('#jp_container_1').removeClass('audio-video-player-stopped');
+    var percentage = (event.jPlayer.status.currentTime / event.jPlayer.status.duration) * 100;
+    var classTime = event.jPlayer.status.currentTime.toFixed(0);
+    var totaltime = event.jPlayer.status.duration.toFixed(0);
+
+    for (let i = 0; i <= classTime; i++) {
+      $("." + tabnum + '_' + i).removeClass("d-none");
+    }
+    for (let i = classTime; i < totaltime; i++) {
+      $("." + tabnum + '_' + i).addClass("d-none");
+    }
+  };
+
+  $(document).on('click', '#jp_container_1 .jp-volume-max', function() {
+    $('#jp_container_1').find('.jp-volume-bar').toggleClass('d-none');
+  });
+</script>
+
+</html>

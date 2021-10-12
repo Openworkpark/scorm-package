@@ -1,0 +1,326 @@
+
+/********Add only shell related css*************/
+body {
+  overflow: hidden;
+}
+#MainC {
+  width: 1920px;
+  height: 945px;
+  position: relative;
+  left: 50%;
+  top: 50%;
+  overflow: hidden;
+  text-shadow: none;  
+}
+
+.MainC.non_addaptive {
+  /*transform: none !important;*/
+  position: relative;
+  /*left: auto;
+  right: 0;
+  top: auto;
+  bottom: 0;*/
+  margin: auto; 
+  width: 1920px;
+  height: 945px;
+}
+
+#player_menuWrapper {
+  display: block !important;
+}
+
+#scrollbox3 {
+  overflow: auto;
+  width: 400px;
+  height: 360px;
+  padding: 0 5px;
+  border: 1px solid #b7b7b7;
+}
+
+.track3 {
+  width: 8px;
+  background: rgba(203, 203, 203, 0.8);
+  margin-right: -12px;
+  border-radius: 0px;
+  -webkit-transition: background 0.1s linear;
+  transition: background 0.1s linear;
+}
+
+#treeMenu~div {
+  position: absolute;
+  left: 595px !important;
+}
+
+.handle3 {
+  width: 8px;
+  background: #003478;
+  border-radius: 0px;
+  -webkit-transition: width 0.1s;
+  transition: width 0.1s;
+}
+
+.track3:hover .handle3,
+.track3.dragging .handle3 {
+  width: 8px;
+}
+
+.transcript_Container_inner~div>.track3 {
+  width: 8px;
+  right: 0px;
+  background: #d1d3d4;
+  margin-right: 2px;
+  border-radius: 0px;
+  -webkit-transition: background 0.1s linear;
+  transition: background 0.1s linear;
+  margin-top: 3px;
+}
+
+.transcript_Container_inner~div>.track3>.handle3 {
+  width: 8px;
+  right: 0px;
+  background: #6d6e71;
+  border-radius: 0px;
+  -webkit-transition: width 0.1s;
+  transition: width 0.1s;
+}
+
+.mc {
+  position: relative;
+  height: 100%;
+  width: 100%;
+}
+
+/* glossary page pop css */
+
+#glossary .rowdivs {
+  background: none;
+}
+
+#glossary #myUL {
+  background: none !important;
+}
+
+#glossary #myUL li {
+  background: none !important;
+}
+
+#glossary #myUL li {
+  border-top: none !important;
+  border-bottom: 1px solid rgba(203, 203, 203, 0.3) !important;
+  border-right: none !important;
+  border-left: none !important;
+}
+
+#glossary #myUL li span.lefttext {
+  border-right: 1px solid rgba(203, 203, 203, 0.3) !important;
+}
+
+#glossary #myUL li a {
+  color: #fff !important;
+}
+
+#resourcePopup #glossary h2 {
+  background: none;
+  font-size: 30px;
+  font-family: "centralesansbook", Arial, Helvetica, sans-seri;
+  padding: 0;
+}
+
+.shellPopupWrap .handle3 {
+  background: #003478 !important;
+}
+
+#glossary .rowdivs~div>.track3 {
+  background: rgba(203, 203, 203, 0.5);
+}
+
+#glossary ::-webkit-input-placeholder {
+  color: #fff;
+}
+
+/* Chrome/Opera/Safari */
+
+#glossary ::-moz-placeholder {
+  color: #fff;
+}
+
+/* Firefox 19+ */
+
+#glossary :-ms-input-placeholder {
+  color: #fff;
+}
+
+/* IE 10+ */
+
+#glossary ::-moz-placeholder {
+  color: #fff;
+}
+
+/* Firefox 18- */
+
+#glossary ::-ms-clear {
+  display: none;
+}
+
+.menu_1overlay {
+  display: none;
+  width: 1288px;
+  height: 728px;
+  position: absolute;
+  left: 0px;
+  top: 0px;
+  z-index: -1;
+  background-color: rgba(0, 0, 0, 0.3);
+}
+
+/* glossary page pop css end*/
+
+.main_title.on {
+  opacity: -1;
+  display: none;
+  transition: inherit;
+}
+
+.whitelines {
+  float: left;
+  width: 1230px;
+  height: 60px;
+  display: none;
+  position: absolute;
+  left: -50px;
+  top: -15px;
+  z-index: 999;
+}
+
+.desablearea.overlayMenu {
+  margin-top: 8px;
+  margin-left: 8px;
+  display: none;
+  height: 40px;
+  width: 40px;
+  z-index: 9999;
+}
+
+.lefttrt.lft {
+  padding-top: 8px;
+}
+
+.footer {
+  display: block;
+}
+
+.mp-menu .leftmenus h2 {
+  margin-top: 20px;
+}
+
+.sdnmenu ul {
+  margin-top: 20px;
+}
+
+.sdnmenu ul li {
+  color: #fff;
+  float: left;
+  width: 100%;
+  font-size: 22px;
+  padding: 5px 60px;
+}
+
+.sdnmenu ul li div {
+  float: left;
+  cursor: pointer;
+  position: relative;
+}
+
+.sdnmenu ul li div {
+  position: relative;
+  margin: 0 0 0 -10px;
+  z-index: 2
+}
+
+.sdnmenu ul li div span {
+  position: relative;
+  z-index: 10;
+  background: #0f204b;
+  padding: 0 10px;
+  display: block;
+}
+
+.sdnmenu ul li div:after {
+  content: "";
+  transition: all 0.5s ease-in-out 0s;
+  position: absolute;
+  left: 50%;
+  top: 19px;
+  width: 0px;
+  height: 1px;
+  background: #72b5cc;
+}
+
+.sdnmenu ul li div:hover {
+  color: #72b5cc
+}
+
+.sdnmenu ul li div:hover:after {
+  width: 490px;
+  left: -50px;
+}
+
+.shellPopupWrap .resources p {
+  color: #ffffff;
+}
+
+.shellPopupWrap .resources p a {
+  color: #0089c4;
+}
+
+@media screen and (width: 1024px) and (orientation:landscape) {
+  #treeMenu~div {
+      left: 598px !important;
+  }
+
+  .warpperarea {
+      max-width: 980px;
+  }
+
+  .main_title {
+      left: 50px;
+      top: 22px;
+  }
+
+  .desablearea.overlayMenu {
+      width: 27px;
+  }
+
+  #audioOnOff {
+      left: 0;
+  }
+
+  .playerCenterBtns ul li.plydv3 {
+      width: 606px;
+  }
+
+  #progressSlider {
+      width: auto;
+  }
+
+  .nextBlink {
+      background-position: -36px -240px;
+  }
+}
+
+@media screen and (max-width: 1023px) and (orientation:portrait) {
+  .transcript_Container_inner~div>.track3 {
+      margin-top: 21px !important;
+      height: 89px !important;
+  }
+}
+
+.dot_listed {
+  height: 100%;
+  width: 21px;
+  position: absolute;
+  left: 16px;
+  top: 0px;
+  z-index: 1;
+  display: none;
+}

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Importance and Measurement Methods</title>
+  <style type="text/css"></style>
+</head>
+
+<body>
+  <section id="page-intro">
+    <p class="headingOne"><strong>Basics of Cathodic Protection (CP)</strong></p>
+    <p class="headingTwo">Importance and Measurement Methods</p>
+  </section>
+  <section id="pageDiv" class="m1t5p1">
+    <section id="audio-video-player"></section>
+  </section>
+</body>
+<script>
+  currentPagenumber = 5;
+  var pagenumber = 1;
+  menuSelection(pagenumber);
+  initAudioVideoPlayer('./content/video/Screen_15.mp4', 'audio-video-player', 'm4v');
+
+  $('#audio-video-player').on($.jPlayer.event.ended, function (event) {
+    $('#audio-video-player').css("display", "block");
+    $('#player_nextBtn').removeClass("player_nextBtnDisabled_style").addClass("player_nextBtn_style");
+    $('.itextNext').removeClass("d-none");    
+    $('#player_content_controls').addClass('audio-video-player-stopped');
+  });
+
+</script>
+</html>

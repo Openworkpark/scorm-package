@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Menu</title>
+  <style type="text/css">
+    .list-group {
+      margin-left: -1.5rem
+    }
+
+    .menu_listing {
+      padding-top: 12%;
+      padding-left: 4%;
+    }
+
+    #pageDiv .menu_listing .disabled-list div:nth-child(2):hover {
+      color: #000000 !important;
+    }
+    .mouse {
+      bottom: 15%;
+    left: 59%;
+      position: absolute;
+      background-image: url(./content/images/shell/mouse_click.png);
+      background-repeat: no-repeat;
+      height: 59px;
+    }
+
+    .mouse-content {
+      line-height: 25px;
+      margin-top: 2px;
+      font-size: 25px !important;
+      font-style: italic;
+      color: green !important;
+      margin-left: 53px;
+    }
+  </style>
+</head>
+
+<body>
+  <section id="page-intro">
+    <p class="headingOne"><strong>Basics of Cathodic Protection (CP)</strong></p>
+    <p class="headingTwo">Menu</p>
+  </section>
+  <section id="pageDiv" class="m1t1p2" animType="audioTimeline">    
+    <section id="audio-video-player"></section>
+    <div class="menu_listing d-none">
+      <div class="row">
+        <div class="col-4">
+          <ul class="list-group list-group-flush " type="1">
+            <li class="list-group-item bg-transparent disabled-list">
+              <div>01</div>
+              <div>Module Objectives</div>
+            </li>
+            <li class="list-group-item  bg-transparent disabled-list">
+              <div>02 </div>
+              <div>Corrosion</div>
+            </li>
+            <li class="list-group-item  bg-transparent disabled-list">
+              <div>03 </div>
+              <div>Corrosion Protection Methods</div>
+            </li>
+            <li class="list-group-item  bg-transparent disabled-list">
+              <div>04 </div>
+              <div>Cathodic Protection and Types of CP</div>
+            </li>
+            <li class="list-group-item  bg-transparent disabled-list">
+              <div>05 </div>
+              <div class="non-padding">Pipe to Soil Potential and Criteria’s for CP</div>
+            </li>
+            <li class="list-group-item  bg-transparent disabled-list">
+              <div>06 </div>
+              <div>CP Assets</div>
+            </li>
+        </div>
+        <div class="col-5 ms-5">
+          <ul class="list-group list-group-flush ">
+            <li class="list-group-item  bg-transparent disabled-list">
+              <div>07 </div>
+              <div>Challenges for CP
+              </div>
+            </li>
+            <li class="list-group-item  bg-transparent disabled-list">
+              <div>08 </div>
+              <div> CP Surveys</div>
+            </li>
+            <li class="list-group-item  bg-transparent disabled-list">
+              <div>09 </div>
+              <div>Summary </div>
+            </li>
+            <li class="list-group-item  bg-transparent disabled-list">
+              <div>10 </div>
+              <div>Assessment </div>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div class="mouse">
+        <p class="mouse-content">Click the Next button to attempt the Pre-assessment section.</p>
+      </div>
+    </div>
+  </section>
+</body>
+
+<script>
+  var tabnum = 1;
+  initAudioVideoPlayer('./content/video/Screen_02.mp4', 'audio-video-player', 'm4v');
+
+  $('#audio-video-player').on($.jPlayer.event.ended, function (event) {
+    $('#player_content_controls').addClass('audio-video-player-stopped');
+    $('#player_nextBtn').removeClass("player_nextBtnDisabled_style").addClass("player_nextBtn_style");
+    $('.itextNext').removeClass("d-none");
+    $("#audio-video-player").hide();
+    $(".menu_listing").removeClass('d-none');
+    if(event.jPlayer.options.supplied == 'm4v') {
+      var audioLocalFilePath = model.getPageCurrentAudioPath(true, tabnum);
+      initAudioVideoPlayer(audioLocalFilePath, 'audio-video-player', 'm4a');
+    }
+  });  
+</script>
+
+</html>

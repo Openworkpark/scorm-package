@@ -1,0 +1,208 @@
+<?xml version="1.0" encoding="utf-8"?>
+<questionBank>
+    <settings>
+        <isRandom val="true" />
+        <attempts val="1000" />
+        <totalQuestion val="10" />
+        <!-- set 0 for all questions -->
+    </settings>
+    <questions>
+        <question type="MCQ" correctAnswer="1"> 
+            <quesText>
+                <![CDATA[Company A is facing a law suit where a loss is nearly certain. The company is likely to reimburse a third party for the losses they incurred because of a delayed dispatch. Does this qualify for a provision in the current financial year?]]>
+            </quesText>
+            <iText>
+                <![CDATA[<i>Select the correct option and click <b>Submit.</b></i>
+                ]]></iText>
+            <options>
+                <option>
+                    <![CDATA[Yes]]>
+                </option>
+                <option>
+                    <![CDATA[No]]>
+                </option>
+                
+                
+              </options>
+        </question>        
+        <question type="MCQ" correctAnswer="2"> 
+            <quesText>
+                <![CDATA[Company A has a successful clothing business. In past years, company A has created a market space for itself, and as a result has rented a facility on a guarantee. The company, however, does not make use of the facility for 4 months. Does this qualify to be recognized as an obligation? State whether the statement is true or false.]]>
+            </quesText>
+            <iText>
+                <![CDATA[<i>Select the correct option and click <b>Submit.</b></i>
+                ]]></iText>
+            <options>
+                <option>
+                    <![CDATA[True]]>
+                </option>
+                <option>
+                    <![CDATA[False]]>
+                </option>
+              </options>
+        </question>
+        <question type="MCQ" correctAnswer="1"> 
+            <quesText>
+                <![CDATA[Expected costs of providing product repairs for units sold prior to year end, where the sales contract does not specifically require the repairs, but the seller has historically made such repairs, present a case for an obligation. State whether the statement is true or false.]]>
+            </quesText>
+            <iText>
+                <![CDATA[<i>Select the correct option and click <b>Submit.</b></i>]]></iText>
+            <options>
+                <option>
+                    <![CDATA[True]]>
+                </option>
+                <option>
+                    <![CDATA[False]]>
+                </option>
+            </options>
+        </question>
+        <question type="MCQ" correctAnswer="4"> 
+            <quesText>
+                <![CDATA[There is a 60% probability that Philips will have to pay damages of EUR 500,000 in a legal case and accordingly 40% probability that the claim against Philips will be dismissed. Philips decides to recognise provision as the payment is probable. <br> What should be the amount of provision?]]>
+            </quesText>
+            <iText>
+                <![CDATA[ <i>Select the correct option and click <b>Submit.</b></i>
+                ]]></iText>
+            <options>
+                <option>
+                    <![CDATA[EUR 375,000]]>
+                </option>
+                <option>
+                    <![CDATA[EUR 300,000 (500.000 * 60%)]]>
+                </option>
+                <option>
+                    <![CDATA[EUR 200,000 (500.000 * 40%)]]>
+                </option>
+                <option>
+                    <![CDATA[EUR 500,000]]>
+                </option>
+              </options>
+        </question>
+        
+         <question type="MCQ" correctAnswer="1"> 
+            <quesText>
+                <![CDATA[Future costs of environmental clean up caused by prior production as required by currently existing laws results in a present obligation. State whether the statement is true or false.]]>
+            </quesText>
+            <iText>
+                <![CDATA[ <i>Select the correct option and click <b>Submit.</b></i>
+                ]]></iText>
+            <options>
+                <option>
+                    <![CDATA[True]]>
+                </option>
+                <option>
+                    <![CDATA[False]]>
+                </option>
+                
+              </options>
+        </question>
+        <question type="DROPDOWN">
+            <quesText>
+                <![CDATA[Identify costs which should be included in the restructuring provision.]]>
+            </quesText>
+            <iText>
+                <![CDATA[<i>Select the correct options(s) from the drop-down list and click <b>Submit.</b></i>]]>
+            </iText>
+            <options>
+                <option items="Select^^Can be included^^Cannot be included" correct="1" type="1">
+                    <![CDATA[<div class="stepDrop">Lease cancellation fees for a factory, which will no longer be used </div>]]>
+                </option>
+                <option items="Select^^Can be included^^Cannot be included" correct="2" type="1">
+                    <![CDATA[<div class="stepDrop">Marketing costs to develop a new corporate image </div>]]>
+                </option>
+                <option items="Select^^Can be included^^Cannot be included" correct="2" type="1">
+                    <![CDATA[<div class="stepDrop">Gain on expected disposal of owned factory that will no longer be used </div>]]>
+                </option>   
+
+                 <option items="Select^^Can be included^^Cannot be included" correct="2" type="1">
+                    <![CDATA[<div class="stepDrop">Impairment write-down of certain property, plant and equipment</div>]]>
+                </option>            
+            </options>
+        </question>
+
+        <question type="MCQ" correctAnswer="2"> 
+            <quesText>
+                <![CDATA[<ul class="bulletsdiv">
+                   <li>Philips has an obligation to rectify a fault in one of its products.</li>
+                   <li>Philips measures the provision based on the expected repair cost, which may be anywhere between EUR 70,000 and EUR 130,000.</li>
+                   <li>Philips recognises a provision at the best estimate of EUR 90,000.</li>
+                  </ul>
+                    <p>The remaining amount of EUR 40,000 (EUR 130,000 – EUR 90,000) can be disclosed as a contingent liability.</p>
+                  ]]>
+            </quesText>
+            <iText>
+                <![CDATA[<i>Select the correct option and click <b>Submit.</b></i>]]></iText>
+            <options>
+               <option>
+                    <![CDATA[True]]>
+                </option>
+                <option>
+                    <![CDATA[False]]>
+                </option>
+            </options>
+        </question> 
+
+        <question type="MMCQ" correctAnswer="1,2,3"> 
+            <quesText>
+                <![CDATA[Which of the following statements are true about an onerous contract?]]>
+            </quesText>
+            <iText>
+                <![CDATA[<i>Select the correct option(s) and click <b>Submit.</b></i>]]></iText>
+            <options>
+                <option>
+                    <![CDATA[The unavoidable costs of meeting the obligations under the contract exceed the economic benefits expected to be received under the contract]]>
+                </option>
+                <option>
+                    <![CDATA[Includes all indirect benefits that are derived by business or CGU which holds contract]]>
+                </option>
+                <option>
+                    <![CDATA[Unavoidable costs are the least net cost of exiting from the contract]]>
+                </option>
+                <option>
+                    <![CDATA[Includes a management decision that gives rise to a constructive obligation]]>
+                </option>
+            </options>
+        </question>
+
+        <question type="MCQ" correctAnswer="1"> 
+            <quesText>
+                <![CDATA[An intention to do something or a future requirement does not result in an unavoidable obligation. State whether the statement is true or false.]]>
+            </quesText>
+            <iText>
+                <![CDATA[<i>Select the correct option and click <b>Submit.</b></i>
+                ]]></iText>
+            <options>
+               <option>
+                    <![CDATA[True]]>
+                </option>
+                <option>
+                    <![CDATA[False]]>
+                </option>
+              </options>
+        </question>
+
+        <question type="MCQ" correctAnswer="2"> 
+            <quesText>
+                <![CDATA[Present obligations arising as a result of obligating event are classified either as _____________ and ___________.]]>
+            </quesText>
+            <iText>
+                <![CDATA[<i>Select the correct option and click <b>Submit.</b></i>]]></iText>
+            <options>
+                <option>
+                    <![CDATA[Contingent and legal obligations]]>
+                </option>
+                <option>
+                    <![CDATA[Legal and constructive obligations]]>
+                </option>
+                <option>
+                    <![CDATA[Environmental and legal obligations]]>
+                </option>
+                <option>
+                    <![CDATA[Constructive and contingent obligations]]>
+                </option>
+            </options>
+        </question> 
+
+        
+    </questions>
+</questionBank>
